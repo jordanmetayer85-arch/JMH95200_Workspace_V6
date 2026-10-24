@@ -1,0 +1,25 @@
+# Applications à désactiver sur la télé (une par ligne).
+# Une ligne qui commence par # est ignorée.
+# Les applications sont DÉSACTIVÉES, jamais désinstallées : tout est réversible
+# avec l'option 4 du menu (Restaurer).
+#
+# Les paquets absents de votre télé sont simplement ignorés.
+# Ne mettez JAMAIS ici le lanceur (com.google.android.tvlauncher,
+# com.google.android.apps.tv.launcherx) : sans lanceur, plus d'écran d'accueil.
+
+# --- Google : services rarement utilisés ---
+com.google.android.feedback
+com.google.android.play.games
+com.google.android.videos
+com.google.android.music
+com.google.android.youtube.tvmusic
+com.google.android.marvin.talkback
+com.android.printspooler
+com.android.dreams.basic
+com.android.dreams.phototable
+
+# --- Télémétrie / publicités ---
+com.google.android.partnersetup
+com.google.android.tvrecommendations
+
+# --- Ajoutez ici les applis du fabricant repérées avec l'option 2 (Lister) ---
