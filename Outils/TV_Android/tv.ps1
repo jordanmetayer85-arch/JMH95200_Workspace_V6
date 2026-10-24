@@ -91,6 +91,36 @@ function Restaurer {
     Write-Host 'Animations remises à 1x. Redémarrez la télé.' -ForegroundColor Green
 }
 
+function Installer-Lanceur {
+    $pkg = 'com.spocky.projengmenu'   # Projectivy Launcher (Play Store, gratuit)
+    if (-not ((Shell "pm list packages $pkg") -match "package:$pkg\s*$")) {
+        Shell "am start -a android.intent.action.VIEW -d market://details?id=$pkg" | Out-Null
+        Write-Host "Sur la télé, le Play Store s'ouvre : appuyez sur « Installer » avec la télécommande." -ForegroundColor Yellow
+        for ($i = 0; $i -lt 100 -and -not ((Shell "pm list packages $pkg") -match "package:$pkg\s*$"); $i++) { Start-Sleep 3 }
+        if (-not ((Shell "pm list packages $pkg") -match "package:$pkg\s*$")) { Write-Host "Projectivy n'est pas installé, on arrête là." -ForegroundColor Red; return }
+    }
+    Write-Host 'Projectivy est installé.' -ForegroundColor Green
+    # Écran d'accueil par défaut
+    $accueil = (Shell "cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.HOME $pkg") |
+        ForEach-Object { "$_".Trim() } | Where-Object { $_ -match '^\S+/\S+$' } | Select-Object -Last 1
+    if ($accueil) { Shell "cmd package set-home-activity $accueil" | Out-Null }
+    # Service d'accessibilité : fait apparaître Projectivy quand on appuie sur le bouton Maison
+    $service = [regex]::Matches((Shell "dumpsys package $pkg") -join "`n", "$pkg/[\w.]*Accessibility[\w.]*") |
+        Select-Object -First 1 -ExpandProperty Value
+    if ($service) {
+        $actifs = "$(Shell 'settings get secure enabled_accessibility_services')".Trim()
+        if ($actifs -eq 'null' -or -not $actifs) { $actifs = $service }
+        elseif ($actifs -notmatch [regex]::Escape($service)) { $actifs = "$($actifs):$service" }
+        Shell "settings put secure enabled_accessibility_services $actifs" | Out-Null
+        Shell 'settings put secure accessibility_enabled 1' | Out-Null
+        Write-Host 'Bouton Maison redirigé vers Projectivy.' -ForegroundColor Green
+    } else {
+        Write-Host "Dans Projectivy : Paramètres > Général > activez « Remplacer le lanceur actuel »." -ForegroundColor Yellow
+    }
+    Shell 'input keyevent KEYCODE_HOME' | Out-Null
+    Write-Host "Terminé. Pour revenir à l'ancien écran : désinstallez Projectivy depuis le Play Store." -ForegroundColor Green
+}
+
 while ($true) {
     Write-Host "`n=== Allègement télé Android ===" -ForegroundColor Cyan
     Write-Host 'Entrée. TOUT FAIRE (conseillé) : connecter, alléger, redémarrer' -ForegroundColor Green
@@ -99,6 +129,7 @@ while ($true) {
     Write-Host '3. Désactiver les applis de la liste + accélérer les animations'
     Write-Host '4. Restaurer (tout réactiver)'
     Write-Host '5. Redémarrer la télé'
+    Write-Host '6. Nouvel écran d''accueil épuré (Projectivy, comme dans la vidéo)'
     Write-Host 'Q. Quitter'
     switch ((Read-Host 'Choix').ToUpper()) {
         ''  { if (Connecter) { Desactiver; Accelerer; Write-Host 'Terminé ! La télé redémarre.' -ForegroundColor Green; & $Adb reboot } }
@@ -107,6 +138,7 @@ while ($true) {
         '3' { Desactiver; Accelerer; Write-Host 'Terminé. Redémarrez la télé (option 5).' }
         '4' { Restaurer }
         '5' { & $Adb reboot }
+        '6' { if (Connecter) { Installer-Lanceur } }
         'Q' { & $Adb disconnect | Out-Null; exit }
     }
 }
