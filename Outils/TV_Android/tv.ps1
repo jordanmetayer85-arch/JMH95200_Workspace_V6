@@ -5,6 +5,7 @@ $ErrorActionPreference = 'Continue'
 $Dossier   = $PSScriptRoot
 $Liste     = Join-Path $Dossier 'paquets_a_desactiver.txt'
 $Journal   = Join-Path $Dossier 'desactives.log'
+$IpParDefaut = '192.168.1.46'
 $Animations = 'window_animation_scale', 'transition_animation_scale', 'animator_duration_scale'
 
 # Paquets à ne jamais désactiver : la télé deviendrait inutilisable.
@@ -24,9 +25,16 @@ function Trouver-Adb {
     if (Test-Path $local) { return $local }
     $cmd = Get-Command adb -ErrorAction SilentlyContinue
     if ($cmd) { return $cmd.Source }
-    Write-Host "adb introuvable. Téléchargez 'SDK Platform-Tools for Windows' :" -ForegroundColor Red
-    Write-Host "  https://developer.android.com/tools/releases/platform-tools"
-    Write-Host "et dézippez le dossier 'platform-tools' à côté de ce script."
+    Write-Host "Téléchargement de l'outil de connexion Google (une seule fois)..." -ForegroundColor Cyan
+    $zip = Join-Path $Dossier 'platform-tools.zip'
+    try {
+        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+        Invoke-WebRequest 'https://dl.google.com/android/repository/platform-tools-latest-windows.zip' -OutFile $zip -UseBasicParsing
+        Expand-Archive $zip -DestinationPath $Dossier -Force
+        Remove-Item $zip
+    } catch { Write-Host "Échec du téléchargement : $_" -ForegroundColor Red }
+    if (Test-Path $local) { return $local }
+    Write-Host "Vérifiez la connexion Internet du PC puis relancez." -ForegroundColor Red
     Read-Host 'Entrée pour quitter'; exit 1
 }
 $Adb = Trouver-Adb
@@ -34,11 +42,16 @@ $Adb = Trouver-Adb
 function Shell([string]$commande) { & $Adb shell $commande 2>&1 }
 
 function Connecter {
-    $ip = Read-Host "Adresse IP de la télé (Paramètres > Réseau, ex. 192.168.1.42)"
-    & $Adb connect "$($ip):5555"
-    Write-Host "Si la télé affiche « Autoriser le débogage USB ? », cochez « Toujours » puis OK." -ForegroundColor Yellow
-    Read-Host 'Entrée une fois accepté'
-    & $Adb devices
+    $ip = Read-Host "Adresse IP de la télé [Entrée = $IpParDefaut]"
+    if (-not $ip) { $ip = $IpParDefaut }
+    & $Adb connect "$($ip):5555" | Out-Null
+    Write-Host "Regardez la télé : acceptez le message « Autoriser le débogage ? » (cochez « Toujours », puis OK)." -ForegroundColor Yellow
+    for ($i = 0; $i -lt 60; $i++) {
+        if ((& $Adb devices) -match "$([regex]::Escape($ip)):5555\s+device") { Write-Host 'Télé connectée.' -ForegroundColor Green; return $true }
+        Start-Sleep 2; & $Adb connect "$($ip):5555" | Out-Null
+    }
+    Write-Host "Impossible de joindre la télé. Vérifiez qu'elle est allumée, sur le même Wi-Fi, et que le débogage est activé." -ForegroundColor Red
+    return $false
 }
 
 function Lister {
@@ -80,6 +93,7 @@ function Restaurer {
 
 while ($true) {
     Write-Host "`n=== Allègement télé Android ===" -ForegroundColor Cyan
+    Write-Host 'Entrée. TOUT FAIRE (conseillé) : connecter, alléger, redémarrer' -ForegroundColor Green
     Write-Host '1. Connecter la télé'
     Write-Host '2. Lister les applis installées'
     Write-Host '3. Désactiver les applis de la liste + accélérer les animations'
@@ -87,7 +101,8 @@ while ($true) {
     Write-Host '5. Redémarrer la télé'
     Write-Host 'Q. Quitter'
     switch ((Read-Host 'Choix').ToUpper()) {
-        '1' { Connecter }
+        ''  { if (Connecter) { Desactiver; Accelerer; Write-Host 'Terminé ! La télé redémarre.' -ForegroundColor Green; & $Adb reboot } }
+        '1' { Connecter | Out-Null }
         '2' { Lister }
         '3' { Desactiver; Accelerer; Write-Host 'Terminé. Redémarrez la télé (option 5).' }
         '4' { Restaurer }

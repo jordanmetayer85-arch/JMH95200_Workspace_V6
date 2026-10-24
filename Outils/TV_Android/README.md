@@ -21,21 +21,14 @@ entrées `com.tcl.tv`/`com.tcl.tvinput`, Wi-Fi, télécommande, mises à jour `c
 3. Notez l'**adresse IP** de la télé : Paramètres → Réseau.
 4. La télé et le PC doivent être sur la **même box / même Wi-Fi**.
 
-## 2. Préparer le PC Windows (une seule fois)
+## 2. Utiliser
 
-1. Téléchargez « SDK Platform-Tools for Windows » : <https://developer.android.com/tools/releases/platform-tools>
-2. Dézippez-le **dans ce dossier** pour obtenir `Outils\TV_Android\platform-tools\adb.exe`.
+Double-cliquez sur **`Lancer.bat`** et appuyez sur **Entrée** : le script télécharge tout seul
+l'outil de connexion Google (la première fois), se connecte à la télé (IP `192.168.1.46` par défaut),
+désactive les applis inutiles, accélère les animations et redémarre la télé.
+Pendant la connexion, acceptez le message sur la télé (cochez « Toujours » puis OK).
 
-## 3. Utiliser
-
-Double-cliquez sur **`Lancer.bat`**, puis :
-
-1. **Connecter** → tapez l'IP, acceptez le message sur la télé (cochez « Toujours »).
-2. **Lister** → repérez les applis du fabricant que vous n'utilisez pas, ajoutez-les à `paquets_a_desactiver.txt`.
-3. **Désactiver + accélérer**.
-4. **Redémarrer** la télé (option 5).
-
-Si quelque chose ne va pas : option **4. Restaurer**, puis redémarrer.
+Si quelque chose ne va pas : relancez, choisissez **4. Restaurer**, puis **5. Redémarrer**.
 
 ## Précautions
 
