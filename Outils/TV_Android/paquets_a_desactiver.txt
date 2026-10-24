@@ -1,25 +1,63 @@
-# Applications à désactiver sur la télé (une par ligne).
+# Applications à désactiver sur la télé TCL Android TV (une par ligne).
 # Une ligne qui commence par # est ignorée.
 # Les applications sont DÉSACTIVÉES, jamais désinstallées : tout est réversible
 # avec l'option 4 du menu (Restaurer).
 #
 # Les paquets absents de votre télé sont simplement ignorés.
-# Ne mettez JAMAIS ici le lanceur (com.google.android.tvlauncher,
-# com.google.android.apps.tv.launcherx) : sans lanceur, plus d'écran d'accueil.
+# Le script refuse de toucher aux paquets vitaux (entrées HDMI, télécommande,
+# Wi-Fi, mises à jour, Play Store, lanceur, clavier), même s'ils sont listés ici.
+#
+# Liste établie à partir des listes testées par d'autres propriétaires de TCL
+# (github.com/Gathin23/cleanyourtv, dossier examples/tcl-*).
 
-# --- Google : services rarement utilisés ---
-com.google.android.feedback
-com.google.android.play.games
-com.google.android.videos
-com.google.android.music
-com.google.android.youtube.tvmusic
-com.google.android.marvin.talkback
-com.android.printspooler
-com.android.dreams.basic
-com.android.dreams.phototable
+# --- TCL : publicités, promos, contenus poussés ---
+com.tcl.esticker                    # autocollant de démo magasin
+com.tcl.messagebox                  # boîte à messages / promos TCL
+com.tcl.partnercustomizer           # rangées de promos sur l'accueil
+com.tcl.waterfall.overseas          # portail TCL Channel
+com.tcl.tv.tclhome_passive          # pousse du contenu TCL sur l'accueil au démarrage
+com.tcl.channelplus                 # TCL Live : chaînes gratuites avec pubs
+com.tcl.dashboard                   # tableau de bord IoT, promos
+com.tcl.overseasappshow             # vitrine d'applis partenaires
+com.tcl.t_solo                      # service promotionnel TCL
+com.tcl.exhibit                     # mode démo magasin
+com.tcl.hotelmenu                   # mode hôtel
 
-# --- Télémétrie / publicités ---
-com.google.android.partnersetup
-com.google.android.tvrecommendations
+# --- TCL : télémétrie, compte, nettoyeurs ---
+com.tcl.bi                          # statistiques d'utilisation TCL
+com.tcl.logkit                      # collecte de journaux / diagnostic à distance
+com.tcl.interactive                 # service d'arrière-plan TCL
+com.tcl.usercenter                  # compte TCL
+com.tcl.guard                       # nettoyeur TGuard
+com.tcl.tvweishi                    # nettoyeur « TV Guard »
+com.tcl.useragreement               # écrans de conditions d'utilisation
 
-# --- Ajoutez ici les applis du fabricant repérées avec l'option 2 (Lister) ---
+# --- TCL : applis rarement utilisées ---
+com.tcl.smartalexa                  # intégration Alexa
+com.tcl.ocean.instructions          # manuel à l'écran
+com.tcl.repairguide                 # autodiagnostic
+com.tcl.browser                     # navigateur TCL
+com.tcl.copydatatotv                # utilitaire de copie
+com.tcl.gamebar                     # surcouche jeu
+
+# --- Google : installations automatiques et services inutiles ---
+android.autoinstalls.config.google.gtvpai   # installe des applis partenaires en douce
+android.autoinstalls.config.tcl.device      # idem, côté TCL
+com.google.android.partnersetup     # suivi des applis partenaires
+com.google.android.onetimeinitializer       # restes de la première installation
+com.google.android.feedback         # envoi de commentaires
+com.google.android.play.games       # Play Jeux
+com.google.android.videos           # Play Films
+com.google.android.tvrecommendations        # recommandations de chaînes
+com.google.android.marvin.talkback  # TalkBack (lecteur d'écran)
+com.android.printspooler            # impression
+
+# --- Facultatif : enlevez le # si vous n'utilisez pas ces fonctions ---
+# com.google.android.youtube.tvmusic  # YouTube Music
+# com.tcl.ui_mediaCenter              # lecteur de clé USB
+# com.tcl.gallery                     # galerie photo USB + économiseur TCL
+# com.tcl.magiconnectfree             # T-Cast / Magiconnect (recopie du téléphone)
+# com.tcl.miracast                    # recopie d'écran Miracast (Chromecast reste actif)
+# com.tcl.appmarket2                  # magasin d'applis TCL (le Play Store reste)
+
+# --- Ajoutez ici d'autres applis repérées avec l'option 2 (Lister) ---

@@ -1,11 +1,23 @@
 ﻿# Allège une télé Android TV / Google TV via ADB (débogage réseau).
 # Tout est réversible : les applis sont désactivées, pas désinstallées.
 
-$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Continue'
 $Dossier   = $PSScriptRoot
 $Liste     = Join-Path $Dossier 'paquets_a_desactiver.txt'
 $Journal   = Join-Path $Dossier 'desactives.log'
 $Animations = 'window_animation_scale', 'transition_animation_scale', 'animator_duration_scale'
+
+# Paquets à ne jamais désactiver : la télé deviendrait inutilisable.
+$Proteges = @(
+    'com.tcl.suspension',            # menu Sources/Entrées (HDMI)
+    'com.tcl.tv', 'com.tcl.tvinput', # TV et entrées HDMI/antenne
+    'com.tcl.ttvs',                  # mises à jour système
+    'com.tcl.providers.config', 'com.tcl.initsetup',  # Wi-Fi
+    'com.tcl.tcl_bt_rcu_service', 'com.tcl.autopair', 'com.google.android.tv.remote.service',  # télécommande
+    'com.google.android.gms', 'com.google.android.gsf', 'com.android.vending',
+    'com.android.location.fused',    # boucle de redémarrage sinon
+    'com.google.android.tvlauncher', 'com.google.android.apps.tv.launcherx'  # écran d'accueil
+)
 
 function Trouver-Adb {
     $local = Join-Path $Dossier 'platform-tools\adb.exe'
@@ -39,8 +51,10 @@ function Lister {
 
 function Desactiver {
     $installes = Shell 'pm list packages -e' | ForEach-Object { $_ -replace '^package:', '' }
-    $cibles = Get-Content $Liste | ForEach-Object { $_.Trim() } | Where-Object { $_ -and -not $_.StartsWith('#') }
+    $cibles = Get-Content $Liste | ForEach-Object { $_.Trim() } | Where-Object { $_ -and -not $_.StartsWith('#') } |
+        ForEach-Object { ($_ -split '\s+')[0] }
     foreach ($p in $cibles) {
+        if ($Proteges -contains $p -or $p -match 'inputmethod') { Write-Host "  PROTÉGÉ $p (ignoré)" -ForegroundColor Yellow; continue }
         if ($installes -notcontains $p) { Write-Host "  - $p (absent ou déjà désactivé)"; continue }
         $r = Shell "pm disable-user --user 0 $p"
         if ($r -match 'disabled') { Add-Content $Journal $p; Write-Host "  OK $p" -ForegroundColor Green }

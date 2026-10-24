@@ -6,6 +6,11 @@ Rien n'est désinstallé : l'option **4. Restaurer** remet tout comme avant.
 
 ## Télés compatibles
 
+La liste fournie est réglée pour les **TCL Android TV**, à partir des listes testées par
+d'autres propriétaires de TCL ([cleanyourtv](https://github.com/Gathin23/cleanyourtv/tree/main/examples)).
+Le script refuse de désactiver les paquets vitaux de TCL (menu Sources/HDMI `com.tcl.suspension`,
+entrées `com.tcl.tv`/`com.tcl.tvinput`, Wi-Fi, télécommande, mises à jour `com.tcl.ttvs`…).
+
 - **Oui** : Android TV et Google TV (TCL, Xiaomi, Hisense, Sony, Philips, Nvidia Shield, Chromecast avec Google TV…).
 - **Non** : Samsung (Tizen), LG (webOS), Amazon Fire TV (fonctionne en partie mais non testé ici).
 
@@ -33,6 +38,8 @@ Double-cliquez sur **`Lancer.bat`**, puis :
 Si quelque chose ne va pas : option **4. Restaurer**, puis redémarrer.
 
 ## Précautions
+
+- Après la désactivation et le redémarrage, testez : changement de source HDMI, télécommande, Wi-Fi, son, Netflix/YouTube. En cas de souci : option 4.
 
 - Ne désactivez jamais le lanceur (`com.google.android.tvlauncher`, `com.google.android.apps.tv.launcherx`) ni `com.google.android.gms` : plus d'écran d'accueil / plus de Play Store.
 - Le journal `desactives.log` mémorise ce que le script a désactivé ; ne le supprimez pas si vous voulez pouvoir restaurer.
