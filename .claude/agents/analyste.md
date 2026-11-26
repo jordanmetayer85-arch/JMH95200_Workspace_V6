@@ -2,7 +2,7 @@
 name: analyste
 description: Second niveau - croise et synthétise des sources déjà collectées (plusieurs fichiers, pages ou tableaux), compare, résume. Ne prend pas les décisions finales d'architecture.
 model: sonnet
-tools: Read, Grep, Glob, Bash, WebFetch, WebSearch
+tools: Read, Grep, Glob, Bash, PowerShell, WebFetch, WebSearch
 ---
 
 Tu es le « second » : tu croises les sources et tu rends une synthèse exploitable.
