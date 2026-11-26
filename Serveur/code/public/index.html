@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111114">
+  <title>JMH95200 — Ton univers personnel</title>
+  <link rel="icon" href="/assets/icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/assets/jmh-app-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="JMH">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/workspace.css">
+  <link rel="stylesheet" href="/cinema.css">
+  <link rel="stylesheet" href="/music.css">
+  <link rel="stylesheet" href="/home.css">
+  <link rel="stylesheet" href="/media-controls.css">
+  <link rel="stylesheet" href="/theme-tools.css">
+  <link rel="stylesheet" href="/daily-tools.css">
+  <link rel="stylesheet" href="/pwa.css">
+  <link rel="stylesheet" href="/player-stability.css">
+  <link rel="stylesheet" href="/studio.css">
+<link rel="stylesheet" href="/polish.css"><link rel="stylesheet" href="/light-theme.css">
+  <link rel="stylesheet" href="/enhanced.css"><link rel="stylesheet" href="/refined.css"><link rel="stylesheet" href="/evolution.css">
+<link rel="stylesheet" href="/navigation.css">
+  <link rel="stylesheet" href="/private-vault.css">
+  <link rel="stylesheet" href="/authority.css">
+<link rel="stylesheet" href="/fond-precoce.css"><script src="/fond-precoce.js"></script>
+</head>
+<body>
+  <div id="toast"></div>
+
+  <section id="loginView" class="center-screen">
+    <div class="login-intro"><span class="login-kicker">TON ESPACE PERSONNEL</span><h1>Tout ton univers.<br><span>Une seule adresse.</span></h1><p>Tes films, ta musique, tes fichiers et tes projets. Installe-toi, tu es chez toi.</p><div class="login-art" aria-hidden="true"><div class="login-reel"></div></div></div>
+    <div class="login-card">
+      <div class="login-wordmark"><svg viewBox="0 0 32 36" aria-hidden="true"><path fill="currentColor" d="M10 2h13v22c0 11-11 15-20 7v-8c7 7 13 4 13-1V2z"/></svg> JMH95200</div>
+      <h2>Bienvenue chez toi.</h2>
+      <p id="loginSlogan">Connecte-toi pour retrouver ton espace.</p>
+      <form id="loginForm">
+        <label>Nom d'utilisateur
+          <input id="username" autocomplete="username" required>
+        </label>
+        <label>Mot de passe
+          <div class="password-wrap">
+            <input id="password" type="password" autocomplete="current-password" required>
+            <button id="togglePassword" type="button" class="eye-btn" aria-label="Afficher ou masquer le mot de passe">◉</button>
+          </div>
+        </label>
+        <div id="localLoginControls" class="local-login-controls hidden"><label class="remember-login"><input id="rememberLogin" type="checkbox"> Enregistrer les identifiants sur ce PC</label><div class="local-login-actions"><button id="fillSavedLogin" type="button" class="secondary hidden">Remplir mes identifiants</button><button id="clearSavedLogin" type="button" class="secondary hidden">Effacer sur ce PC</button></div></div><p id="localLoginStatus" class="muted-text" role="status"></p><button type="submit">Se connecter</button>
+      </form>
+      <small class="login-private">TON UNIVERS · TON ESPACE PRIVÉ</small>
+      <details class="login-help"><summary>Aide à la connexion</summary><p>Sélectionne un compte enregistré pour remplir les deux champs, puis clique sur Se connecter. Les mémorisations sont chiffrées sur ce PC. Oublier un identifiant ici ne supprime pas le compte du NAS.</p><p>Si le NAS ne répond pas, vérifie que tu es connecté au réseau de la maison ou à ton accès distant.</p></details>
+    </div>
+  </section>
+
+  <section id="appView" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand-block">
+        <div class="brand-mark"><svg viewBox="0 0 32 36" aria-hidden="true"><path fill="currentColor" d="M10 2h13v22c0 11-11 15-20 7v-8c7 7 13 4 13-1V2z"/></svg></div>
+        <div class="brand-copy">
+          <strong id="sidebarWorkspaceName">JMH95200 Workspace</strong>
+          <span>Cinéma &amp; Workspace</span>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Navigation principale"><div class="nav-divider"><span>TON UNIVERS</span></div>
+<button class="nav active" data-page="cinemaPage"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z M3 9h18 M7 5l3 4 M13 5l3 4 M10 12l5 2-5 2z"/></svg><span>Cinéma</span></button>
+<button class="nav" data-page="musicPage"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-3v14 M9 8l12-3 M9 18a3 3 0 11-3-3c2 0 3 1 3 3z M21 16a3 3 0 11-3-3c2 0 3 1 3 3z"/></svg><span>Musiques</span></button>
+<button class="nav" data-page="storagePage"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h7l2 2h9v11H3z M3 7V4h7l2 3"/></svg><span>Mes fichiers</span></button>
+<div class="nav-divider"><span>WORKSPACE</span></div>
+<button class="nav" data-page="dashboardPage"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z"/></svg><span>Vue d’ensemble</span></button>
+<button class="nav" data-page="chatPage"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H9l-5 4z M8 8h8 M8 12h5"/></svg><span>Messages</span></button>
+<button class="nav" data-page="tasksPage"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h12 M9 12h12 M9 20h12 M2 4l2 2 3-4 M2 12l2 2 3-4 M2 20l2 2 3-4"/></svg><span>Tâches</span></button>
+<button class="nav" data-page="calendarPage"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v16H4z M4 10h16 M8 3v4 M16 3v4 M8 14h2 M14 14h2"/></svg><span>Calendrier</span></button>
+<button class="nav" data-page="notificationsPage"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h14l-2-3V9a5 5 0 00-10 0v5z M10 20h4"/></svg><span>Notifications</span><span id="notificationBadge" class="notification-badge hidden">0</span></button>
+<button class="nav" data-page="announcementsPage"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h5l10-5v14L9 14H4z M6 14v6h4v-5"/></svg><span>Annonces</span></button>
+<button class="nav admin-only" data-page="trashPage"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16 M9 3h6 M6 6l1 15h10l1-15 M10 10v7 M14 10v7"/></svg><span>Corbeille</span></button>
+<div class="nav-divider"><span>TON ESPACE</span></div>
+<button class="nav admin-only" data-page="usersPage"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 7a3 3 0 11-6 0 3 3 0 016 0z M5 21v-3a7 7 0 0114 0v3 M3 8a2 2 0 004 0 M21 8a2 2 0 00-4 0"/></svg><span>Utilisateurs</span></button>
+<button class="nav admin-only" data-page="auditPage"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-8 9-8 9s-8-4-8-9V6z M8 12l3 3 5-6"/></svg><span>Journal</span></button>
+<button class="nav" data-page="accountPage"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 7a5 5 0 11-10 0 5 5 0 0110 0z M3 22v-3a9 9 0 0118 0v3"/></svg><span>Mon compte</span></button>
+<button class="nav" data-page="updatesPage"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V3 M7 8l5-5 5 5 M4 15v6h16v-6"/></svg><span>Mises à jour</span></button>
+<button class="nav" data-page="settingsPage"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 110 8 4 4 0 010-8z M9 3h6l1 3 3 1 2 5-2 5-3 1-1 3H9l-1-3-3-1-2-5 2-5 3-1z"/></svg><span>Paramètres</span></button></nav>
+      <div class="profile-card">
+        <div class="avatar" id="profileAvatar">JM</div>
+        <div class="profile-copy">
+          <strong id="currentUser"></strong>
+          <span><span class="online-dot">●</span> Connecté</span>
+        </div>
+        <button id="logoutBtn" class="icon-button" title="Déconnexion" aria-label="Se déconnecter">↪</button>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div class="page-heading">
+          <button id="sidebarToggle" class="icon-button mobile-only" title="Menu">☰</button>
+          <div>
+            <h2 id="pageTitle">Tableau de bord</h2>
+            <p id="pageSubtitle">Vue d’ensemble de l’activité</p>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <div class="global-search">
+            <span>⌕</span>
+            <input id="globalSearch" placeholder="Rechercher…" aria-label="Recherche globale">
+          </div>
+          <button id="themeToggle" class="icon-button" title="Changer le thème" aria-label="Changer le thème">◐</button>
+          <button id="topNotificationsBtn" class="icon-button notification-top" title="Notifications" aria-label="Ouvrir les notifications">
+            ♧<span id="topNotificationBadge" class="notification-badge hidden">0</span>
+          </button>
+          <div class="role-pill" id="roleBadge"></div>
+        </div>
+      </header>
+
+
+      <div id="mediaTransferStatus" class="media-transfer-banner hidden" role="status" aria-live="polite"></div>
+      <section id="homePage" class="page home-page hidden" aria-label="Accueil JMH">
+        <div class="home-hero"><div><span class="home-eyebrow">TON UNIVERS, À LA MAISON</span><h1>Installe-toi.<br><em>La suite t’appartient.</em></h1><p>Un film à reprendre, un album à découvrir, une playlist à lancer. Tout est réuni ici.</p><div class="home-hero-actions"><button data-home-nav="cinemaPage">Explorer mes films</button><button class="secondary" data-home-nav="musicPage">Écouter ma musique</button></div></div><div class="home-art" aria-hidden="true"><div class="home-record"><span>JMH<br>YOUR COLLECTION</span></div><div class="home-ticket">ADMIT ONE<br><b>SOIRÉE CINÉMA</b><small>CHEZ TOI · À TON RYTHME</small></div></div></div>
+        <div class="home-stats" id="homeStats"></div><div id="homeLoadStatus" role="status" aria-live="polite"></div>
+        <div class="home-columns"><section class="home-section"><div class="home-section-title"><div><span>CINÉMA</span><h2>Reprendre la séance</h2></div><button class="home-link" data-home-nav="cinemaPage">Voir les films →</button></div><div id="homeContinue" class="home-film-grid"></div></section><section class="home-section home-music-panel"><span class="home-eyebrow">LA BONNE AMBIANCE</span><h2>Un mix qui te ressemble.</h2><p>Lance une sélection aléatoire de ta collection ou retrouve tes titres favoris.</p><button id="homeMusicMix">▶ Mélanger ma musique</button><button id="homeMusicFavorites" class="secondary">♥ Écouter mes favoris</button><div class="home-shortcuts"><span>À découvrir aussi</span><button data-home-nav="musicPage">Albums &amp; playlists →</button><button data-home-nav="storagePage">Mes fichiers →</button></div></section></div>
+        <section class="home-section"><div class="home-section-title"><div><span>TA COLLECTION</span><h2>Récemment ajoutés</h2></div><button class="home-link" data-home-nav="cinemaPage">Tout parcourir →</button></div><div id="homeRecentFilms" class="home-film-grid"></div></section>
+        <section class="home-section"><div class="home-section-title"><div><span>TES INCONTOURNABLES</span><h2>Les titres que tu aimes</h2></div><button class="home-link" data-home-nav="musicPage">Ouvrir la bibliothèque →</button></div><div id="homeTracks" class="home-track-grid"></div></section>
+      </section>
+      <section id="cinemaPage" class="page cinema-page hidden" aria-labelledby="cinemaWordmark">
+        <div class="cinema-topline">
+          <div class="cinema-brand"><span class="cinema-monogram" aria-hidden="true">J</span><div><strong id="cinemaWordmark">JMH <span>CINÉMA</span></strong><small>Ta collection privée</small></div></div>
+          <div class="cinema-top-actions"><span id="cinemaCount" class="cinema-count">0 film</span><button id="cinemaImportBtn" class="cinema-button cinema-primary" type="button"><span aria-hidden="true">＋</span> Ajouter des films</button></div>
+        </div>
+        <div id="cinemaAccessMessage" class="cinema-access hidden" role="status">Ton compte n’a pas accès à la bibliothèque cinéma.</div>
+        <div id="cinemaContent">
+          <div id="cinemaHero" class="cinema-hero">
+            <div class="cinema-hero-art" aria-hidden="true">
+              <svg class="cinema-landscape" viewBox="0 0 960 550" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                <defs><radialGradient id="jmhCinemaSky"><stop stop-color="#e8b279" stop-opacity=".8"/><stop offset=".42" stop-color="#96433d" stop-opacity=".55"/><stop offset="1" stop-color="#111013"/></radialGradient><linearGradient id="jmhCinemaMountain" x2="0" y2="1"><stop stop-color="#754046"/><stop offset="1" stop-color="#211b25"/></linearGradient><linearGradient id="jmhCinemaLake" x2="0" y2="1"><stop stop-color="#9d574e" stop-opacity=".55"/><stop offset="1" stop-color="#17151b"/></linearGradient></defs>
+                <rect width="960" height="550" fill="url(#jmhCinemaSky)"/><circle cx="660" cy="166" r="69" fill="#f5c096" opacity=".88"/><circle cx="660" cy="166" r="84" fill="none" stroke="#f5c096" stroke-opacity=".15"/>
+                <path d="M0 365 150 255 249 325 418 180 534 299 635 254 793 341 960 262V550H0Z" fill="url(#jmhCinemaMountain)"/><path d="m418 180 41 49-28-9-14 12-26-21Z" fill="#bd7f77" opacity=".5"/>
+                <path d="M0 408 196 350 309 390 546 348 725 385 960 331V550H0Z" fill="#2b222c"/><path d="M0 444Q252 388 490 429T960 405V550H0Z" fill="url(#jmhCinemaLake)"/>
+                <path d="M565 447h178m-208 17h260m-239 19h205m-173 18h123" stroke="#d99e82" stroke-width="2" stroke-linecap="round" opacity=".16"/><path d="M0 490 110 456 196 506 334 467 451 550H0Z" fill="#15131b"/>
+                <path d="m843 438 17-78 20 78h-12l16 26h-18v65h-13v-65h-20l17-26Z" fill="#18151d"/><path d="m903 443 19-108 28 108h-18l21 34h-25v67h-13v-67h-23l22-34Z" fill="#131218"/>
+                <g fill="#f7d8b7" opacity=".4"><circle cx="520" cy="78" r="1.5"/><circle cx="780" cy="64" r="1"/><circle cx="867" cy="136" r="1.5"/><circle cx="470" cy="144" r="1"/><circle cx="723" cy="32" r="1"/></g>
+              </svg>
+              <div class="cinema-film-frame"><span>JMH COLLECTION</span><span aria-hidden="true">01 / ∞</span></div>
+            </div>
+            <div class="cinema-hero-copy">
+              <span id="cinemaHeroEyebrow" class="cinema-eyebrow"><i aria-hidden="true"></i> LE CINÉMA, CHEZ VOUS</span>
+              <h1 id="cinemaHeroTitle">Ta salle.<br><span>Tes films.</span></h1>
+              <div id="cinemaHeroMeta" class="cinema-hero-meta hidden"></div>
+              <p id="cinemaHeroDescription">Un grand écran pour ta collection. Retrouve tes films, classe tes découvertes et reprends la séance là où tu l’as laissée.</p>
+              <div class="cinema-hero-actions"><button id="cinemaHeroPlay" class="cinema-button cinema-light hidden" type="button"><span aria-hidden="true">▶</span> Regarder</button><button id="cinemaHeroDetails" class="cinema-button cinema-glass hidden" type="button">Plus d’infos</button><button id="cinemaHeroImport" class="cinema-button cinema-light" type="button"><span aria-hidden="true">＋</span> Créer ma collection</button></div>
+              <div id="cinemaHeroFootnote" class="cinema-hero-footnote"><span aria-hidden="true">◉</span> Tes fichiers. Ta bibliothèque. Ton rythme.</div>
+            </div>
+          </div>
+          <div class="cinema-library-toolbar">
+            <nav class="cinema-tabs" aria-label="Collections de films"><button type="button" class="cinema-tab is-active" data-cinema-filter="all" aria-pressed="true">À l’affiche</button><button type="button" class="cinema-tab" data-cinema-filter="favorite" aria-pressed="false">Ma liste <span id="cinemaFavoriteCount">0</span></button><button type="button" class="cinema-tab" data-cinema-filter="continue" aria-pressed="false">Reprendre</button></nav>
+            <div class="cinema-search-controls"><label class="cinema-search"><span aria-hidden="true">⌕</span><input id="cinemaSearch" type="search" placeholder="Rechercher un film…" aria-label="Rechercher dans tes films"></label><select id="cinemaGenre" aria-label="Filtrer les films par genre"><option value="">Tous les genres</option></select></div>
+          </div>
+          <div id="cinemaStatus" class="cinema-status" role="status" aria-live="polite"></div>
+          <div id="cinemaLibrary" class="cinema-library">
+            <div class="cinema-empty"><div class="cinema-empty-icon" aria-hidden="true">▶</div><div><span class="cinema-eyebrow">LE PREMIER FILM VOUS ATTEND</span><h2>La collection commence avec toi.</h2><p>Ajoutez des films depuis un disque de cet ordinateur ou un dossier du NAS. Ils apparaîtront ici, prêts à être classés.</p></div><button id="cinemaEmptyImport" class="cinema-button cinema-glass" type="button">Ajouter mes premiers films <span aria-hidden="true">↗</span></button></div>
+          </div>
+          <div class="cinema-bottom-note"><span>JMH CINÉMA</span><p>Ta bibliothèque personnelle, depuis tes propres fichiers.</p><span id="cinemaLibrarySize"></span></div>
+        </div>
+      </section>
+
+      <dialog id="cinemaImportDialog" class="cinema-dialog" aria-labelledby="cinemaImportTitle">
+        <div class="cinema-dialog-head"><div><span class="cinema-eyebrow">AGRANDIR LA COLLECTION</span><h2 id="cinemaImportTitle">Tes films entrent en scène.</h2></div><button class="cinema-close" data-cinema-close="cinemaImportDialog" type="button" aria-label="Fermer l’ajout de films">×</button></div>
+        <p class="cinema-dialog-intro">Sélectionnez des vidéos ou un dossier accessible à l’ordinateur qui héberge JMH. Les fichiers restent à leur emplacement d’origine, sans copie.</p>
+        <div id="cinemaNativePickers" class="cinema-import-pickers"><button id="cinemaPickFiles" class="cinema-pick-button" type="button"><span aria-hidden="true">▤</span><strong>Choisir des films</strong><small>Sur cet ordinateur ou le NAS</small></button><button id="cinemaPickFolder" class="cinema-pick-button" type="button"><span aria-hidden="true">▱</span><strong>Choisir un dossier</strong><small>Rechercher les vidéos qu’il contient</small></button></div>
+        <div id="cinemaRemoteNote" class="cinema-import-note hidden">Depuis le navigateur ou un client distant, indiquez le chemin accessible au serveur JMH.</div>
+        <form id="cinemaImportForm">
+          <div class="cinema-import-fields"><label>Type d’ajout<select id="cinemaImportKind"><option value="files">Un ou plusieurs fichiers</option><option value="folder">Un dossier de films</option></select></label><label id="cinemaImportPathLabel">Chemins des fichiers<textarea id="cinemaImportPaths" rows="4" placeholder="Un chemin complet par ligne, par exemple :&#10;D:\Films\Mon film.mp4&#10;\\192.168.1.27\JMH\Films\Mon autre film.mkv" required spellcheck="false"></textarea></label></div>
+          <p class="cinema-import-note">Les disques externes et le NAS devront être accessibles pendant la lecture. La lecture intégrée dépend du format vidéo et audio ; un lien permet aussi d’ouvrir le fichier dans ton lecteur habituel.</p>
+          <div id="cinemaImportResult" class="cinema-inline-status" role="status" aria-live="polite"></div>
+          <div class="cinema-dialog-actions"><button class="cinema-button cinema-glass" data-cinema-close="cinemaImportDialog" type="button">Fermer</button><button id="cinemaImportSubmit" class="cinema-button cinema-primary" type="submit">Ajouter à la collection</button></div>
+        </form>
+      </dialog>
+
+      <dialog id="cinemaDetailsDialog" class="cinema-dialog cinema-details-dialog" aria-labelledby="cinemaDetailsTitle">
+        <div id="cinemaDetailsArt" class="cinema-details-art" aria-hidden="true"><span>JMH COLLECTION</span><b id="cinemaDetailsArtTitle"></b></div>
+        <button class="cinema-close cinema-floating-close" data-cinema-close="cinemaDetailsDialog" type="button" aria-label="Fermer la fiche du film">×</button>
+        <div class="cinema-details-body"><div class="cinema-detail-heading"><div><span class="cinema-eyebrow">DANS VOTRE COLLECTION</span><h2 id="cinemaDetailsTitle"></h2><div id="cinemaDetailsMeta" class="cinema-details-meta"></div></div><button id="cinemaDetailFavorite" class="cinema-round-button" type="button" aria-label="Ajouter à ma liste" aria-pressed="false">＋</button></div>
+          <p id="cinemaDetailsDescription"></p><p id="cinemaDetailsAvailability" class="cinema-import-note"></p>
+          <div class="cinema-detail-actions"><button id="cinemaDetailPlay" class="cinema-button cinema-light" type="button"><span aria-hidden="true">▶</span> Regarder</button><a id="cinemaDetailDownload" class="cinema-button cinema-glass" download>Ouvrir / télécharger le fichier <span aria-hidden="true">↗</span></a></div>
+          <details id="cinemaEditDetails" class="cinema-edit-details"><summary>Modifier la fiche du film</summary><form id="cinemaEditForm"><label>Titre<input id="cinemaEditTitle" maxlength="200" required></label><div class="cinema-edit-pair"><label>Genre<input id="cinemaEditGenre" maxlength="80" list="cinemaGenresList" placeholder="À classer"><datalist id="cinemaGenresList"></datalist></label><label>Année<input id="cinemaEditYear" type="number" min="1888" max="2200" placeholder="Ex. 2024"></label></div><label>Description<textarea id="cinemaEditDescription" maxlength="4000" rows="3" placeholder="Un synopsis ou quelques mots pour retrouver ce film…"></textarea></label><div id="cinemaEditStatus" class="cinema-inline-status" role="status"></div><button id="cinemaEditSubmit" class="cinema-button cinema-primary" type="submit">Enregistrer la fiche</button></form></details>
+        </div>
+      </dialog>
+
+      <dialog id="cinemaPlayerDialog" class="cinema-dialog cinema-player-dialog" aria-labelledby="cinemaPlayerTitle">
+        <div class="cinema-player-top"><div><span class="cinema-eyebrow">JMH CINÉMA</span><h2 id="cinemaPlayerTitle"></h2></div><button class="cinema-close" data-cinema-close="cinemaPlayerDialog" type="button" aria-label="Fermer la lecture">×</button></div>
+        <video id="cinemaVideo" controls playsinline preload="metadata" aria-label="Lecteur du film"></video>
+        <div class="cinema-player-bottom"><p id="cinemaPlayerStatus" role="status" aria-live="polite">La lecture reprend automatiquement ta dernière position.</p><a id="cinemaPlayerDownload" class="cinema-text-link" download>Ouvrir / télécharger le fichier ↗</a></div>
+      </dialog>
+
+      <section id="musicPage" class="page music-page hidden" aria-labelledby="musicWordmark">
+        <div class="music-topline"><div class="music-brand"><span class="music-monogram" aria-hidden="true">♪</span><div><strong id="musicWordmark">JMH <span>MUSIQUES</span></strong><small>Le rythme de ta collection</small></div></div><div class="music-top-actions"><span id="musicCount">0 titre</span><button id="musicImportBtn" type="button" class="music-button music-primary">＋ Ajouter des musiques</button></div></div>
+        <div id="musicAccessMessage" class="music-access hidden" role="status">Ton compte n’a pas accès à la bibliothèque musicale.</div>
+        <div id="musicContent">
+          <div class="music-hero"><div class="music-hero-copy"><span class="music-eyebrow">VOTRE COLLECTION, À L’ÉCOUTE</span><h1>Le son de<br><span>ton univers.</span></h1><p>Les morceaux que tu aimes, réunis au même endroit. Parcours tes albums, compose tes playlists et retrouve ton rythme.</p><div class="music-hero-actions"><button id="musicHeroListen" class="music-button music-light" type="button">▶ Écouter la collection</button><button id="musicHeroImport" class="music-button music-glass" type="button">＋ Ajouter mes titres</button></div><div class="music-hero-stats"><span><b id="musicHeroTrackCount">0</b> titres</span><span><b id="musicHeroArtistCount">0</b> artistes</span><span><b id="musicHeroAlbumCount">0</b> albums</span></div></div><div class="music-hero-art" aria-hidden="true"><div class="music-art-orbit"></div><div class="music-art-orbit music-orbit-two"></div><div class="music-vinyl"><div class="music-vinyl-label"><span>JMH</span><b>COLLECTION<br>PERSONNELLE</b><i></i></div></div><div class="music-art-caption"><span>PRESS PLAY.</span><span>FIND YOUR RHYTHM.</span></div></div></div>
+          <div class="music-tabs-bar"><nav class="music-tabs" aria-label="Collections musicales"><button class="music-tab is-active" type="button" data-music-filter="all" aria-pressed="true">Bibliothèque</button><button class="music-tab" type="button" data-music-filter="favorite" aria-pressed="false">Mes favoris <span id="musicFavoriteCount">0</span></button><button class="music-tab" type="button" data-music-filter="playlists" aria-pressed="false">Playlists <span id="musicPlaylistCount">0</span></button></nav><button id="musicNewPlaylistBtn" class="music-text-button" type="button">＋ Créer une playlist</button></div>
+          <div class="music-filters"><label class="music-search"><span aria-hidden="true">⌕</span><input id="musicSearch" type="search" placeholder="Un titre, un artiste, un album…" aria-label="Rechercher dans ta musique"></label><select id="musicGenre" aria-label="Filtrer par genre"><option value="">Tous les genres</option></select><select id="musicArtist" aria-label="Filtrer par artiste"><option value="">Tous les artistes</option></select><select id="musicAlbum" aria-label="Filtrer par album"><option value="">Tous les albums</option></select><select id="musicSort" aria-label="Trier la collection"><option value="recent">Derniers ajouts</option><option value="title">Titre : A → Z</option><option value="artist">Artiste : A → Z</option><option value="album">Album : A → Z</option><option value="year">Année récente</option></select></div>
+          <div id="musicStatus" class="music-status" role="status" aria-live="polite"></div><div id="musicLibrary" class="music-library"></div>
+          <div class="music-bottom-note"><span>JMH MUSIQUES</span><p>Ta musique, depuis tes propres fichiers.</p><span id="musicLibrarySize"></span></div>
+        </div>
+      </section>
+
+      <dialog id="musicImportDialog" class="music-dialog"><div class="music-dialog-head"><div><span class="music-eyebrow">TA COLLECTION SUR LE NAS</span><h2>Ajouter mes musiques</h2></div><button type="button" class="music-icon-button" data-music-close="musicImportDialog" aria-label="Fermer">×</button></div><p>Choisis des titres ou un dossier sur ton ordinateur. JMH les copie vers <b>Medias / Musique / Ajouts</b> sur le NAS et les rend disponibles sur tes autres PC. Les originaux restent à leur place.</p><div id="musicNativePickers" class="music-native-pickers"><button type="button" id="musicPickFiles" class="music-button music-primary">Choisir des musiques</button><button type="button" id="musicPickFolder" class="music-button music-glass">Choisir un dossier</button></div><input id="musicFilesInput" type="file" multiple accept=".mp3,.flac,.m4a,.aac,.ogg,.opus,.wav,.wma,.aiff,.aif,.amr,.mpc" hidden><input id="musicFolderInput" type="file" webkitdirectory multiple hidden><p id="musicSelectedSummary">Aucune sélection.</p><form id="musicImportForm"><button id="musicImportSubmit" class="music-button music-primary" type="submit">Copier sur le NAS et ajouter</button><button id="musicImportCancel" class="music-button music-glass hidden" type="button">Arrêter après le titre en cours</button></form><progress id="musicUploadProgress" max="100" value="0" class="hidden" style="width:100%"></progress><p id="musicImportResult" role="status"></p><p class="muted-text">MP3, FLAC, M4A, WAV, WMA et autres formats audio. 500 Mo maximum par titre. Les copies identiques déjà importées sont reconnues.</p></dialog>
+
+      <dialog id="musicDetailsDialog" class="music-dialog music-details-dialog" aria-labelledby="musicDetailsTitle"><button class="music-close music-floating-close" type="button" data-music-close="musicDetailsDialog" aria-label="Fermer la fiche du titre">×</button><div class="music-detail-top"><div id="musicDetailsArt" class="music-album-art" aria-hidden="true"><span>JMH</span><b>♪</b><small>PERSONAL COLLECTION</small></div><div><span class="music-eyebrow">DANS VOTRE COLLECTION</span><h2 id="musicDetailsTitle"></h2><p id="musicDetailsArtist"></p><div id="musicDetailsMeta" class="music-details-meta"></div><div class="music-detail-actions"><button id="musicDetailPlay" class="music-button music-light" type="button">▶ Écouter</button><button id="musicDetailFavorite" class="music-icon-button" type="button" aria-label="Ajouter à mes favoris" aria-pressed="false">♡</button></div></div></div><p id="musicDetailsDescription" class="music-description"></p><p id="musicDetailsAvailability" class="music-note"></p><a id="musicDetailDownload" class="music-text-link" download>Ouvrir / télécharger le fichier ↗</a><div class="music-add-playlist"><label>Ajouter à une playlist<select id="musicDetailPlaylist" aria-label="Playlist de destination"><option value="">Choisir une playlist</option></select></label><button id="musicAddToPlaylist" class="music-button music-glass" type="button">Ajouter</button><button id="musicDetailNewPlaylist" class="music-text-button" type="button">＋ Nouvelle playlist</button></div><div id="musicDetailStatus" class="music-inline-status" role="status"></div><details id="musicEditDetails" class="music-edit-details"><summary>Modifier et classer ce titre</summary><form id="musicEditForm"><label>Titre<input id="musicEditTitle" maxlength="200" required></label><div class="music-edit-pair"><label>Artiste<input id="musicEditArtist" maxlength="200" list="musicArtistsList"><datalist id="musicArtistsList"></datalist></label><label>Album<input id="musicEditAlbum" maxlength="200" list="musicAlbumsList"><datalist id="musicAlbumsList"></datalist></label></div><div class="music-edit-pair"><label>Genre<input id="musicEditGenre" maxlength="80" list="musicGenresList"><datalist id="musicGenresList"></datalist></label><label>Année<input id="musicEditYear" type="number" min="1888" max="2100" placeholder="Ex. 2024"></label></div><label>Description<textarea id="musicEditDescription" rows="3" maxlength="4000"></textarea></label><div id="musicEditStatus" class="music-inline-status" role="status"></div><button id="musicEditSubmit" class="music-button music-primary" type="submit">Enregistrer la fiche</button></form></details></dialog>
+
+      <dialog id="musicPlaylistDialog" class="music-dialog music-playlist-dialog" aria-labelledby="musicPlaylistTitle"><div class="music-dialog-head"><div><span class="music-eyebrow">UNE AMBIANCE À VOUS</span><h2 id="musicPlaylistTitle">Une nouvelle playlist.</h2></div><button class="music-close" type="button" data-music-close="musicPlaylistDialog" aria-label="Fermer la création de playlist">×</button></div><p class="music-dialog-intro">Pour la route, pour se concentrer, pour ne rien faire. Tes playlists sont personnelles.</p><form id="musicPlaylistForm"><label>Nom de la playlist<input id="musicPlaylistName" maxlength="120" required placeholder="Ex. Les soirées tranquilles" autocomplete="off"></label><div id="musicPlaylistStatus" class="music-inline-status" role="status"></div><div class="music-dialog-actions"><button class="music-button music-glass" type="button" data-music-close="musicPlaylistDialog">Annuler</button><button id="musicPlaylistSubmit" class="music-button music-primary" type="submit">Créer ma playlist</button></div></form></dialog>
+
+      <section id="dashboardPage" class="page dashboard-page">
+        <div class="welcome-banner">
+          <div>
+            <span class="eyebrow">JMH95200 WORKSPACE</span>
+            <h3 id="welcomeTitle">Bonjour 👋</h3>
+            <p id="welcomeText">Voici ce qui se passe dans ton espace aujourd’hui.</p>
+          </div>
+          <div class="server-health">
+            <span class="health-dot"></span>
+            <div><strong>Serveur opérationnel</strong><small id="serverHostname">Chargement…</small></div>
+          </div>
+        </div>
+
+        <div class="stats-grid enterprise-stats">
+          <div class="stat-card"><div class="stat-icon">👥</div><div><small>Utilisateurs actifs</small><strong id="statUsers">0</strong><span id="statUsersTrend">Comptes autorisés</span></div></div>
+          <div class="stat-card"><div class="stat-icon">🟢</div><div><small>En ligne</small><strong id="statOnline">0</strong><span>Temps réel</span></div></div>
+          <div class="stat-card"><div class="stat-icon">💬</div><div><small>Messages aujourd’hui</small><strong id="statMessages">0</strong><span>Activité du jour</span></div></div>
+          <div class="stat-card"><div class="stat-icon">✅</div><div><small>Tâches ouvertes</small><strong id="statTasks">0</strong><span>À traiter</span></div></div>
+        </div>
+
+        <div class="enterprise-grid">
+          <div class="panel large-panel">
+            <div class="panel-title"><div><span class="eyebrow">ÉQUIPE</span><h3>Utilisateurs en ligne</h3></div><button class="text-button" data-jump="usersPage">Gérer</button></div>
+            <div id="dashboardOnlineUsers" class="online-list"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-title"><div><span class="eyebrow">PLANNING</span><h3>Prochains événements</h3></div><button class="text-button" data-jump="calendarPage">Voir tout</button></div>
+            <div id="dashboardEvents"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-title"><div><span class="eyebrow">TRAVAIL</span><h3>Tâches récentes</h3></div><button class="text-button" data-jump="tasksPage">Voir tout</button></div>
+            <div id="dashboardTasks"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-title"><div><span class="eyebrow">INFORMATIONS</span><h3>Dernières annonces</h3></div><button class="text-button" data-jump="announcementsPage">Voir tout</button></div>
+            <div id="dashboardAnnouncements"></div>
+          </div>
+          <div class="panel system-panel admin-only">
+            <div class="panel-title"><div><span class="eyebrow">SYSTÈME</span><h3>État du serveur</h3></div><button class="text-button" data-jump="settingsPage">Détails</button></div>
+            <div class="system-metrics">
+              <div><span>Mémoire</span><strong id="systemMemory">—</strong></div>
+              <div><span>Stockage NAS</span><strong id="systemStorage">—</strong></div>
+              <div><span>Uptime</span><strong id="systemUptime">—</strong></div>
+              <div><span>Version</span><strong>Cinéma</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="tasksPage" class="page hidden">
+        <div class="panel"><h3>Creer une tache</h3><form id="createTaskForm" class="task-form"><input id="taskTitle" placeholder="Titre de la tache" required><select id="taskAssignedTo"></select><select id="taskPriority"><option value="normal">Priorite normale</option><option value="high">Priorite haute</option><option value="low">Priorite basse</option></select><input id="taskDueDate" type="date"><textarea id="taskDescription" placeholder="Description facultative"></textarea><button>Creer la tache</button></form></div>
+        <div class="panel"><div class="tasks-header"><h3>Liste des taches</h3><select id="taskFilter"><option value="all">Toutes</option><option value="todo">A faire</option><option value="doing">En cours</option><option value="done">Terminees</option></select></div><div id="tasksList"></div></div>
+      </section>
+
+      <section id="calendarPage" class="page hidden">
+        <div class="calendar-layout">
+          <div class="panel">
+            <h3>Créer un événement</h3>
+            <form id="eventForm" class="event-form">
+              <input id="eventTitle" placeholder="Titre de l’événement" required>
+              <input id="eventStart" type="datetime-local" required>
+              <input id="eventEnd" type="datetime-local" required>
+              <input id="eventLocation" placeholder="Lieu ou lien de réunion">
+              <select id="eventVisibility">
+                <option value="selected">Utilisateurs sélectionnés</option>
+                <option value="all">Toute l’équipe</option>
+              </select>
+              <div id="eventAttendees" class="attendee-grid"></div>
+              <textarea id="eventDescription" placeholder="Description"></textarea>
+              <button>Ajouter au calendrier</button>
+            </form>
+          </div>
+
+          <div class="panel">
+            <div class="calendar-header">
+              <h3>Planning</h3>
+              <select id="calendarFilter">
+                <option value="upcoming">À venir</option>
+                <option value="all">Tous les événements</option>
+                <option value="past">Passés</option>
+              </select>
+            </div>
+            <div id="eventsList"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="notificationsPage" class="page hidden">
+        <div class="panel">
+          <div class="notification-header">
+            <h3>Centre de notifications</h3>
+            <div>
+              <button id="markAllNotificationsBtn" class="secondary">Tout marquer comme lu</button>
+              <button id="clearNotificationsBtn" class="danger">Vider</button>
+            </div>
+          </div>
+          <div id="notificationsList"></div>
+        </div>
+      </section>
+
+      <section id="announcementsPage" class="page hidden">
+        <div class="panel admin-only"><h3>Publier une annonce</h3><form id="announcementForm" class="announcement-form"><input id="announcementTitle" placeholder="Titre de l'annonce" required><textarea id="announcementContent" placeholder="Contenu de l'annonce" required></textarea><button>Publier</button></form></div>
+        <div class="panel"><h3>Annonces de l'entreprise</h3><div id="announcementsList"></div></div>
+      </section>
+
+      <section id="chatPage" class="page chat-page hidden">
+        <div class="chat-toolbar">
+          <input id="messageSearch" placeholder="🔎 Rechercher dans les messages…">
+          <button id="exportMessagesBtn" class="secondary">⬇️ Exporter</button>
+        </div>
+        <div id="messages" class="messages"></div>
+        <div class="recipient-bar">
+          <label for="recipientSelect">Destinataire</label>
+          <select id="recipientSelect">
+            <option value="all">📢 Toute l'équipe</option>
+          </select>
+          <span id="conversationHint">Message visible par toute l'équipe</span>
+        </div>
+        <div class="screen-tools">
+          <button id="captureScreenBtn" type="button" class="secondary">📸 Capture d’écran</button>
+          <button id="startRecordingBtn" type="button" class="secondary">⏺️ Enregistrer l’écran</button>
+          <button id="stopRecordingBtn" type="button" class="danger hidden">⏹️ Arrêter et envoyer</button>
+          <span id="recordingStatus" class="recording-status"></span>
+        </div>
+        <form id="messageForm" class="composer">
+          <input id="messageInput" placeholder="Écris ton message…" maxlength="4000">
+          <label class="file-btn" title="Envoyer un fichier">📎
+            <input id="fileInput" type="file" hidden>
+          </label>
+          <button>Envoyer</button>
+        </form>
+      </section>
+
+
+      <section id="storagePage" class="page hidden">
+        <div class="storage-header">
+          <div>
+            <h3>Espace fichiers partagé</h3>
+            <div id="storageBreadcrumb" class="breadcrumb"></div>
+          </div>
+          <div class="storage-actions">
+            <button id="createFolderBtn" class="secondary">📁 Nouveau dossier</button>
+            <label class="upload-button">⬆️ Ajouter des fichiers
+              <input id="storageFileInput" type="file" multiple hidden>
+            </label>
+          </div>
+        </div>
+
+        <div class="storage-search-row"><input id="storageSearchInput" placeholder="🔎 Rechercher un fichier ou un dossier…"><button id="storageSearchBtn" class="secondary">Rechercher</button><button id="storageResetSearchBtn" class="secondary">Réinitialiser</button></div>
+
+        <p id="storageSearchStatus" role="status" aria-live="polite"></p>
+        <div id="storageDropZone" class="drop-zone">
+          Glisse-dépose tes fichiers ici ou utilise « Ajouter des fichiers »
+        </div>
+
+        <div class="storage-summary" id="storageSummary"></div>
+
+        <div class="storage-table-wrap">
+          <table class="storage-table">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Type</th>
+                <th>Taille</th>
+                <th>Dernière modification</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="storageTableBody"></tbody>
+          </table>
+        </div>
+        <nav id="storagePagination" class="storage-pagination" aria-label="Pages des fichiers" hidden></nav>
+      </section>
+
+
+      <section id="trashPage" class="page hidden"><div class="panel"><h3>Corbeille</h3><p class="muted-text">Restaurez ou supprimez définitivement les éléments.</p><div id="trashList"></div></div></section>
+      <section id="usersPage" class="page hidden">
+        <div class="panel">
+          <h3>Créer un compte</h3>
+          <form id="createUserForm" class="user-create-form">
+            <input id="newUsername" placeholder="Nom d'utilisateur" required>
+            <select id="newRole">
+              <option value="employee">Compte personnel</option>
+              <option value="admin">Administrateur</option>
+            </select>
+            <select id="newAccessPreset">
+              <option value="full">Accès complet</option>
+              <option value="messages">Messages uniquement</option>
+              <option value="files">Fichiers uniquement</option>
+              <option value="readonly">Lecture seule NAS</option>
+              <option value="custom">Personnalisé</option>
+            </select>
+            <button>Créer le compte</button>
+          </form>
+          <div id="newPermissionsPanel" class="permission-grid hidden"></div>
+          <div id="generatedCredentials" class="credentials hidden"></div>
+        </div>
+        <div class="panel">
+          <h3>Comptes</h3>
+          <div id="usersTable"></div>
+        </div>
+      </section>
+
+      <section id="auditPage" class="page hidden">
+        <div class="panel">
+          <h3>Journal d'activité</h3>
+          <div id="auditList"></div>
+        </div>
+      </section>
+
+
+
+
+      <section id="accountPage" class="page hidden">
+        <div class="panel account-panel">
+          <span class="eyebrow">SÉCURITÉ</span>
+          <h3>Modifier mon mot de passe</h3>
+          <p class="muted-text">Choisissez un mot de passe personnel d’au moins 8 caractères.</p>
+          <form id="changePasswordForm" class="settings-form">
+            <label>Mot de passe actuel<input id="currentPassword" type="password" required></label>
+            <label>Nouveau mot de passe<input id="newPassword" type="password" minlength="12" required></label>
+            <label>Confirmer le nouveau mot de passe<input id="confirmPassword" type="password" minlength="12" required></label>
+            <button>Modifier mon mot de passe</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="updatesPage" class="page hidden">
+        <div class="panel">
+          <div class="panel-title"><div><span class="eyebrow">LOGICIEL</span><h3>Mises à jour</h3></div></div>
+          <div id="updateStatus" class="update-card"></div>
+        </div>
+        <div class="panel admin-only">
+          <span class="eyebrow">ADMINISTRATION</span>
+          <h3>Publier une mise à jour</h3>
+          <p class="muted-text">Sélectionnez le nouvel installateur .exe. Les utilisateurs pourront ensuite cliquer sur « Installer ».</p>
+          <form id="publishUpdateForm" class="settings-form">
+            <label>Numéro de version<input id="publishVersion" placeholder="Exemple : 5.2.0" required></label>
+            <label>Notes de mise à jour<textarea id="publishNotes" rows="6"></textarea></label>
+            <label>Installateur Windows<input id="publishInstaller" type="file" accept=".exe" required></label>
+            <button>Publier la mise à jour</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="settingsPage" class="page hidden">
+        <div class="settings-layout">
+          <div class="settings-menu panel">
+            <span class="eyebrow">CONFIGURATION</span>
+            <h3>Personnalisation</h3>
+            <button class="settings-tab active" data-settings-tab="general">🏢 Identité</button>
+            <button class="settings-tab" data-settings-tab="appearance">🎨 Apparence</button>
+            <button class="settings-tab" data-settings-tab="system">🖥️ Système</button>
+          </div>
+          <div class="settings-content">
+            <div id="settings-general" class="settings-panel panel">
+              <div class="panel-title"><div><span class="eyebrow">IDENTITÉ</span><h3>Nom et présentation</h3></div></div>
+              <form id="generalSettingsForm" class="settings-form">
+                <label>Nom de l’entreprise<input id="settingCompanyName"></label>
+                <label>Nom de l’espace de travail<input id="settingWorkspaceName"></label>
+                <label>Slogan<input id="settingSlogan"></label>
+                <button>Enregistrer les paramètres</button>
+              </form>
+            </div>
+            <div id="settings-appearance" class="settings-panel panel hidden">
+              <div class="panel-title"><div><span class="eyebrow">APPARENCE</span><h3>Thème et couleur</h3></div></div>
+              <form id="appearanceSettingsForm" class="settings-form">
+                <label>Couleur principale
+                  <select id="settingAccent">
+                    <option value="blue">Rouge cinéma</option>
+                    <option value="violet">Violet</option>
+                    <option value="green">Vert sauge</option>
+                    <option value="orange">Ambre</option>
+                  </select>
+                </label>
+                <label>Thème par défaut
+                  <select id="settingDefaultTheme">
+                    <option value="dark">Sombre</option>
+                    <option value="light">Clair</option>
+                  </select>
+                </label>
+                <button>Enregistrer l’apparence</button>
+              </form>
+            </div>
+            <div id="settings-system" class="settings-panel panel hidden">
+              <div class="panel-title"><div><span class="eyebrow">SUPERVISION</span><h3>Informations système</h3></div><button id="refreshSystemBtn" class="secondary">Actualiser</button></div>
+              <div id="systemDetails" class="system-details"></div>
+              <button id="connectionSettingsBtn" class="secondary desktop-only">Modifier la connexion serveur</button>
+              <p><a href="/acces-distance.html">Accès au NAS depuis l’extérieur</a> · <a href="/mobile.html" data-install-jmh>Installer JMH sur un téléphone</a></p>
+              <small class="muted-text">Raccourci : Ctrl + Maj + S</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="musicPlayerDock" class="music-dock hidden" role="region" aria-label="Lecteur de musique">
+        <audio id="musicAudio" preload="metadata"></audio><div class="music-dock-track"><button id="musicDockArtwork" class="music-mini-art" type="button" aria-label="Voir la fiche du titre en cours"><span aria-hidden="true">♪</span></button><div class="music-dock-track-copy"><strong id="musicDockTitle">Choisis un titre.</strong><span id="musicDockArtist">Ta prochaine écoute t’attend.</span></div><button id="musicDockFavorite" class="music-icon-button" type="button" aria-label="Ajouter le titre à mes favoris" aria-pressed="false" disabled>♡</button></div>
+        <div class="music-dock-center"><div class="music-play-controls"><button id="musicPrevious" class="music-icon-button" type="button" aria-label="Titre précédent" disabled>⏮</button><button id="musicPlayPause" class="music-play-button" type="button" aria-label="Lire la musique" disabled>▶</button><button id="musicNext" class="music-icon-button" type="button" aria-label="Titre suivant" disabled>⏭</button></div><div class="music-seek"><span id="musicCurrentTime">0:00</span><input id="musicSeek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Position de lecture en secondes" disabled><span id="musicDuration">0:00</span></div></div>
+        <div class="music-dock-side"><div class="music-volume"><span aria-hidden="true">♫</span><input id="musicVolume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume sonore"></div><span id="musicQueuePosition" class="music-queue-position">Ta collection privée</span></div><p id="musicPlayerStatus" class="music-player-status" role="status" aria-live="polite"></p>
+      </div>
+
+
+    </main>
+  </section>
+
+  <dialog id="screenPreviewDialog" class="screen-preview-dialog">
+    <div class="screen-preview-content">
+      <h3 id="screenPreviewTitle">Aperçu</h3>
+      <img id="screenPreviewImage" class="hidden" alt="Aperçu de la capture">
+      <video id="screenPreviewVideo" class="hidden" controls></video>
+      <div class="dialog-actions">
+        <button id="cancelScreenPreview" type="button" class="secondary">Annuler</button>
+        <button id="sendScreenPreview" type="button">Envoyer dans la messagerie</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="editUserDialog" class="user-dialog">
+    <form id="editUserForm" method="dialog">
+      <h3>Modifier le compte</h3>
+      <input id="editUserId" type="hidden">
+      <label>Nom d'utilisateur<input id="editUsername" required></label>
+      <label>Rôle
+        <select id="editRole">
+          <option value="employee">Compte personnel</option>
+          <option value="admin">Administrateur</option>
+        </select>
+      </label>
+      <label>Niveau d'accès
+        <select id="editAccessPreset">
+          <option value="full">Accès complet</option>
+          <option value="messages">Messages uniquement</option>
+          <option value="files">Fichiers uniquement</option>
+          <option value="readonly">Lecture seule NAS</option>
+          <option value="custom">Personnalisé</option>
+        </select>
+      </label>
+      <div id="editPermissionsPanel" class="permission-grid"></div>
+      <label>Nouveau mot de passe administrateur
+        <input id="editNewPassword" type="password" minlength="8" placeholder="Laisser vide pour ne pas modifier">
+      </label>
+      <div class="dialog-actions">
+        <button type="button" id="cancelEditUser" class="secondary">Annuler</button>
+        <button type="submit">Enregistrer</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/workspace-core.js"></script>
+  <script src="/cinema.js"></script>
+  <script src="/library-search.js"></script>
+  <script src="/music.js"></script>
+  <script src="/home.js"></script>
+  <script src="/music-extras.js"></script>
+  <script src="/tools.js"></script>
+  <script src="/studio.js"></script>
+  <script src="/gallery.js"></script>
+  <script src="/global-search.js"></script>
+  <script src="/app.js"></script>
+  <script src="/password-onboarding.js"></script>
+  <script src="/owner-qr.js"></script>
+  <script src="/dictation.js"></script>
+  <script src="/moderation-appeals.js"></script>
+  <script src="/authority.js"></script>
+  <script src="/local-accounts.js"></script>
+  <script src="/avatars72.js"></script><script src="/personal-space.js"></script>
+  <script src="/home-memories.js"></script><script src="/refined.js"></script><script src="/settings-tools.js"></script><script src="/appearance-preview.js"></script><script src="/users-cards.js"></script><script src="/vpn-credentials.js"></script><script src="/user-wizard.js"></script><script src="/vpn-verification.js"></script>
+  <script src="/mini-games-model.js"></script><script src="/mini-games.js"></script><script src="/evolution.js"></script>
+  <script src="/vault-crypto.js"></script><script src="/private-vault.js"></script>
+  <script src="/navigation-model.js"></script><script src="/navigation.js"></script>
+  <link rel="stylesheet" href="/atelier-page.css"><script src="/atelier-page.js"></script><script src="/pwa.js"></script><link rel="stylesheet" href="/themes72.css"><script src="/themes72.js"></script><link rel="stylesheet" href="/refonte.css"><script src="/refonte.js"></script><link rel="stylesheet" href="/cinema-player.css"><script src="/cinema-player.js"></script><link rel="stylesheet" href="/ajustements.css"><script src="/ajustements.js"></script><link rel="stylesheet" href="/finitions.css"><script src="/finitions.js"></script><link rel="stylesheet" href="/interface7.css"><script src="/interface7.js"></script><link rel="stylesheet" href="/lecteur71.css"><link rel="stylesheet" href="/egaliseur71.css"><script src="/egaliseur71.js"></script><link rel="stylesheet" href="/fichiers71.css"><script src="/fichiers71.js"></script><link rel="stylesheet" href="/galerie71.css"><script src="/galerie71.js"></script><link rel="stylesheet" href="/solitaire71.css"><script src="/solitaire71.js"></script><link rel="stylesheet" href="/cinema71.css"><link rel="stylesheet" href="/menus71.css"><link rel="stylesheet" href="/audit72.css"><script src="/audit72.js"></script><link rel="stylesheet" href="/design74.css"><script src="/design74.js"></script><link rel="stylesheet" href="/design75.css"><script src="/design75.js"></script>
+</body>
+</html>

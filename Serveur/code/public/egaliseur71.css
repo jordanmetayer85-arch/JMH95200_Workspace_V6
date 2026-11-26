@@ -1,0 +1,63 @@
+/* JMH 7.1 — égaliseur en bulle (variables de thème : identique dans les 12 thèmes). */
+html body #musicEqualizerDialog.eq71{position:fixed!important;width:360px!important;max-width:calc(100vw - 24px)!important;max-height:none!important;overflow:visible!important;
+ padding:16px 18px 14px!important;border-radius:24px!important;box-sizing:border-box;z-index:140;
+ background:var(--r-surface-strong,#1b1f38)!important;color:var(--r-text,#fff)!important;border:1px solid var(--r-border,#fff2)!important;
+ backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);box-shadow:0 24px 60px rgba(0,0,0,.32)!important;animation:eq71-pop .2s cubic-bezier(.2,.9,.3,1.15)}
+html body #musicEqualizerDialog.eq71[hidden]{display:none!important}
+@keyframes eq71-pop{from{opacity:0;transform:translateY(8px) scale(.97)}}
+.eq71 .eq71-tip{position:absolute;left:var(--eq71-tip,50%);bottom:-8px;width:16px;height:16px;margin-left:-8px;transform:rotate(45deg);
+ background:var(--r-surface-strong,#1b1f38);border-right:1px solid var(--r-border,#fff2);border-bottom:1px solid var(--r-border,#fff2)}
+.eq71.eq71-below .eq71-tip{bottom:auto;top:-8px;transform:rotate(225deg)}
+.eq71.eq71-free .eq71-tip{display:none}
+
+/* En-tête : titre et bouton fermer rond. */
+html body .eq71 .music-dialog-head{display:flex!important;align-items:center;justify-content:space-between;gap:10px;padding:0 0 10px!important;margin:0 0 12px!important;border-bottom:1px solid var(--r-border)!important}
+html body .eq71 #musicEqTitle{font-size:16px!important;font-weight:700;margin:0!important;color:var(--r-text)!important}
+html body .eq71 .music-dialog-head .music-eyebrow,html body .eq71 .music-dialog-head small{font-size:10px!important;letter-spacing:.12em;color:var(--r-accent)!important}
+html body .eq71 #musicEqClose{width:32px!important;height:32px!important;min-width:0!important;padding:0!important;border-radius:50%!important;display:grid!important;place-items:center;
+ background:color-mix(in srgb,var(--r-text) 8%,transparent)!important;border:0!important;color:var(--r-text)!important;box-shadow:none!important}
+html body .eq71 #musicEqClose:hover{background:color-mix(in srgb,var(--r-accent) 18%,transparent)!important}
+.eq71 #musicEqClose svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+
+/* Activation : interrupteur. */
+html body .eq71 .music-eq-toggle{display:flex!important;align-items:center;justify-content:space-between;flex-direction:row-reverse!important;gap:12px!important;padding:10px 12px!important;margin:0 0 12px!important;
+ border-radius:14px!important;background:color-mix(in srgb,var(--r-text) 5%,transparent)!important;border:1px solid var(--r-border)!important;font-size:13px!important;font-weight:600;color:var(--r-text)!important}
+html body .eq71 #musicEqEnabled{-webkit-appearance:none;appearance:none;position:relative;flex:none;width:42px!important;height:24px!important;margin:0!important;border-radius:999px;cursor:pointer;
+ background:color-mix(in srgb,var(--r-text) 18%,transparent);transition:background .2s}
+html body .eq71 #musicEqEnabled::after{content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.25);transition:transform .22s cubic-bezier(.3,1.4,.5,1)}
+html body .eq71 #musicEqEnabled:checked{background:linear-gradient(135deg,var(--r-accent),var(--r-accent-2))}
+html body .eq71 #musicEqEnabled:checked::after{transform:translateX(18px)}
+
+/* Réglages prédéfinis. */
+.eq71 .eq71-presets{display:flex;flex-wrap:nowrap;justify-content:space-between;gap:4px;margin:0 0 12px}
+html body .eq71 .eq71-presets button{flex:1 1 auto;height:28px;padding:0 6px!important;border-radius:999px!important;font-size:11.5px!important;white-space:nowrap;font-weight:600;cursor:pointer;
+ background:color-mix(in srgb,var(--r-text) 6%,transparent)!important;border:1px solid var(--r-border)!important;color:var(--r-muted)!important;box-shadow:none!important}
+html body .eq71 .eq71-presets button:hover{color:var(--r-text)!important}
+html body .eq71 .eq71-presets button[aria-pressed=true]{background:var(--r-accent)!important;border-color:transparent!important;color:var(--r-accent-ink)!important}
+
+/* Trois bandes côte à côte, curseurs verticaux. */
+html body .eq71 .music-eq-bands{display:grid!important;grid-template-columns:repeat(3,1fr);gap:8px}
+html body .eq71 .music-eq-band{display:flex!important;flex-direction:column;align-items:center;gap:8px;margin:0!important;padding:12px 4px 10px!important;border-radius:16px;
+ background:color-mix(in srgb,var(--r-text) 4%,transparent);border:1px solid var(--r-border)}
+html body .eq71 .music-eq-band-heading{display:contents!important}
+html body .eq71 .music-eq-band-heading output{order:0;width:auto!important;text-align:center!important;font-size:12px!important;font-weight:700;color:var(--r-accent)!important;font-variant-numeric:tabular-nums}
+html body .eq71 .music-eq-band input[type=range]{order:1;-webkit-appearance:none;appearance:none;writing-mode:vertical-lr;direction:rtl;width:28px!important;height:130px!important;margin:0!important;padding:0!important;
+ background:transparent!important;border:0!important;box-shadow:none!important;cursor:pointer}
+html body .eq71 .music-eq-band input[type=range]::-webkit-slider-runnable-track{width:6px;border-radius:6px;
+ background:linear-gradient(to top,var(--r-accent) var(--p,50%),color-mix(in srgb,var(--r-text) 14%,transparent) var(--p,50%))}
+html body .eq71 .music-eq-band input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;margin-left:-7px;border-radius:50%;
+ background:#fff;border:0;box-shadow:0 2px 6px rgba(0,0,0,.3),0 0 0 3px color-mix(in srgb,var(--r-accent) 40%,transparent)}
+html body .eq71 .music-eq-band input[type=range]:disabled{opacity:.4}
+html body .eq71 .music-eq-band-heading label{order:2;display:flex!important;flex-direction:column;align-items:center;gap:1px!important;margin:0!important;text-align:center}
+html body .eq71 .music-eq-band-heading strong{font-size:13px!important;color:var(--r-text)!important}
+html body .eq71 .music-eq-band-heading small{font-size:10.5px!important;color:var(--r-muted)!important}
+html body .eq71 .music-eq-scale{display:none!important}
+
+/* Pied : état et réinitialisation. */
+html body .eq71 .music-eq-footer{display:flex!important;align-items:center;justify-content:space-between;gap:10px;margin:12px 0 0!important;padding:10px 0 0!important;border-top:1px solid var(--r-border)!important}
+html body .eq71 #musicEqState{font-size:12px!important;color:var(--r-muted)!important}
+html body .eq71 #musicEqReset{height:30px;min-height:0!important;padding:0 14px!important;border-radius:999px!important;font-size:12px!important;font-weight:600;
+ background:transparent!important;border:1px solid var(--r-border)!important;color:var(--r-text)!important;box-shadow:none!important}
+html body .eq71 #musicEqReset:hover{background:color-mix(in srgb,var(--r-accent) 14%,transparent)!important}
+html body .eq71 #musicEqMessage{font-size:11.5px;color:var(--r-muted);margin:6px 0 0}
+html body .eq71 #musicEqMessage:empty{display:none}

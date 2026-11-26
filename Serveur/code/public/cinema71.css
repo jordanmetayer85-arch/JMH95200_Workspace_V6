@@ -1,0 +1,36 @@
+/* JMH 7.1 — Cinéma : onglets en pastilles, recherche et genre de même hauteur. Accueil : raccourcis en puces. */
+html body.jmh-refonte #cinemaPage .cinema-library-toolbar{display:flex!important;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:0 0 14px!important;margin-bottom:18px!important;border-bottom:1px solid var(--r-border)!important;background:none!important}
+html body.jmh-refonte #cinemaPage .cinema-tabs{display:inline-flex!important;gap:4px;padding:4px!important;border-radius:999px!important;background:var(--r-input)!important;border:1px solid var(--r-border)!important}
+html body.jmh-refonte #cinemaPage .cinema-tab{display:inline-flex!important;align-items:center;gap:7px;height:36px;padding:0 16px!important;margin:0!important;border-radius:999px!important;border:0!important;box-shadow:none!important;
+ background:transparent!important;color:var(--r-muted)!important;font-size:13px!important;font-weight:600!important;cursor:pointer;transition:background .15s,color .15s}
+html body.jmh-refonte #cinemaPage .cinema-tab::after{content:none!important}
+html body.jmh-refonte #cinemaPage .cinema-tab:hover{color:var(--r-text)!important;background:color-mix(in srgb,var(--r-text) 6%,transparent)!important}
+html body.jmh-refonte #cinemaPage .cinema-tab.is-active{background:var(--r-accent)!important;color:var(--r-accent-ink)!important}
+html body.jmh-refonte #cinemaPage #cinemaFavoriteCount{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;font-size:11px;font-weight:700;opacity:1!important;
+ background:color-mix(in srgb,currentColor 16%,transparent);color:inherit!important}
+html body.jmh-refonte #cinemaPage .cinema-search-controls{display:flex!important;grid-template-columns:none!important;width:auto!important;max-width:100%;flex-wrap:nowrap;gap:10px;align-items:center}
+html body.jmh-refonte #cinemaPage .cinema-search{display:flex!important;align-items:center;gap:10px;width:min(320px,52vw)!important;flex:0 1 auto;height:44px;padding:0 14px!important;margin:0!important;border-radius:14px!important;
+ background:var(--r-input)!important;border:1px solid var(--r-border)!important;box-shadow:none!important;color:var(--r-muted)}
+html body.jmh-refonte #cinemaPage .cinema-search:focus-within{border-color:color-mix(in srgb,var(--r-accent) 60%,transparent)!important;box-shadow:0 0 0 4px color-mix(in srgb,var(--r-accent) 14%,transparent)!important}
+html body.jmh-refonte #cinemaPage .cinema-search>span{position:static!important;transform:none!important;font-size:0!important;width:16px;height:16px;flex:none;background:currentColor;
+ -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='6.5'/%3E%3Cpath d='m20 20-4.2-4.2'/%3E%3C/svg%3E") center/contain no-repeat;
+ mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='6.5'/%3E%3Cpath d='m20 20-4.2-4.2'/%3E%3C/svg%3E") center/contain no-repeat}
+html body.jmh-refonte #cinemaPage .cinema-search input#cinemaSearch{text-indent:0!important;flex:1;min-width:0;height:100%!important;padding:0!important;margin:0!important;border:0!important;outline:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:var(--r-text)!important;font-size:14px!important}
+html body.jmh-refonte #cinemaPage select#cinemaGenre{height:44px!important;min-width:170px;padding:0 38px 0 14px!important;margin:0!important;border-radius:14px!important;font-size:13px!important;font-weight:600!important;
+ background:var(--r-input) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") right 12px center/16px no-repeat!important;
+ border:1px solid var(--r-border)!important;color:var(--r-text)!important;box-shadow:none!important;cursor:pointer}
+html body.jmh-refonte #cinemaPage select#cinemaGenre option{background:var(--r-surface-strong);color:var(--r-text)}
+
+/* Accueil — « À découvrir aussi » : puces compactes au lieu de grandes barres. */
+html body.jmh-refonte #homePage .home-shortcuts{display:flex!important;flex-wrap:wrap;align-items:center;gap:8px;margin-top:18px!important}
+html body.jmh-refonte #homePage .home-shortcuts>span{flex-basis:100%;font-size:11px!important;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--r-muted)!important;margin-bottom:2px}
+html body.jmh-refonte #appView main #homePage .home-shortcuts>button[data-home-nav]{display:inline-flex!important;align-items:center;width:auto!important;height:36px;min-height:0!important;padding:0 15px!important;margin:0!important;border-radius:999px!important;
+ font-size:13px!important;font-weight:600!important;background:var(--r-input)!important;border:1px solid var(--r-border)!important;color:var(--r-text)!important;box-shadow:none!important;transition:background .15s,border-color .15s}
+html body.jmh-refonte #appView main #homePage .home-shortcuts>button[data-home-nav]:hover{background:color-mix(in srgb,var(--r-accent) 12%,var(--r-input))!important;border-color:color-mix(in srgb,var(--r-accent) 45%,transparent)!important}
+/* Titres des morceaux favoris : lisibles sur tous les thèmes. */
+html body.jmh-refonte #homePage .home-track-card .home-track-copy strong{color:var(--r-text)!important;font-weight:650}
+html body.jmh-refonte #homePage .home-track-card .home-track-copy small{color:var(--r-muted)!important}
+/* « Écouter mes favoris » désactivé (aucun favori) : discret mais lisible. */
+html body.jmh-refonte #homePage #homeMusicFavorites:disabled{opacity:.7!important;background:transparent!important;border:1px dashed var(--r-border)!important;color:var(--r-muted)!important;cursor:default}
+/* Aucun film commencé : encart pointillé neutre. */
+html body.jmh-refonte #homePage .home-empty{padding:22px!important;border-radius:16px!important;border:1.5px dashed var(--r-border)!important;background:color-mix(in srgb,var(--r-text) 3%,transparent)!important;color:var(--r-muted)!important;text-align:center}

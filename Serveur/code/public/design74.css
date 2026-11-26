@@ -1,0 +1,240 @@
+/* 7.4 : Applications, Paramètres, Importer, pochettes du Cinéma. Couleurs tirées du thème actif (--r-*). */
+body.jmh-d74{--d74-gap:18px;--d74-radius:var(--r-radius,20px);--d74-soft:color-mix(in srgb,var(--r-accent,#ff8a3d) 14%,transparent)}
+
+/* ── En-tête commun (Applications, Paramètres, Importer) ── */
+body.jmh-d74 :is(#applicationsPage,#downloadsPage,#settingsPage) .d74-hero,
+body.jmh-d74 #settingsPage .d74-settings>.studio-heading{position:relative;overflow:hidden;display:flex!important;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:30px 34px!important;margin:0 0 26px!important;border-radius:calc(var(--d74-radius) + 4px)!important;
+  background:radial-gradient(120% 140% at 100% 0%,color-mix(in srgb,var(--r-accent,#ff8a3d) 26%,transparent),transparent 60%),var(--r-surface)!important}
+body.jmh-d74 :is(#applicationsPage,#downloadsPage,#settingsPage) .d74-hero::after,
+body.jmh-d74 #settingsPage .d74-settings>.studio-heading::after{content:"";position:absolute;right:-60px;top:-80px;width:260px;height:260px;border-radius:50%;border:1px solid color-mix(in srgb,var(--r-accent,#ff8a3d) 30%,transparent);box-shadow:0 0 0 40px color-mix(in srgb,var(--r-accent,#ff8a3d) 5%,transparent),0 0 0 80px color-mix(in srgb,var(--r-accent,#ff8a3d) 3%,transparent);pointer-events:none}
+body.jmh-d74 .d74-hero-copy{position:relative;z-index:1;max-width:640px}
+body.jmh-d74 #settingsPage .d74-settings>.studio-heading{flex-direction:column;align-items:flex-start;justify-content:center;gap:0}
+body.jmh-d74 #settingsPage .d74-settings>.studio-heading>*{position:relative;z-index:1}
+body.jmh-d74 :is(.d74-hero,.d74-settings>.studio-heading) h1{font-size:clamp(26px,2.6vw,36px)!important;letter-spacing:-.8px;line-height:1.08;margin:8px 0 8px!important}
+body.jmh-d74 :is(.d74-hero,.d74-settings>.studio-heading) p{margin:0!important;font-size:14px;max-width:560px}
+body.jmh-d74 :is(.d74-hero,.d74-settings>.studio-heading) .studio-eyebrow{letter-spacing:2.4px;font-size:11px;font-weight:700;color:var(--r-accent)!important}
+
+/* Champ de recherche en pilule */
+body.jmh-d74 .d74-search{position:relative;z-index:1;display:flex;align-items:center;gap:10px;min-width:min(360px,100%);height:48px;padding:0 16px;border-radius:999px;background:var(--r-input,rgba(0,0,0,.25));border:1px solid var(--r-border);transition:border-color .2s,box-shadow .2s}
+body.jmh-d74 .d74-search:focus-within{border-color:color-mix(in srgb,var(--r-accent) 60%,transparent);box-shadow:0 0 0 4px var(--d74-soft)}
+body.jmh-d74 .d74-search .studio-icon{width:18px;height:18px;flex:0 0 18px;stroke:var(--r-muted);fill:none;stroke-width:2}
+body.jmh-d74 #appView .d74-search input[type=search]{flex:1;min-width:0;height:100%!important;min-height:0!important;border:0!important;border-radius:0!important;background:transparent!important;backdrop-filter:none!important;box-shadow:none!important;padding:0!important;margin:0!important;color:var(--r-text)!important;font-size:14px;outline:none}
+body.jmh-d74 .d74-search-count{font-size:12px;color:var(--r-muted);white-space:nowrap}
+
+/* ── Applications ── */
+body.jmh-d74 #applicationsPage{padding-bottom:40px}
+body.jmh-d74 #applicationsPage .studio-app-grid{display:block!important}
+body.jmh-d74 #applicationsPage .applications-group{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:var(--d74-gap)!important;margin:0 0 34px!important;padding:0!important;border:0!important;background:none!important}
+body.jmh-d74 #applicationsPage .applications-group.d74-out,body.jmh-d74 #applicationsPage .studio-app-card.d74-out{display:none!important}
+body.jmh-d74 #applicationsPage .applications-group-heading{grid-column:1/-1;display:flex!important;align-items:baseline;gap:14px;margin:0!important;padding:0 0 4px!important;border:0!important}
+body.jmh-d74 #applicationsPage .applications-group-heading h2{font-size:20px!important;letter-spacing:-.3px;margin:0!important}
+body.jmh-d74 #applicationsPage .applications-group-heading p{margin:0!important;font-size:13px}
+body.jmh-d74 #applicationsPage .applications-group-heading::after{content:"";flex:1;height:1px;align-self:center;background:linear-gradient(90deg,var(--r-border),transparent)}
+
+/* Carte standard : pastille colorée, titre, texte, bouton */
+body.jmh-d74 #applicationsPage .studio-app-card{position:relative;isolation:isolate;overflow:hidden;display:grid!important;grid-template-columns:52px 1fr;grid-template-rows:auto 1fr auto;column-gap:16px;row-gap:4px;align-items:start;text-align:left;min-height:150px;padding:20px!important;border-radius:var(--d74-radius)!important;cursor:pointer}
+body.jmh-d74 #applicationsPage .studio-app-card::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(110% 90% at 100% 100%,color-mix(in srgb,var(--app-2) 22%,transparent),transparent 60%);opacity:.75;transition:opacity .25s}
+body.jmh-d74 #applicationsPage .studio-app-card:hover::before,body.jmh-d74 #applicationsPage .studio-app-card:focus-visible::before{opacity:1}
+body.jmh-d74 #applicationsPage .studio-app-card:hover{border-color:color-mix(in srgb,var(--app-1) 55%,transparent)!important;box-shadow:0 22px 46px rgba(0,0,0,.28),0 0 0 1px color-mix(in srgb,var(--app-1) 22%,transparent)!important}
+body.jmh-d74 #applicationsPage .studio-app-icon{grid-row:1/3;width:52px!important;height:52px!important;display:grid!important;place-items:center;border-radius:16px!important;margin:0!important;background:linear-gradient(135deg,var(--app-1),var(--app-2))!important;box-shadow:0 10px 24px color-mix(in srgb,var(--app-2) 40%,transparent),inset 0 1px 0 rgba(255,255,255,.35)}
+body.jmh-d74 #applicationsPage .studio-app-icon .studio-icon{width:24px!important;height:24px!important;stroke:#fff!important;fill:none;stroke-width:2}
+body.jmh-d74 #applicationsPage .studio-app-icon img{width:30px;height:30px}
+body.jmh-d74 #applicationsPage .studio-app-card>strong{grid-column:2;font-size:16.5px!important;letter-spacing:-.2px;margin:2px 0 0!important;color:var(--r-text)!important}
+body.jmh-d74 #applicationsPage .studio-app-card>span:not(.studio-app-icon):not(.studio-card-arrow){grid-column:2;font-size:13px!important;line-height:1.45;color:var(--r-muted)!important}
+body.jmh-d74 #applicationsPage .studio-card-arrow{grid-column:2;justify-self:start;align-self:end;display:inline-flex;align-items:center;gap:6px;margin-top:14px!important;padding:6px 13px;border-radius:999px;font-size:12px!important;font-weight:700;letter-spacing:.2px!important;text-transform:none!important;color:var(--r-text)!important;background:color-mix(in srgb,var(--app-1) 16%,transparent);border:1px solid color-mix(in srgb,var(--app-1) 30%,transparent);transition:background .2s,transform .2s}
+body.jmh-d74 #applicationsPage .studio-card-arrow::after{content:"→";transition:transform .2s}
+body.jmh-d74 #applicationsPage .studio-app-card:hover .studio-card-arrow{background:linear-gradient(135deg,var(--app-1),var(--app-2));border-color:transparent;color:#fff!important}
+body.jmh-d74 #applicationsPage .studio-app-card:hover .studio-card-arrow::after{transform:translateX(3px)}
+body.jmh-d74 #applicationsPage .d74-watermark{position:absolute;right:-18px;bottom:-22px;width:120px!important;height:120px!important;stroke:var(--app-1)!important;fill:none;stroke-width:1.2;opacity:.09;z-index:-1;transform:rotate(-12deg);transition:opacity .25s,transform .35s}
+body.jmh-d74 #applicationsPage .studio-app-card:hover .d74-watermark{opacity:.16;transform:rotate(-6deg) scale(1.05)}
+
+/* Collections : grandes tuiles en dégradé plein */
+body.jmh-d74 #applicationsPage .d74-featured{grid-template-columns:repeat(6,minmax(0,1fr))}
+body.jmh-d74 #applicationsPage .d74-featured .studio-app-card{grid-column:span 2;min-height:210px;grid-template-columns:1fr;grid-template-rows:auto 1fr auto auto;border:0!important;color:#fff!important;
+  background:linear-gradient(140deg,var(--app-1),var(--app-2))!important;box-shadow:0 18px 40px color-mix(in srgb,var(--app-2) 35%,transparent)!important}
+body.jmh-d74 #applicationsPage .d74-featured .studio-app-card:nth-of-type(-n+2){grid-column:span 3;min-height:240px}
+body.jmh-d74 #applicationsPage .d74-featured .studio-app-card::before{background:radial-gradient(80% 90% at 90% 10%,rgba(255,255,255,.28),transparent 55%),linear-gradient(180deg,transparent 40%,rgba(0,0,0,.28));opacity:1}
+body.jmh-d74 #applicationsPage .d74-featured .studio-app-icon{grid-row:1;background:rgba(255,255,255,.2)!important;backdrop-filter:blur(6px);box-shadow:inset 0 1px 0 rgba(255,255,255,.4)!important}
+body.jmh-d74 #applicationsPage .d74-featured .studio-app-card>strong{grid-column:1;grid-row:3;font-size:24px!important;letter-spacing:-.6px;color:#fff!important;margin-top:auto!important}
+body.jmh-d74 #applicationsPage .d74-featured .studio-app-card>span:not(.studio-app-icon):not(.studio-card-arrow){grid-column:1;grid-row:4;color:rgba(255,255,255,.86)!important;max-width:34ch}
+body.jmh-d74 #applicationsPage .d74-featured .studio-card-arrow{grid-column:1;grid-row:1;justify-self:end;align-self:start;margin:0!important;color:#fff!important;background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.3)}
+body.jmh-d74 #applicationsPage .d74-featured .studio-app-card:hover .studio-card-arrow{background:#fff;color:var(--app-2)!important}
+body.jmh-d74 #applicationsPage .d74-featured .d74-watermark{stroke:#fff!important;opacity:.16;width:190px!important;height:190px!important;right:-26px;bottom:-34px}
+body.jmh-d74 #applicationsPage .d74-featured .studio-app-card:hover{transform:translateY(-4px);box-shadow:0 26px 56px color-mix(in srgb,var(--app-2) 45%,transparent)!important}
+
+/* Intelligence artificielle : bannière large */
+body.jmh-d74 #applicationsPage .d74-ai .studio-app-card{grid-column:1/-1;min-height:120px;grid-template-columns:52px 1fr auto;grid-template-rows:auto auto;align-items:center}
+body.jmh-d74 #applicationsPage .d74-ai .studio-card-arrow{grid-column:3;grid-row:1/3;align-self:center;margin:0!important}
+body.jmh-d74 #applicationsPage .studio-transfer-details{max-width:none;margin-top:6px!important;padding:14px 18px!important;border-radius:16px!important;font-size:13px}
+
+/* ── Paramètres ── */
+body.jmh-d74 #settingsPage .d74-settings{display:grid!important;grid-template-columns:286px minmax(0,1fr);column-gap:26px;row-gap:0;align-items:start;max-width:1400px;margin:0 auto}
+body.jmh-d74 #settingsPage .d74-settings>*{grid-column:2;min-width:0}
+body.jmh-d74 #settingsPage .d74-settings>.studio-heading{grid-column:1/-1}
+body.jmh-d74 #settingsPage .d74-settings>.studio-heading.hidden{display:none!important}
+body.jmh-d74 #settingsPage .d74-settings>.settings-search{height:48px;margin:0 0 16px!important;padding:0 18px 0 46px!important;border-radius:999px!important;border:1px solid var(--r-border)!important;background:var(--r-input) no-repeat 17px 50%/18px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-4-4'/%3E%3C/svg%3E")!important;font-size:14px!important}
+body.jmh-d74 #settingsPage .d74-settings>.settings-search:focus{border-color:color-mix(in srgb,var(--r-accent) 60%,transparent)!important;box-shadow:0 0 0 4px var(--d74-soft)!important}
+body.jmh-d74 #settingsPage .d74-settings>.settings-search-status:empty{display:none}
+
+/* Menu de gauche : groupes, icône en pastille, intitulé + aide */
+/* Menu d'un seul tenant : une colonne, jamais de barre de défilement interne ni de seconde colonne (anciens flex-wrap). */
+body.jmh-d74 #settingsPage .d74-settings>.preferences-tabs{grid-column:1;grid-row:2/span 40;position:static!important;display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;gap:2px!important;padding:10px!important;margin:0!important;width:auto!important;height:auto!important;max-height:none!important;overflow:visible!important;border-radius:var(--d74-radius)!important;border:1px solid var(--r-border)!important;
+  background:var(--r-surface)!important;backdrop-filter:blur(var(--r-blur,18px));box-shadow:var(--r-shadow)}
+body.jmh-d74 #settingsPage .d74-settings>.preferences-tabs>*{flex:0 0 auto!important;max-width:none!important}
+body.jmh-d74 #settingsPage .d74-settings .preference-tab::before{display:none!important}
+body.jmh-d74 #settingsPage .d74-tab-group{font-size:10.5px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--r-muted);padding:12px 10px 4px;opacity:.85}
+body.jmh-d74 #settingsPage .d74-tab-group[data-group="0"]{padding-top:2px}
+body.jmh-d74 #settingsPage .d74-settings .preference-tab{display:grid!important;grid-template-columns:32px minmax(0,1fr);grid-template-rows:auto auto;column-gap:11px;align-items:center;text-align:left;width:100%!important;min-width:0!important;min-height:46px;height:auto!important;padding:6px 8px!important;white-space:normal!important;margin:0!important;border-radius:14px!important;border:1px solid transparent!important;
+  background:transparent!important;color:var(--r-text)!important;font-size:13.5px!important;font-weight:650!important;line-height:1.2;box-shadow:none!important;transition:background .18s,border-color .18s}
+body.jmh-d74 #settingsPage .d74-settings .preference-tab[hidden],body.jmh-d74 #settingsPage .d74-settings .preference-tab.hidden{display:none!important}
+body.jmh-d74 #settingsPage .d74-settings .preference-tab>svg,body.jmh-d74 #settingsPage .d74-settings .preference-tab>.studio-icon{grid-row:1/3;width:32px!important;height:32px!important;padding:7px;border-radius:10px;margin:0!important;box-sizing:border-box;background:var(--r-elev,rgba(255,255,255,.06));stroke:var(--r-muted)!important;fill:none;stroke-width:2;transition:background .18s,stroke .18s}
+body.jmh-d74 #settingsPage .d74-settings .preference-tab::after{content:attr(data-d74-hint);grid-column:2;font-size:11.5px;font-weight:500;color:var(--r-muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.jmh-d74 #settingsPage .d74-settings .preference-tab:not([data-d74-hint])::after{display:none}
+body.jmh-d74 #settingsPage .d74-settings .preference-tab:hover{background:var(--r-elev,rgba(255,255,255,.05))!important}
+body.jmh-d74 #settingsPage .d74-settings .preference-tab.active{background:var(--d74-soft)!important;border-color:color-mix(in srgb,var(--r-accent) 35%,transparent)!important}
+body.jmh-d74 #settingsPage .d74-settings .preference-tab.active>:is(svg,.studio-icon){background:var(--r-accent);stroke:var(--r-accent-ink,#fff)!important}
+body.jmh-d74 #settingsPage .d74-settings .preference-tab:focus-visible{outline:2px solid var(--r-accent);outline-offset:2px}
+
+/* Contenu : panneau large, lignes en cartes */
+body.jmh-d74 #settingsPage .d74-settings :is(.preference-panel,#personalPreferences){max-width:none!important;width:100%!important;margin:0!important}
+body.jmh-d74 #settingsPage .d74-settings .preference-panel{padding:30px 32px!important;border-radius:var(--d74-radius)!important}
+body.jmh-d74 #settingsPage .d74-settings .preference-panel>h2{font-size:24px!important;letter-spacing:-.5px;margin:0 0 18px!important;padding-bottom:16px;border-bottom:1px solid var(--r-border)}
+body.jmh-d74 #settingsPage .d74-settings .preference-panel h3{font-size:15px!important;margin:26px 0 8px!important}
+body.jmh-d74 #settingsPage .d74-settings :is(.preference-row,.setting-row){padding:16px 18px!important;margin:0 0 10px!important;border-radius:16px!important;border:1px solid var(--r-border)!important;background:var(--r-elev,rgba(255,255,255,.04))!important;gap:18px}
+body.jmh-d74 #settingsPage .d74-settings :is(.preference-row,.setting-row):hover{border-color:var(--r-border-strong,var(--r-border))!important}
+body.jmh-d74 #settingsPage .d74-settings .preferences-footer{margin-top:14px!important;padding:14px 4px!important;border:0!important;background:none!important}
+body.jmh-d74 #settingsPage .d74-settings .setting-preview{border-radius:16px!important}
+
+/* Rubrique Cinéma */
+body.jmh-d74 .d74-cinema-settings .d74-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0 10px}
+body.jmh-d74 .d74-cinema-settings .d74-stats>div{padding:16px 18px;border-radius:16px;border:1px solid var(--r-border);background:var(--r-elev,rgba(255,255,255,.04))}
+body.jmh-d74 .d74-cinema-settings .d74-stats strong{display:block;font-size:28px;letter-spacing:-.8px;color:var(--r-text)}
+body.jmh-d74 .d74-cinema-settings .d74-stats span{font-size:12.5px;color:var(--r-muted)}
+body.jmh-d74 .d74-cinema-settings .d74-stats>div:first-child strong{color:var(--r-accent)}
+body.jmh-d74 .d74-cinema-settings :is(.d74-poster-state,.d74-key-state){font-size:13px;color:var(--r-muted);margin:6px 0 12px}
+body.jmh-d74 .d74-cinema-settings .d74-actions,body.jmh-d74 .d74-cinema-settings .d74-key{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+body.jmh-d74 .d74-cinema-settings .d74-key input{flex:1 1 320px;min-width:0;height:44px;border-radius:12px!important}
+body.jmh-d74 .d74-poster-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:14px;margin-top:14px}
+body.jmh-d74 .d74-poster-tile{margin:0;display:flex;flex-direction:column;gap:8px}
+body.jmh-d74 .d74-poster-frame{position:relative;aspect-ratio:2/3;border-radius:12px;overflow:hidden;background:linear-gradient(150deg,var(--r-elev,#333),var(--d74-soft));border:1px solid var(--r-border)}
+body.jmh-d74 .d74-poster-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+body.jmh-d74 .d74-poster-empty{position:absolute;inset:0;display:grid;place-items:center;font-size:34px;font-weight:800;color:var(--r-muted);opacity:.6}
+body.jmh-d74 .d74-poster-tile figcaption{display:flex;flex-direction:column;gap:6px;font-size:12px;color:var(--r-text)}
+body.jmh-d74 .d74-poster-tile figcaption span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.jmh-d74 .d74-poster-tile figcaption button{min-height:30px!important;padding:4px 10px!important;font-size:12px!important;border-radius:9px!important}
+
+/* ── Importer ── */
+/* La page était une grille de hauteur fixe : l'en-tête (overflow:hidden) y était écrasé. Bloc simple, plus large. */
+body.jmh-d74 #downloadsPage:not(.hidden){display:block!important;max-width:1240px!important;margin:0 auto!important;padding-bottom:40px}
+body.jmh-d74 #downloadsPage>:not(.d74-hero):not(.d74-import-section){max-width:none}
+body.jmh-d74 .d74-import-section{margin:0 0 34px}
+body.jmh-d74 .d74-section-head{display:flex;align-items:center;gap:14px;margin:0 0 16px}
+body.jmh-d74 .d74-section-head h2{font-size:20px!important;margin:0!important;letter-spacing:-.3px}
+body.jmh-d74 .d74-section-head p{margin:2px 0 0!important;font-size:13px;color:var(--r-muted)}
+body.jmh-d74 .d74-section-icon{width:44px;height:44px;flex:0 0 44px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,#ff5f8f,#8b3dff);box-shadow:0 10px 22px rgba(139,61,255,.3)}
+body.jmh-d74 .d74-films .d74-section-icon{background:linear-gradient(135deg,#ff7a3d,#d0254f);box-shadow:0 10px 22px rgba(208,37,79,.3)}
+body.jmh-d74 .d74-section-icon .studio-icon{width:22px;height:22px;stroke:#fff!important;fill:none;stroke-width:2}
+body.jmh-d74 .d74-import-body{display:grid;grid-template-columns:minmax(260px,.85fr) minmax(0,1.6fr);gap:var(--d74-gap);align-items:stretch}
+body.jmh-d74 .d74-films .d74-import-body{grid-template-columns:minmax(0,1.6fr) minmax(260px,.85fr)}
+body.jmh-d74 .d74-import-local{display:grid;gap:var(--d74-gap);grid-auto-rows:1fr}
+body.jmh-d74 #downloadsPage .studio-import-card{position:relative;overflow:hidden;display:grid!important;grid-template-columns:48px 1fr;grid-template-rows:auto auto;column-gap:14px;align-content:center;align-items:center;text-align:left;min-height:0!important;height:100%;padding:20px 50px 20px 20px!important;border-radius:var(--d74-radius)!important}
+body.jmh-d74 #downloadsPage .studio-import-card>.studio-icon{grid-row:1/3;width:48px!important;height:48px!important;padding:12px;box-sizing:border-box;border-radius:14px;background:var(--d74-soft);stroke:var(--r-accent)!important;fill:none;stroke-width:2;margin:0!important}
+body.jmh-d74 #downloadsPage .studio-import-card>strong{font-size:16px!important;margin:0!important}
+body.jmh-d74 #downloadsPage .studio-import-card>span{font-size:12.5px!important;color:var(--r-muted)!important;margin:2px 0 0!important}
+body.jmh-d74 #downloadsPage .studio-import-card::after{content:"→";position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:18px;color:var(--r-muted);transition:transform .2s,color .2s}
+body.jmh-d74 #downloadsPage .studio-import-card:hover::after{transform:translate(4px,-50%);color:var(--r-accent)}
+body.jmh-d74 #downloadsPage .panel{margin:0!important;padding:26px 28px!important;border-radius:var(--d74-radius)!important;max-width:none!important;display:flex;flex-direction:column}
+body.jmh-d74 #downloadsPage .panel .eyebrow{font-size:10.5px;letter-spacing:2px;font-weight:800;color:var(--r-accent)}
+body.jmh-d74 #downloadsPage .panel h3{font-size:21px!important;letter-spacing:-.4px;margin:6px 0 8px!important}
+body.jmh-d74 #downloadsPage .panel>p{font-size:13.5px;line-height:1.6;margin:0 0 14px!important;color:var(--r-muted)}
+body.jmh-d74 #downloadsPage .panel>p strong{color:var(--r-text)}
+body.jmh-d74 .d74-youtube #downloadForm{display:flex!important;gap:10px;align-items:flex-end;flex-wrap:wrap;margin:4px 0 10px}
+body.jmh-d74 .d74-youtube #downloadForm label{flex:1 1 300px;margin:0!important}
+body.jmh-d74 .d74-youtube #downloadUrl{height:48px;border-radius:14px!important;padding-left:16px!important}
+body.jmh-d74 .d74-youtube #downloadStart{width:auto!important;height:48px;padding:0 22px!important;border-radius:14px!important;white-space:nowrap}
+body.jmh-d74 .d74-status-line{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border-radius:14px;background:var(--r-elev,rgba(255,255,255,.04));border:1px solid var(--r-border);margin:4px 0 14px}
+body.jmh-d74 .d74-status-line #downloadStatus{margin:0!important;font-size:13px}
+body.jmh-d74 .d74-status-line #downloadRefresh{min-height:34px!important;padding:6px 14px!important;font-size:12.5px!important;border-radius:10px!important}
+body.jmh-d74 .d74-youtube>p.muted-text{font-size:12px!important;line-height:1.55;margin:auto 0 0!important;padding-top:6px;opacity:.85}
+
+/* Films : zone de dépôt + file d'envoi */
+body.jmh-d74 .d74-dropzone{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:170px;margin:6px 0 4px;padding:22px;border-radius:18px;border:2px dashed color-mix(in srgb,var(--r-accent) 40%,var(--r-border));background:color-mix(in srgb,var(--r-accent) 6%,transparent);cursor:pointer;text-align:center;transition:background .2s,border-color .2s,transform .2s}
+body.jmh-d74 .d74-dropzone:hover,body.jmh-d74 .d74-dropzone:focus-visible,body.jmh-d74 .d74-dropzone.is-over{background:var(--d74-soft);border-color:var(--r-accent);outline:none}
+body.jmh-d74 .d74-dropzone.is-over{transform:scale(1.01)}
+body.jmh-d74 .d74-dropzone .studio-icon{width:42px;height:42px;padding:10px;box-sizing:border-box;border-radius:50%;background:var(--r-accent);stroke:var(--r-accent-ink,#fff)!important;fill:none;stroke-width:2;margin-bottom:6px}
+body.jmh-d74 .d74-dropzone strong{font-size:16px;color:var(--r-text)}
+body.jmh-d74 .d74-dropzone span{font-size:12.5px;color:var(--r-muted)}
+body.jmh-d74 .d74-space{margin:12px 0 0}
+body.jmh-d74 .d74-space-bar{height:6px;border-radius:6px;background:var(--r-border);overflow:hidden}
+body.jmh-d74 .d74-space-bar>span{display:block;height:100%;width:0;border-radius:6px;background:linear-gradient(90deg,#3ccf8e,var(--r-accent));transition:width .4s}
+body.jmh-d74 .d74-space.is-low .d74-space-bar>span{background:#ff6b6b}
+body.jmh-d74 .d74-space p{margin:6px 0 0!important;font-size:12.5px!important;color:var(--r-muted)}
+body.jmh-d74 .d74-space.is-low p{color:#ff6b6b}
+body.jmh-d74 .d74-space p:empty,body.jmh-d74 .d74-space:has(p:empty){display:none}
+body.jmh-d74 .d74-sort-note{margin:8px 0 0!important;font-size:12.5px!important;color:var(--r-muted)}
+body.jmh-d74 .d74-alert{margin:14px 0 0;padding:14px 16px;border-radius:14px;border:1px solid color-mix(in srgb,#ffb347 55%,transparent);background:color-mix(in srgb,#ffb347 12%,transparent)}
+body.jmh-d74 .d74-alert[hidden]{display:none}
+body.jmh-d74 .d74-alert strong{display:block;font-size:14px;color:var(--r-text);margin-bottom:4px}
+body.jmh-d74 .d74-alert p{margin:4px 0 0!important;font-size:12.5px!important;line-height:1.55;color:var(--r-muted)}
+body.jmh-d74 .d74-alert code{font-size:12px;word-break:break-all}
+body.jmh-d74 .d74-dropzone.is-blocked{opacity:.6}
+body.jmh-d74 .d74-queue{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+body.jmh-d74 .d74-queue:empty{display:none}
+body.jmh-d74 .d74-job{display:grid;grid-template-columns:1fr auto;grid-template-areas:"name btn" "info btn" "bar bar";column-gap:12px;row-gap:3px;padding:12px 14px;border-radius:14px;border:1px solid var(--r-border);background:var(--r-elev,rgba(255,255,255,.04))}
+body.jmh-d74 .d74-job>strong{grid-area:name;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.jmh-d74 .d74-job>span{grid-area:info;font-size:12px;color:var(--r-muted)}
+body.jmh-d74 .d74-job>button{grid-area:btn;align-self:center;min-height:32px!important;padding:4px 12px!important;font-size:12px!important;border-radius:10px!important}
+body.jmh-d74 .d74-bar{grid-area:bar;height:5px;margin-top:6px;border-radius:5px;background:var(--r-border);overflow:hidden}
+body.jmh-d74 .d74-bar>span{display:block;width:0;height:100%;border-radius:5px;background:linear-gradient(90deg,var(--r-accent),color-mix(in srgb,var(--r-accent) 55%,#fff));transition:width .3s}
+body.jmh-d74 .d74-job.is-done>span{color:#3ccf8e}
+body.jmh-d74 .d74-job.is-done .d74-bar>span{width:100%!important;background:#3ccf8e}
+body.jmh-d74 .d74-job.is-error>span{color:#ff6b6b}
+body.jmh-d74 .d74-job.is-error .d74-bar{display:none}
+body.jmh-d74 .d74-path{display:flex;align-items:center;gap:10px;padding:10px 10px 10px 14px;border-radius:12px;background:var(--r-input,rgba(0,0,0,.25));border:1px solid var(--r-border);margin:4px 0 12px}
+body.jmh-d74 .d74-path code{flex:1;min-width:0;font-size:12.5px;color:var(--r-text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:none}
+body.jmh-d74 .d74-path button{min-height:32px!important;padding:4px 12px!important;font-size:12px!important;border-radius:9px!important}
+body.jmh-d74 .d74-steps{margin:0;padding:0 0 0 18px;font-size:12.5px;line-height:1.75;color:var(--r-muted)}
+
+/* ── Cinéma : cartes au format affiche ── */
+body.jmh-d74 #cinemaPage .cinema-card-row{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))!important;gap:24px 16px!important}
+body.jmh-d74 #cinemaPage .cinema-card-cover{aspect-ratio:2/3!important;padding:16px 14px!important;border-radius:12px!important}
+body.jmh-d74 #cinemaPage .cinema-card-cover>strong{font-size:17px!important;-webkit-line-clamp:3!important}
+body.jmh-d74 #cinemaPage .cinema-card-cover>small{font-size:9px!important;letter-spacing:2px!important}
+body.jmh-d74 #cinemaPage .cinema-card-cover.has-poster>:is(small,strong){display:none!important}
+body.jmh-d74 #cinemaPage .cinema-card-cover.has-poster::before{background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,transparent 22%,transparent 70%,rgba(0,0,0,.45) 100%)!important}
+body.jmh-d74 #cinemaPage .cinema-local-poster{object-position:center top}
+body.jmh-d74 #cinemaPage .cinema-card-cover:hover .cinema-local-poster{transform:scale(1.04)}
+body.jmh-d74 #cinemaPage .cinema-local-poster{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+/* Film à la une : fond flouté tiré de l'affiche + affiche inclinée */
+body.jmh-d74 #cinemaHero{position:relative;isolation:isolate;overflow:hidden}
+body.jmh-d74 #cinemaHero .d74-hero-backdrop{position:absolute;inset:-40px;z-index:0;background:center/cover no-repeat;filter:blur(34px) saturate(1.3) brightness(.42);transform:scale(1.1);pointer-events:none}
+body.jmh-d74 #cinemaHero.d74-has-poster::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.25) 55%,transparent 100%);pointer-events:none}
+body.jmh-d74 #cinemaHero.d74-has-poster .cinema-hero-art{opacity:0!important}
+body.jmh-d74 #cinemaHero.d74-has-poster>:not(.d74-hero-backdrop):not(.d74-hero-poster):not(.cinema-hero-art){position:relative;z-index:1}
+body.jmh-d74 #cinemaHero .d74-hero-poster{display:none}
+body.jmh-d74 #cinemaHero.d74-has-poster .d74-hero-poster{display:block;position:absolute;z-index:1;right:7%;top:50%;height:min(80%,400px);aspect-ratio:2/3;object-fit:cover;border-radius:16px;box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.12);transform:translateY(-50%) rotate(2.5deg);transition:transform .5s}
+body.jmh-d74 #cinemaHero.d74-has-poster:hover .d74-hero-poster{transform:translateY(-50%) rotate(0deg) scale(1.02)}
+body.jmh-d74.light-theme #cinemaHero.d74-has-poster{color:#fff}
+
+/* ── Écrans étroits ── */
+@media (max-width:1100px){
+  body.jmh-d74 #applicationsPage .d74-featured{grid-template-columns:repeat(2,minmax(0,1fr))}
+  body.jmh-d74 #applicationsPage .d74-featured .studio-app-card,body.jmh-d74 #applicationsPage .d74-featured .studio-app-card:nth-of-type(-n+2){grid-column:span 1;min-height:190px}
+  body.jmh-d74 #settingsPage .d74-settings{grid-template-columns:240px minmax(0,1fr);column-gap:18px}
+  body.jmh-d74 .d74-import-body,body.jmh-d74 .d74-films .d74-import-body{grid-template-columns:1fr}
+  body.jmh-d74 #cinemaHero.d74-has-poster .d74-hero-poster{right:4%;height:min(62%,300px)}
+}
+@media (max-width:760px){
+  body.jmh-d74 :is(#applicationsPage,#downloadsPage,#settingsPage) .d74-hero,body.jmh-d74 #settingsPage .d74-settings>.studio-heading{padding:22px 20px!important}
+  body.jmh-d74 #applicationsPage .d74-featured{grid-template-columns:1fr}
+  body.jmh-d74 #settingsPage .d74-settings{display:block!important}
+  body.jmh-d74 #settingsPage .d74-settings>.preferences-tabs{position:static;max-height:none;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;margin-bottom:16px!important}
+  body.jmh-d74 #settingsPage .d74-tab-group{display:none}
+  body.jmh-d74 #settingsPage .d74-settings .preference-tab{width:auto;flex:0 0 auto;grid-template-rows:auto}
+  body.jmh-d74 #settingsPage .d74-settings .preference-tab::after{display:none}
+  body.jmh-d74 .d74-cinema-settings .d74-stats{grid-template-columns:1fr}
+  body.jmh-d74 #cinemaHero.d74-has-poster .d74-hero-poster{display:none}
+  body.jmh-d74 #cinemaPage .cinema-card-row{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))!important}
+}
+@media (prefers-reduced-motion:reduce){body.jmh-d74 :is(.studio-app-card,.d74-watermark,.d74-hero-poster,.cinema-local-poster,.d74-dropzone){transition:none!important}}
+body.jmh-d74.reduce-motion :is(.studio-app-card,.d74-watermark,.d74-hero-poster,.cinema-local-poster,.d74-dropzone){transition:none!important}

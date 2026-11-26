@@ -1,0 +1,56 @@
+/* JMH 7.2 — points d'interface de l'audit du 25/10/2026. Même palette et mêmes formes : seuls lisibilité et rangement changent. */
+
+/* 1 — Lisibilité : textes secondaires, dates, aides et états désactivés un peu plus contrastés, jamais sous 11,5 px. */
+html body.jmh-refonte #appView :is(.muted-text,.privacy,.studio-vpn-caption,.gallery-status,.home-empty,.preference-help,.setting-help,small){color:color-mix(in srgb,var(--r-muted) 78%,var(--r-text))!important}
+html body.jmh-refonte #appView :is(.muted-text,.preference-help,.setting-help){font-size:max(12px,1em)}
+html body.jmh-refonte #appView small{font-size:max(11.5px,.85em)}
+html body.jmh-refonte #appView button:disabled{opacity:.6}
+
+/* 9 — Bouton Paramètres dans la barre du haut. */
+html body.jmh-refonte .a72-top-settings{display:inline-grid!important;place-items:center}
+html body.jmh-refonte .a72-top-settings svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* 4 — Connexion : options d'oubli dans un menu discret. */
+html body.jmh-refonte #loginView .a72-forget{margin:10px 0 0;font-size:12.5px}
+html body.jmh-refonte #loginView .a72-forget summary{cursor:pointer;color:var(--r-muted);list-style:none;display:inline-flex;align-items:center;gap:6px}
+html body.jmh-refonte #loginView .a72-forget summary::-webkit-details-marker{display:none}
+html body.jmh-refonte #loginView .a72-forget summary::before{content:'›';display:inline-block;transition:transform .15s}
+html body.jmh-refonte #loginView .a72-forget[open] summary::before{transform:rotate(90deg)}
+html body.jmh-refonte #loginView .a72-forget-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+
+/* 3 — Mes fichiers : actions affichées au survol ou au clavier (toujours visibles sur écran tactile).
+   Animation seulement à l'ouverture : un repli animé décalerait la position rétablie par « Précédent » (audit N1). */
+@media (hover:hover){
+  html body.jmh-refonte #storageTableBody tr.f71-tile>td:last-child{opacity:0;max-height:0;margin-top:0!important;overflow:hidden}
+  html body.jmh-refonte #storageTableBody tr.f71-tile:is(:hover,:focus-within)>td:last-child{opacity:1;max-height:80px;margin-top:10px!important;transition:opacity .15s,max-height .15s,margin-top .15s}
+}
+html body.jmh-refonte #storageTableBody tr.f71-tile:focus-visible{outline:2px solid var(--r-accent);outline-offset:2px}
+
+/* VPN — états regroupés et portée exacte. */
+html body.jmh-refonte .a72-vpn-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
+@media (max-width:760px){html body.jmh-refonte .a72-vpn-summary{grid-template-columns:1fr}}
+html body.jmh-refonte .a72-vpn-cell{display:grid;gap:3px;padding:12px 14px;border-radius:14px;border:1px solid var(--r-border);background:color-mix(in srgb,var(--r-text) 4%,transparent)}
+html body.jmh-refonte .a72-vpn-cell .a72-vpn-k{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--r-muted)}
+html body.jmh-refonte .a72-vpn-cell strong{font-size:13.5px;color:var(--r-text);font-weight:650}
+html body.jmh-refonte .a72-vpn-cell small{font-size:11.5px}
+html body.jmh-refonte .a72-vpn-cell::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--r-muted);margin-bottom:2px}
+html body.jmh-refonte .a72-vpn-cell[data-state=on]::before{background:#2fbf71}
+html body.jmh-refonte .a72-vpn-cell[data-state=warn]::before,html body.jmh-refonte .a72-vpn-cell[data-state=warning]::before{background:#e8a33a}
+html body.jmh-refonte .a72-vpn-cell[data-state=off]::before{background:#8a8f9c}
+html body.jmh-refonte #vpnPage #vpnState{display:none}
+html body.jmh-refonte .a72-vpn-scope{margin:12px 0;padding:12px 14px;border-radius:14px;border:1px solid var(--r-border);background:color-mix(in srgb,var(--r-accent) 6%,transparent)}
+html body.jmh-refonte .a72-vpn-scope summary{cursor:pointer;font-weight:650;color:var(--r-text)}
+html body.jmh-refonte .a72-vpn-scope ul{margin:10px 0 0;padding-left:18px;display:grid;gap:6px;font-size:13px;color:color-mix(in srgb,var(--r-muted) 70%,var(--r-text))}
+html body.jmh-refonte .a72-vpn-scope b{color:var(--r-text)}
+
+/* 7.2.1 — icônes de profil : 69 choix en grille compacte, « Assortie au thème » en premier, choix en cours bien visible. */
+html body.jmh-refonte #accountPage .avatar-choices{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:8px;max-height:430px;overflow-y:auto;padding:4px;margin:14px 0 20px;scrollbar-width:thin}
+html body.jmh-refonte #accountPage .avatar-choice{position:relative;gap:6px;padding:10px 6px!important;border:1px solid var(--r-border)!important;background:color-mix(in srgb,var(--r-text) 3%,transparent)!important;color:var(--r-muted)!important;transition:transform .12s,background .15s}
+html body.jmh-refonte #accountPage .avatar-choice:hover{transform:translateY(-2px);background:color-mix(in srgb,var(--r-accent) 8%,transparent)!important}
+html body.jmh-refonte #accountPage .avatar-choice img{width:46px;height:46px}
+html body.jmh-refonte #accountPage .avatar-choice small{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px}
+html body.jmh-refonte #accountPage .avatar-choice.active{border-color:var(--r-accent)!important;background:color-mix(in srgb,var(--r-accent) 12%,transparent)!important;box-shadow:0 0 0 2px color-mix(in srgb,var(--r-accent) 40%,transparent);color:var(--r-text)!important}
+html body.jmh-refonte #accountPage .avatar-choice.active::after{content:'✓';position:absolute;top:6px;right:6px;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;background:var(--r-accent);color:var(--r-accent-ink);font-size:10px;font-weight:700}
+html body.jmh-refonte #accountPage .avatar-choice-theme{grid-column:span 2;grid-template-columns:auto 1fr;justify-items:start;align-items:center;text-align:left;border-style:dashed!important}
+html body.jmh-refonte #accountPage .avatar-choice-theme small{font-size:12px;font-weight:650;color:var(--r-text);white-space:normal}
+html body.jmh-refonte #accountPage .avatar-choice-theme small::after{content:'Change avec le thème';display:block;font-size:10.5px;font-weight:500;color:var(--r-muted)}

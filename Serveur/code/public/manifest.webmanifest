@@ -1,0 +1,16 @@
+{
+  "id": "/",
+  "name": "JMH95200 · Cinéma, musique et fichiers",
+  "short_name": "JMH",
+  "description": "Ton cinéma, ta musique et tes fichiers, centralisés sur ton NAS.",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#111114",
+  "theme_color": "#111114",
+  "icons": [
+    {"src":"/assets/jmh-app-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"/assets/jmh-app-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}

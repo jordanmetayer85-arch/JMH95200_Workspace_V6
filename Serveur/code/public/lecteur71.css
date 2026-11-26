@@ -1,0 +1,36 @@
+/* JMH 7.1 — barre de lecture Musiques : une seule rangée, proportionnée aux boutons. */
+
+/* Le bouton « bibliothèque » ne sert que dans le mini-lecteur : dans la grande barre il créait une 2e rangée vide. */
+html body.jmh-refonte #musicPlayerDock:not(.music-dock-compact) #musicDockLibrary{display:none!important}
+
+html body.jmh-refonte #musicPlayerDock:not(.music-dock-compact){
+ min-height:0!important;height:auto!important;padding:10px 22px!important;
+ grid-template-columns:minmax(200px,1fr) minmax(320px,560px) minmax(200px,1fr)!important;
+ grid-template-rows:auto!important;align-items:center!important;column-gap:24px!important;row-gap:0!important}
+html body.jmh-refonte #musicPlayerDock:not(.music-dock-compact) .music-dock-center{gap:4px!important}
+html body.jmh-refonte #musicPlayerDock:not(.music-dock-compact) .music-seek{width:100%;gap:10px}
+html body.jmh-refonte #musicPlayerDock :is(#musicCurrentTime,#musicDuration){font-size:11px!important;font-variant-numeric:tabular-nums;color:var(--r-muted)!important;min-width:32px}
+
+/* Barre de progression : fine, remplie à l'accent, poignée au survol. */
+html body.jmh-refonte #musicPlayerDock #musicSeek{height:4px!important;border-radius:4px!important;
+ background:linear-gradient(90deg,var(--r-accent) var(--music-progress,0%),color-mix(in srgb,var(--r-text) 14%,transparent) var(--music-progress,0%))!important}
+html body.jmh-refonte #musicPlayerDock #musicSeek::-webkit-slider-thumb{width:12px;height:12px;background:#fff;box-shadow:0 0 0 3px color-mix(in srgb,var(--r-accent) 45%,transparent);transform:scale(0);transition:transform .15s}
+html body.jmh-refonte #musicPlayerDock #musicSeek:hover::-webkit-slider-thumb{transform:scale(1)}
+
+/* Colonne de droite : volume puis infos sur une ligne discrète. */
+html body.jmh-refonte #musicPlayerDock:not(.music-dock-compact) .music-dock-side{display:flex!important;flex-direction:column;align-items:flex-end;gap:4px}
+html body.jmh-refonte #musicPlayerDock .music-volume{display:flex;align-items:center;gap:8px;color:var(--r-muted)}
+html body.jmh-refonte #musicPlayerDock #musicVolume{width:110px!important;height:4px!important;border-radius:4px!important;background:color-mix(in srgb,var(--r-text) 14%,transparent)!important;accent-color:var(--r-accent)}
+html body.jmh-refonte #musicPlayerDock #musicQueuePosition{font-size:11px!important;color:var(--r-muted)!important;white-space:nowrap}
+html body.jmh-refonte #musicPlayerDock #musicQueueBtn{height:24px;padding:0 10px!important;border-radius:999px!important;font-size:11px!important;font-weight:600;
+ background:color-mix(in srgb,var(--r-text) 7%,transparent)!important;border:1px solid var(--r-border)!important;color:var(--r-text)!important}
+html body.jmh-refonte #musicPlayerDock #musicQueueBtn:hover{background:color-mix(in srgb,var(--r-accent) 14%,transparent)!important}
+
+/* Titre en cours : pochette et textes alignés. */
+html body.jmh-refonte #musicPlayerDock .music-dock-track{gap:12px!important;min-width:0}
+html body.jmh-refonte #musicPlayerDock #musicDockArtwork{width:44px!important;height:44px!important;border-radius:12px!important;flex:none}
+html body.jmh-refonte #musicPlayerDock #musicDockTitle{font-size:13.5px!important;font-weight:650;color:var(--r-text)!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+html body.jmh-refonte #musicPlayerDock #musicDockArtist{font-size:12px!important;color:var(--r-muted)!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* Espace réservé sous la page Musiques, ajusté à la nouvelle hauteur. */
+@media (min-width:901px){html body.jmh-refonte.music-dock-full .app #musicPage{padding-bottom:104px!important}}

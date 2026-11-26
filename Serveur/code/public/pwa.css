@@ -1,0 +1,6 @@
+/* Keep the iPhone status bar and home indicator clear in standalone mode. */
+@media (display-mode:standalone){
+ html{height:100dvh}
+ body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);height:100%;box-sizing:border-box}
+ .sidebar{top:env(safe-area-inset-top);height:calc(100% - env(safe-area-inset-top) - env(safe-area-inset-bottom))}
+}

@@ -1,0 +1,22 @@
+{
+  "serverUrl": "https://192.168.1.27:3443",
+  "legacyServerUrl": "http://192.168.1.27:3000",
+  "tlsPin": "sha256/hfEItxJS7VdlJyvTAd+RXl2IjrvDl6MzdO8aK6NUq/c=",
+  "nas": {
+    "host": "192.168.1.27",
+    "share": "JMH",
+    "dnsMode": "automatic"
+  },
+  "vpn": {
+    "configured": true,
+    "host": "192.168.1.27",
+    "port": 8888,
+    "mode": "jmh",
+    "enabled": false,
+    "authenticate": "after-login",
+    "bypass": "<local>;localhost;127.0.0.1;[::1];192.168.1.*",
+    "profile": "us-free-56"
+  },
+  "httpsActive": true,
+  "snapshot": "jmhpool/jmh-service@before-jmh-20261015-1792051393002"
+}

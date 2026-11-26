@@ -1,0 +1,4 @@
+#atelierPage{padding:0;overflow:hidden!important;height:100%}.atelier-frame{display:block;border:0;width:100%;height:100%;min-height:0;background:transparent}.applications-group[hidden]{display:none!important}.atelier-nav-proxy{display:none!important}@media(max-width:700px){.atelier-frame{min-height:600px}}
+
+/* 7.1 : l'Atelier occupe exactement la hauteur visible, sans défilement de la page JMH. */
+html body.jmh-refonte #atelierPage:not(.hidden){height:calc(100dvh - 190px)!important;min-height:460px;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important}

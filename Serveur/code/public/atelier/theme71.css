@@ -1,0 +1,57 @@
+/* JMH 7.1 — Atelier dans JMH : tout tient sur un écran, un seul défilement (les messages), couleurs du thème JMH. */
+html.in-jmh,html.in-jmh body{height:100%;overflow:hidden}
+html.in-jmh body{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto minmax(0,1fr);column-gap:14px;padding:16px 20px 14px;background:transparent}
+html.in-jmh body>header{grid-column:2;grid-row:1;margin:0;align-self:center}
+html.in-jmh body>nav{grid-column:1;grid-row:1;margin:0 0 12px;padding:0;border:0;gap:6px}
+html.in-jmh body>main{grid-column:1/-1;grid-row:2;min-height:0;display:flex;flex-direction:column}
+html.in-jmh #engine{max-width:min(420px,38vw)}
+/* Chaque onglet occupe la hauteur disponible ; seul son contenu défile s'il est long. */
+html.in-jmh .panel{flex:1;min-height:0;max-width:none;width:100%;margin:0;overflow:auto;padding:22px 26px}
+html.in-jmh #chat.panel{display:flex;flex-direction:column;overflow:hidden;padding:18px 22px 12px}
+html.in-jmh #chat .section-heading{flex:none}
+html.in-jmh #chat .section-heading h1{font-size:21px;margin:4px 0 0}
+html.in-jmh #messages{flex:1;min-height:0;height:auto;margin:8px 0 12px;padding:4px 4px 8px}
+html.in-jmh #messages .welcome{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px}
+html.in-jmh #messages .welcome h2{margin:6px 0 4px}
+html.in-jmh #messages .welcome p{margin:0 0 14px}
+html.in-jmh #chat-form,html.in-jmh #desktop-mode-banner{flex:none}
+html.in-jmh .privacy{flex:none;margin:8px 0 0}
+html.in-jmh #dictation-status:empty{display:none}
+html.in-jmh h1{font-size:23px;margin:6px 0 12px}
+
+/* Couleurs : variables JMH copiées par theme71.js. */
+html.jmh-theme{--bg:var(--r-input);--panel:var(--r-surface-strong);--ink:var(--r-text);--muted:var(--r-muted);--line:var(--r-border);--accent:var(--r-accent)}
+html.jmh-theme body{color:var(--r-text)}
+html.jmh-theme .panel{border:1px solid var(--r-border);border-radius:var(--r-radius,20px);background:var(--r-surface-strong);box-shadow:0 10px 30px color-mix(in srgb,#000 8%,transparent)}
+html.jmh-theme nav button{height:36px;padding:0 15px;border-radius:999px;font-size:13px;font-weight:600;color:var(--r-muted);background:transparent;border:1px solid transparent}
+html.jmh-theme nav button:hover{background:color-mix(in srgb,var(--r-text) 6%,transparent);color:var(--r-text)}
+html.jmh-theme nav button.selected{background:var(--r-accent);color:var(--r-accent-ink);border-color:transparent}
+html.jmh-theme #engine{color:var(--r-muted);background:var(--r-input);border:1px solid var(--r-border)}
+html.jmh-theme .eyebrow{color:var(--r-accent);font-weight:700}
+html.jmh-theme .primary,html.jmh-theme #send,html.jmh-theme .generated-button.primary-link{background:linear-gradient(135deg,var(--r-accent),var(--r-accent-2))!important;color:var(--r-accent-ink)!important;box-shadow:0 6px 16px color-mix(in srgb,var(--r-accent) 30%,transparent)}
+html.jmh-theme .secondary,html.jmh-theme .suggestions button{background:var(--r-input);border:1px solid var(--r-border);color:var(--r-text)}
+html.jmh-theme .suggestions button:hover,html.jmh-theme .secondary:hover{background:color-mix(in srgb,var(--r-accent) 12%,var(--r-input))}
+html.jmh-theme .welcome>span{color:var(--r-accent)}
+html.jmh-theme .message{background:color-mix(in srgb,var(--r-text) 4%,transparent);border-color:var(--r-border)}
+html.jmh-theme .message.user{background:color-mix(in srgb,var(--r-accent) 12%,transparent);border-color:color-mix(in srgb,var(--r-accent) 25%,transparent)}
+html.jmh-theme #chat-form,html.jmh-theme #chat-form:focus-within{background:var(--r-input);border:1px solid var(--r-border);box-shadow:none}
+html.jmh-theme #chat-form:focus-within{border-color:color-mix(in srgb,var(--r-accent) 60%,transparent);box-shadow:0 0 0 4px color-mix(in srgb,var(--r-accent) 14%,transparent)}
+html.jmh-theme #chat-form.image-mode{background:var(--r-input);border-color:color-mix(in srgb,var(--r-accent-2) 70%,transparent)}
+html.jmh-theme #chat-form .composer>span{background:transparent}
+html.jmh-theme :is(.attach-button,.dictate-button,.image-mode-chip):hover{background:color-mix(in srgb,var(--r-accent) 12%,transparent)!important;border-color:color-mix(in srgb,var(--r-accent) 45%,transparent)!important;color:var(--r-text)!important}
+html.jmh-theme .image-mode-chip[aria-pressed=true]{background:color-mix(in srgb,var(--r-accent) 20%,transparent)!important;border-color:var(--r-accent)!important}
+html.jmh-theme :is(.attachment-menu,.attachment-card,.desktop-approval,#toast){background:var(--r-surface-strong);border-color:var(--r-border);color:var(--r-text)}
+html.jmh-theme .attachment-menu strong,html.jmh-theme .attachment-card strong{color:var(--r-text)}
+html.jmh-theme .attachment-menu small,html.jmh-theme .attachment-card small{color:var(--r-muted)}
+html.jmh-theme .attachment-menu>button:hover{background:color-mix(in srgb,var(--r-text) 6%,transparent)}
+html.jmh-theme :is(.notice,.connector){background:color-mix(in srgb,var(--r-accent) 7%,transparent);border-color:var(--r-border)}
+html.jmh-theme :is(textarea,input:not([type=checkbox])){color:var(--r-text)}
+html.jmh-theme ::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--r-text) 22%,transparent)}
+@media(max-width:650px){html.in-jmh body{grid-template-columns:1fr;padding:12px}html.in-jmh body>header{grid-column:1;grid-row:1;justify-self:end}html.in-jmh body>nav{grid-row:2}html.in-jmh body>main{grid-row:3}html.in-jmh body{grid-template-rows:auto auto minmax(0,1fr)}}
+/* Audit point 12 : état du moteur et note du bas lisibles. */
+html.jmh-theme #engine{color:var(--r-text);font-weight:600;display:inline-flex!important;align-items:center;gap:7px}
+html.jmh-theme #engine::before{content:'';flex:none;width:8px;height:8px;border-radius:50%;background:#e8a33a}
+html.jmh-theme #engine[data-state=ok]::before{background:#2fbf71}
+html.jmh-theme #engine[data-state=error]{color:#d6455d;border-color:color-mix(in srgb,#d6455d 45%,transparent)}
+html.jmh-theme #engine[data-state=error]::before{background:#d6455d}
+html.jmh-theme .privacy{opacity:1;color:color-mix(in srgb,var(--r-muted) 75%,var(--r-text));font-size:11.5px}
