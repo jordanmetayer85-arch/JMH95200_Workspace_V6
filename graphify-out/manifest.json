@@ -1,50 +1,1568 @@
 {
   ".github/workflows/docker-publish.yml": {
-    "mtime": 1795714688.3312545,
-    "seen": 1795715075.8334756,
-    "ast_hash": "bd705b8f12d5e7d6ea58aaa7f720bf99",
+    "mtime": 1795716979.489756,
+    "seen": 1795716986.2826355,
+    "ast_hash": "a26d16cb3bf95cfa6a1e3159dfd5356a",
     "semantic_hash": ""
   },
   "Outils/TV_Android/tv.ps1": {
-    "mtime": 1795714688.3314936,
-    "seen": 1795715075.8334825,
+    "mtime": 1795716979.5024664,
+    "seen": 1795716986.2826416,
     "ast_hash": "4f247088c657d0355096c5b595e1108f",
     "semantic_hash": ""
   },
   "Serveur/package.json": {
-    "mtime": 1795714688.331797,
-    "seen": 1795715075.8334858,
-    "ast_hash": "0285fc45e1272738f424ba8ac38a9f53",
+    "mtime": 1795716979.5024664,
+    "seen": 1795716986.282645,
+    "ast_hash": "936f024716e2e03184b264a9e21d6c28",
     "semantic_hash": ""
   },
   "Serveur/src/index.js": {
-    "mtime": 1795714688.331797,
-    "seen": 1795715075.8334875,
-    "ast_hash": "d65b2e9e1cee9d6f8b3cebe5bfe8ca27",
+    "mtime": 1795716979.5068655,
+    "seen": 1795716986.2826471,
+    "ast_hash": "86fc6d237583bc4635d5eae129327bbd",
     "semantic_hash": ""
   },
   "Documentation/INSTALLATION_SIMPLE.md": {
-    "mtime": 1795714688.3312545,
-    "seen": 1795715075.8334892,
-    "ast_hash": "32fa1ecc610e87ef9753581434629567",
+    "mtime": 1795716979.489756,
+    "seen": 1795716986.2826486,
+    "ast_hash": "69c314fbb8a8ee084b6779049d05df2f",
     "semantic_hash": ""
   },
   "Outils/TV_Android/README.md": {
-    "mtime": 1795714688.3314936,
-    "seen": 1795715075.8334904,
-    "ast_hash": "d65541630a59abd725e7257ab3beb8f0",
+    "mtime": 1795716979.489756,
+    "seen": 1795716986.28265,
+    "ast_hash": "ce63e18e5271e5e0ac63ff5f49c2ea35",
     "semantic_hash": ""
   },
   "Outils/TV_Android/paquets_a_desactiver.txt": {
-    "mtime": 1795714688.3314936,
-    "seen": 1795715075.833492,
-    "ast_hash": "3a56923b0a0e7905fd12dbf751d430cc",
+    "mtime": 1795716979.5024664,
+    "seen": 1795716986.2826514,
+    "ast_hash": "03499612cc3554b65a010c5b0419da25",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1795714688.3314936,
-    "seen": 1795715075.8334928,
-    "ast_hash": "0ce7fcae906c57bac73ffedb76f4fc18",
+    "mtime": 1795716979.5024664,
+    "seen": 1795716986.282653,
+    "ast_hash": "ba1cc1c16a81ae6b5a57ae1c9e95a118",
+    "semantic_hash": ""
+  },
+  "Serveur/code/admin-credentials.js": {
+    "mtime": 1795717500.7491364,
+    "seen": 1795717573.2462115,
+    "ast_hash": "43b3ace4be18206b92342cbe733cce23",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-chat-input.js": {
+    "mtime": 1795717420.4515145,
+    "seen": 1795717573.246213,
+    "ast_hash": "88da8fe167f66f7c1c62553ca006b3a4",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-client.js": {
+    "mtime": 1795717499.4651105,
+    "seen": 1795717573.246214,
+    "ast_hash": "8302bd2732f8833853742359baa6d3e2",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-gateway.cjs": {
+    "mtime": 1795717497.4890707,
+    "seen": 1795717573.2462165,
+    "ast_hash": "b7ae95a2499730416a8d68c757218366",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-server.js": {
+    "mtime": 1795717502.5171723,
+    "seen": 1795717573.2462177,
+    "ast_hash": "25199de1ab2296bd5c1bec2882904d57",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-service.js": {
+    "mtime": 1795717484.788814,
+    "seen": 1795717573.246219,
+    "ast_hash": "8345270114069a562a64850e2a159323",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update.js": {
+    "mtime": 1795717479.276703,
+    "seen": 1795717573.2462204,
+    "ast_hash": "99bed82990f00da32fbd8070c93daea1",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/Stop-DesktopAgent.ps1": {
+    "mtime": 1795717496.9450598,
+    "seen": 1795717573.2462213,
+    "ast_hash": "6a63f5233ca31ae655583cf56b694933",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/anthropic-stream.cjs": {
+    "mtime": 1795717494.4770098,
+    "seen": 1795717573.2462225,
+    "ast_hash": "19fa5941d73d776bfb2fe8d23e6820cd",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/app.cjs": {
+    "mtime": 1795717490.1729228,
+    "seen": 1795717573.2462237,
+    "ast_hash": "4778095e494408a508734cffb6fc43e3",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/chat-input.cjs": {
+    "mtime": 1795717496.021041,
+    "seen": 1795717573.2462246,
+    "ast_hash": "b1aff64bbe3d5bf8088b5f02ac27ad19",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/desktop-agent.cjs": {
+    "mtime": 1795717494.185004,
+    "seen": 1795717573.2462256,
+    "ast_hash": "b753f63d885a9a6392fe90633d14a0f0",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/desktop-connector.cjs": {
+    "mtime": 1795717494.7930162,
+    "seen": 1795717573.2462268,
+    "ast_hash": "48bc789a2de081771f2de265648ce983",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/desktop-control/start-windows-mcp.py": {
+    "mtime": 1795717495.081022,
+    "seen": 1795717573.2462282,
+    "ast_hash": "5313a258da3d714234e0c02ad4c590ef",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/manifest.json": {
+    "mtime": 1795717495.6930344,
+    "seen": 1795717573.2462292,
+    "ast_hash": "387ede9b31ed8ff43f8babc81f19c020",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/nas-bridge.cjs": {
+    "mtime": 1795717496.3810482,
+    "seen": 1795717573.2462308,
+    "ast_hash": "10b122b1e7992f9df5e6f131f1f3029e",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/public/app.js": {
+    "mtime": 1795717491.0929415,
+    "seen": 1795717573.2462318,
+    "ast_hash": "b24f35f85effb549186e2e7834675aab",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/public/demo.js": {
+    "mtime": 1795717492.9249785,
+    "seen": 1795717573.2462327,
+    "ast_hash": "6293c80ef58e56cc8d94a14df9a14e5f",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/public/desktop-approval.js": {
+    "mtime": 1795717492.02096,
+    "seen": 1795717573.2462342,
+    "ast_hash": "6e045e4cea0aa4985b1612135dfe303d",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/public/dictation.js": {
+    "mtime": 1795717491.6969538,
+    "seen": 1795717573.2462354,
+    "ast_hash": "e4a63494a0b7ad2cfd6ecd715db388c0",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/public/images.js": {
+    "mtime": 1795717493.2289846,
+    "seen": 1795717573.2462363,
+    "ast_hash": "33b57c2b88d4cb0b58e2dcada38faabf",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/visual-session.cjs": {
+    "mtime": 1795717496.661054,
+    "seen": 1795717573.2462378,
+    "ast_hash": "5ac1b623fd6d42ce514d7d46cfa77992",
+    "semantic_hash": ""
+  },
+  "Serveur/code/authority-bootstrap.js": {
+    "mtime": 1795717498.097083,
+    "seen": 1795717573.2462387,
+    "ast_hash": "11e4b3e0a853ca738233839175221b8a",
+    "semantic_hash": ""
+  },
+  "Serveur/code/authority-security.js": {
+    "mtime": 1795717480.5487285,
+    "seen": 1795717573.24624,
+    "ast_hash": "306507b76d1a5961c30d5fc5eb84cc5b",
+    "semantic_hash": ""
+  },
+  "Serveur/code/authority-server.js": {
+    "mtime": 1795717421.907544,
+    "seen": 1795717573.246242,
+    "ast_hash": "4810872d605ffe76e64ef853fb8db547",
+    "semantic_hash": ""
+  },
+  "Serveur/code/authority-transfer.js": {
+    "mtime": 1795717486.5768504,
+    "seen": 1795717573.2462432,
+    "ast_hash": "a9738303590120db600e78d134e2dfc9",
+    "semantic_hash": ""
+  },
+  "Serveur/code/browser-transcoder.js": {
+    "mtime": 1795717423.655579,
+    "seen": 1795717573.2462442,
+    "ast_hash": "8b4da35cdcb37f933445d7e30793d851",
+    "semantic_hash": ""
+  },
+  "Serveur/code/build-info.json": {
+    "mtime": 1795717497.7770765,
+    "seen": 1795717573.2462454,
+    "ast_hash": "194da310dcbfe849afc9501c3f37801e",
+    "semantic_hash": ""
+  },
+  "Serveur/code/catalog-response.js": {
+    "mtime": 1795717481.012738,
+    "seen": 1795717573.2462463,
+    "ast_hash": "e68cd4c30e58dd9be7476bc0847d51b4",
+    "semantic_hash": ""
+  },
+  "Serveur/code/cinema-library-storage.js": {
+    "mtime": 1795717485.720833,
+    "seen": 1795717573.2462487,
+    "ast_hash": "555fdd8bb7371e964ceaf60cc7ae0e8d",
+    "semantic_hash": ""
+  },
+  "Serveur/code/cinema-posters.js": {
+    "mtime": 1795717423.1795695,
+    "seen": 1795717573.2462509,
+    "ast_hash": "70f769a3bc513d643bca19379aeec057",
+    "semantic_hash": ""
+  },
+  "Serveur/code/cinema-server.js": {
+    "mtime": 1795717482.896776,
+    "seen": 1795717573.2462528,
+    "ast_hash": "c6f07f4487b0fc3f425cd9fd5e8afe78",
+    "semantic_hash": ""
+  },
+  "Serveur/code/client-diagnostics-server.js": {
+    "mtime": 1795717422.8795636,
+    "seen": 1795717573.246255,
+    "ast_hash": "1eaf24bdad1ef46569c18b6148c1b1e0",
+    "semantic_hash": ""
+  },
+  "Serveur/code/client-vpn.js": {
+    "mtime": 1795717422.7355607,
+    "seen": 1795717573.2462566,
+    "ast_hash": "d24c6c8a8ac65ee7923b9b4722631e1f",
+    "semantic_hash": ""
+  },
+  "Serveur/code/connection-setup.js": {
+    "mtime": 1795717482.548769,
+    "seen": 1795717573.2462587,
+    "ast_hash": "5b1f3aa78cf376f5e7dcc82bc5c3c2fa",
+    "semantic_hash": ""
+  },
+  "Serveur/code/desktop-connection.js": {
+    "mtime": 1795717487.260864,
+    "seen": 1795717573.246261,
+    "ast_hash": "a7ceb64d2f8217cfa562cd4541bf9f8b",
+    "semantic_hash": ""
+  },
+  "Serveur/code/desktop-health.js": {
+    "mtime": 1795717477.4286654,
+    "seen": 1795717573.246263,
+    "ast_hash": "878a2e48ef4157c1d2d7f0ad9b9674d5",
+    "semantic_hash": ""
+  },
+  "Serveur/code/desktop-icon.js": {
+    "mtime": 1795717478.096679,
+    "seen": 1795717573.246265,
+    "ast_hash": "9ead8f06dc4fce33bf5d391f048608bd",
+    "semantic_hash": ""
+  },
+  "Serveur/code/desktop-updater.js": {
+    "mtime": 1795717486.916857,
+    "seen": 1795717573.246267,
+    "ast_hash": "9ab75354c534dfdf7c36ab8f8648bc6b",
+    "semantic_hash": ""
+  },
+  "Serveur/code/electron-main.js": {
+    "mtime": 1795717478.9846969,
+    "seen": 1795717573.2462692,
+    "ast_hash": "5fefe80b737047cc43c30b0ef1f60659",
+    "semantic_hash": ""
+  },
+  "Serveur/code/gallery-memories.js": {
+    "mtime": 1795717489.8729167,
+    "seen": 1795717573.2462711,
+    "ast_hash": "8b2872b501951d10580ebb063a37a688",
+    "semantic_hash": ""
+  },
+  "Serveur/code/gallery-server.js": {
+    "mtime": 1795717487.8968768,
+    "seen": 1795717573.2462733,
+    "ast_hash": "4c4285e0d3fa6ed828e836fb93584c2e",
+    "semantic_hash": ""
+  },
+  "Serveur/code/https-only.js": {
+    "mtime": 1795717481.2927434,
+    "seen": 1795717573.2462754,
+    "ast_hash": "78e0898a2982c5f6be53c5c7655f8fca",
+    "semantic_hash": ""
+  },
+  "Serveur/code/installation-defaults.json": {
+    "mtime": 1795717501.069143,
+    "seen": 1795717573.2462773,
+    "ast_hash": "3af4479f30648c1d2bc8645677ecf639",
+    "semantic_hash": ""
+  },
+  "Serveur/code/installation-profile.js": {
+    "mtime": 1795717423.3315725,
+    "seen": 1795717573.2462797,
+    "ast_hash": "91cdcb1993d12e93d84bdf8be7b26cd0",
+    "semantic_hash": ""
+  },
+  "Serveur/code/json-store.js": {
+    "mtime": 1795717481.5927496,
+    "seen": 1795717573.2462814,
+    "ast_hash": "70bb3fa27ef36deafac2ca47478749be",
+    "semantic_hash": ""
+  },
+  "Serveur/code/local-login-migration.js": {
+    "mtime": 1795717501.6291542,
+    "seen": 1795717573.2462835,
+    "ast_hash": "90a1dadcbc7b0ddf4583e2ddcfa12628",
+    "semantic_hash": ""
+  },
+  "Serveur/code/local-login-vault.js": {
+    "mtime": 1795717420.6155179,
+    "seen": 1795717573.2462862,
+    "ast_hash": "8fd767634305038e0936db9048591eb7",
+    "semantic_hash": ""
+  },
+  "Serveur/code/maintenance-artwork-manifest.cjs": {
+    "mtime": 1795717422.411554,
+    "seen": 1795717573.2462878,
+    "ast_hash": "366381969dd07708a626d1063f5c8ee9",
+    "semantic_hash": ""
+  },
+  "Serveur/code/media-paths.js": {
+    "mtime": 1795717478.688691,
+    "seen": 1795717573.24629,
+    "ast_hash": "5cad52cb1fc90afd1e638d1a07381a23",
+    "semantic_hash": ""
+  },
+  "Serveur/code/migrate-music-downloads.js": {
+    "mtime": 1795717421.619538,
+    "seen": 1795717573.2462916,
+    "ast_hash": "af1506a8abd523bf3b8877fc991a7f9e",
+    "semantic_hash": ""
+  },
+  "Serveur/code/moderation-appeals.js": {
+    "mtime": 1795717502.2211664,
+    "seen": 1795717573.2462938,
+    "ast_hash": "e001b8e875f4619a0491706d152f996c",
+    "semantic_hash": ""
+  },
+  "Serveur/code/music-covers.js": {
+    "mtime": 1795717485.132821,
+    "seen": 1795717573.2462955,
+    "ast_hash": "f00333c6f9c2906cb993618fa872ca11",
+    "semantic_hash": ""
+  },
+  "Serveur/code/music-downloads.js": {
+    "mtime": 1795717500.2891273,
+    "seen": 1795717573.2462974,
+    "ast_hash": "12127f46e49fba28dbc19dbff6889ec8",
+    "semantic_hash": ""
+  },
+  "Serveur/code/music-durations.js": {
+    "mtime": 1795717499.981121,
+    "seen": 1795717573.246299,
+    "ast_hash": "63ebe335585214dc7760b8102c8dd33f",
+    "semantic_hash": ""
+  },
+  "Serveur/code/music-library-storage.js": {
+    "mtime": 1795717421.1915295,
+    "seen": 1795717573.2463012,
+    "ast_hash": "c21affa9edcaa6037d8291a8bc7ecd12",
+    "semantic_hash": ""
+  },
+  "Serveur/code/music-server.js": {
+    "mtime": 1795717501.9331605,
+    "seen": 1795717573.2463033,
+    "ast_hash": "e4dcda03474b47bb8bc2008434c9df86",
+    "semantic_hash": ""
+  },
+  "Serveur/code/music-tags.js": {
+    "mtime": 1795717486.2768443,
+    "seen": 1795717573.246305,
+    "ast_hash": "ca7d89565faa61906c59215b2eaea0e1",
+    "semantic_hash": ""
+  },
+  "Serveur/code/nas-remap-catalogues.cjs": {
+    "mtime": 1795717421.3275323,
+    "seen": 1795717573.2463071,
+    "ast_hash": "b24e32859d98ecb1edb5b19d42b8927d",
+    "semantic_hash": ""
+  },
+  "Serveur/code/nas-server.cjs": {
+    "mtime": 1795717481.9287565,
+    "seen": 1795717573.2463088,
+    "ast_hash": "bb45e6690f5f2c516b155972e0504a05",
+    "semantic_hash": ""
+  },
+  "Serveur/code/native-tools-server.js": {
+    "mtime": 1795717423.495576,
+    "seen": 1795717573.2463105,
+    "ast_hash": "a7dfe6843a68e5a9b203ecd44a2f857f",
+    "semantic_hash": ""
+  },
+  "Serveur/code/network-file-check.js": {
+    "mtime": 1795717477.7726724,
+    "seen": 1795717573.2463121,
+    "ast_hash": "f3cfc99021f7037626aab7cc470044a2",
+    "semantic_hash": ""
+  },
+  "Serveur/code/package.json": {
+    "mtime": 1795717484.440807,
+    "seen": 1795717573.2463143,
+    "ast_hash": "871aa0fa7ac01ea5548e2619bcaf0ebf",
+    "semantic_hash": ""
+  },
+  "Serveur/code/password-onboarding.js": {
+    "mtime": 1795717503.245187,
+    "seen": 1795717573.2463162,
+    "ast_hash": "7ede10530cbba6d7b9ce87c131b42f5c",
+    "semantic_hash": ""
+  },
+  "Serveur/code/playback-cache.js": {
+    "mtime": 1795717420.8955233,
+    "seen": 1795717573.246318,
+    "ast_hash": "a6ca86c429aff9b71e20bf978cb71214",
+    "semantic_hash": ""
+  },
+  "Serveur/code/preload.js": {
+    "mtime": 1795717478.396685,
+    "seen": 1795717573.24632,
+    "ast_hash": "e00c3cb50d0d9c6c525a6aaa906568ba",
+    "semantic_hash": ""
+  },
+  "Serveur/code/private-vault-server.js": {
+    "mtime": 1795717487.5888708,
+    "seen": 1795717573.246322,
+    "ast_hash": "5cd4fa2a9894988bd4eb92dd517a7a51",
+    "semantic_hash": ""
+  },
+  "Serveur/code/proxy-probe.js": {
+    "mtime": 1795717484.1608014,
+    "seen": 1795717573.2463255,
+    "ast_hash": "99d3bb05122a0b0c1612ef77d5f8305c",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/access-status.js": {
+    "mtime": 1795717442.7919657,
+    "seen": 1795717573.2463276,
+    "ast_hash": "619ddb7fa6c55cb3e34e82d8df7c1140",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/ajustements.js": {
+    "mtime": 1795717466.468444,
+    "seen": 1795717573.2463295,
+    "ast_hash": "b3afd031a69ea74bac956b33138e643d",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/app.js": {
+    "mtime": 1795717442.5959618,
+    "seen": 1795717573.246332,
+    "ast_hash": "60ae532aa6f88de8458adffce9d2c9b0",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/appearance-preview.js": {
+    "mtime": 1795717444.1279926,
+    "seen": 1795717573.2463338,
+    "ast_hash": "1651ee762cb62d14cb278211434b20e0",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/arcade-pocket/app.mjs": {
+    "mtime": 1795717445.3920183,
+    "seen": 1795717573.246336,
+    "ast_hash": "45dce09d1cc62bf711ebdedab7ff2709",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/arcade-pocket/engine.mjs": {
+    "mtime": 1795717445.1600137,
+    "seen": 1795717573.2463381,
+    "ast_hash": "f5744e36c933c50816204e6778cf06e2",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/atelier-page.js": {
+    "mtime": 1795717448.0800726,
+    "seen": 1795717573.2463398,
+    "ast_hash": "1261ae83e5b97bd43fa92d03ffed63e4",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/atelier/app.js": {
+    "mtime": 1795717451.8961496,
+    "seen": 1795717573.246342,
+    "ast_hash": "87aca157a03daec3ddcf19402a902686",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/atelier/attachments.js": {
+    "mtime": 1795717451.2921374,
+    "seen": 1795717573.2463436,
+    "ast_hash": "2c4f608a7367ff9042750d7a248c18a7",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/atelier/composer.js": {
+    "mtime": 1795717449.4921012,
+    "seen": 1795717573.2463458,
+    "ast_hash": "e10da13c36969d6f4bdff9bb34387a4d",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/atelier/desktop-approval.js": {
+    "mtime": 1795717450.3161178,
+    "seen": 1795717573.2463477,
+    "ast_hash": "4a165c203f6c6e4c0fbe7745797d823c",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/atelier/dictation.js": {
+    "mtime": 1795717451.572143,
+    "seen": 1795717573.2463496,
+    "ast_hash": "e4a63494a0b7ad2cfd6ecd715db388c0",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/atelier/images.js": {
+    "mtime": 1795717450.0681126,
+    "seen": 1795717573.2463512,
+    "ast_hash": "33b57c2b88d4cb0b58e2dcada38faabf",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/atelier/theme71.js": {
+    "mtime": 1795717449.8281078,
+    "seen": 1795717573.2463531,
+    "ast_hash": "c0ad094ff4715cbba11aa6bcec983f3d",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/audit72.js": {
+    "mtime": 1795717456.812249,
+    "seen": 1795717573.2463553,
+    "ast_hash": "22af029996a68e9248b1edae3cbfe68a",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/authority.js": {
+    "mtime": 1795717425.8076227,
+    "seen": 1795717573.2463572,
+    "ast_hash": "9c75dbc2f87ecb904f54c6c47b767067",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars72.js": {
+    "mtime": 1795717425.1356091,
+    "seen": 1795717573.246359,
+    "ast_hash": "61f6ee9732693a3db5e0999868e3d58e",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/cinema-player.js": {
+    "mtime": 1795717452.1161542,
+    "seen": 1795717573.2463608,
+    "ast_hash": "2a061cbc12f71de46b6596b03baca672",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/cinema.js": {
+    "mtime": 1795717423.9315848,
+    "seen": 1795717573.246363,
+    "ast_hash": "830035272fffbcb5e5c3356b1ed20358",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/design74.js": {
+    "mtime": 1795717476.512647,
+    "seen": 1795717573.2463646,
+    "ast_hash": "0af2b6f1d6212d57cbe35f4641d49ac4",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/design75.js": {
+    "mtime": 1795717470.9565346,
+    "seen": 1795717573.2463667,
+    "ast_hash": "ba04286b3dd5fb9c657e07f7d246930f",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/dictation.js": {
+    "mtime": 1795717468.0244756,
+    "seen": 1795717573.2463684,
+    "ast_hash": "1bd0eae30f5bd4b6c1b4e7f5dacfed86",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/egaliseur71.js": {
+    "mtime": 1795717453.3601792,
+    "seen": 1795717573.2463706,
+    "ast_hash": "5025f7a5c601681c81cca11df2f033bd",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/evolution.js": {
+    "mtime": 1795717464.0803957,
+    "seen": 1795717573.2463727,
+    "ast_hash": "010ba8eb1158f011ada0e8698fed34be",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/fichiers71.js": {
+    "mtime": 1795717426.0996287,
+    "seen": 1795717573.2463748,
+    "ast_hash": "16bd0e4d680c14bb907201ff7ba343e0",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/finitions.js": {
+    "mtime": 1795717457.8722703,
+    "seen": 1795717573.2463772,
+    "ast_hash": "f185a365a2fb9f2dd1bffc2887ad2e27",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/fond-precoce.js": {
+    "mtime": 1795717426.867644,
+    "seen": 1795717573.2463794,
+    "ast_hash": "f61b7998a43f5763ba5599ec2d0dfbe4",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/galerie71.js": {
+    "mtime": 1795717441.9759493,
+    "seen": 1795717573.2463808,
+    "ast_hash": "a85d60d899e10885cd4829b866c87b4e",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/gallery.js": {
+    "mtime": 1795717441.5359404,
+    "seen": 1795717573.246382,
+    "ast_hash": "31551c448698f2a5aafef88b6a233bc9",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/global-search.js": {
+    "mtime": 1795717457.3402596,
+    "seen": 1795717573.2463832,
+    "ast_hash": "1a85439ce0bac89aa4f7bd44cdfe3f2b",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/home-memories.js": {
+    "mtime": 1795717457.5722642,
+    "seen": 1795717573.2463844,
+    "ast_hash": "41134722d72d7d707a77d870db529a78",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/home.js": {
+    "mtime": 1795717471.6485486,
+    "seen": 1795717573.2463853,
+    "ast_hash": "d18df79a896a4c9cec3cb4ebb11f6830",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/interface7.js": {
+    "mtime": 1795717456.2762382,
+    "seen": 1795717573.2463865,
+    "ast_hash": "c5ee8f50dbaff27f13dd0dc735fc47d8",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/library-search.js": {
+    "mtime": 1795717448.9960911,
+    "seen": 1795717573.2463877,
+    "ast_hash": "fd31957ceba627a3f645c79ad84ee6fa",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/local-accounts.js": {
+    "mtime": 1795717475.4606256,
+    "seen": 1795717573.2463884,
+    "ast_hash": "3a090d10baf4908b2d3e38bc631dcdb3",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/m/app.js": {
+    "mtime": 1795717443.2399747,
+    "seen": 1795717573.2463899,
+    "ast_hash": "c9b02e54e09a3636e6970ec1c86db816",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/mini-games-model.js": {
+    "mtime": 1795717465.372422,
+    "seen": 1795717573.2463908,
+    "ast_hash": "0d0a24c3d53b7239ffdd2fca1d1813bb",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/mini-games.js": {
+    "mtime": 1795717463.0203743,
+    "seen": 1795717573.2463918,
+    "ast_hash": "f3185a1545383bc3e4c540d2ac4a02db",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/moderation-appeals.js": {
+    "mtime": 1795717458.8242896,
+    "seen": 1795717573.2463927,
+    "ast_hash": "998ab80a91abde1b190e1e1e090e0b82",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/music-extras.js": {
+    "mtime": 1795717426.715641,
+    "seen": 1795717573.2463942,
+    "ast_hash": "51a89e170c1e87fa558179b0b95eff5e",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/music.js": {
+    "mtime": 1795717469.2124996,
+    "seen": 1795717573.246395,
+    "ast_hash": "d41cbf2128dec34f747965653c9cb061",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/navigation-model.js": {
+    "mtime": 1795717427.3316534,
+    "seen": 1795717573.2463963,
+    "ast_hash": "6e4300e66261a6cc014074379a3ad66e",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/navigation.js": {
+    "mtime": 1795717463.7843897,
+    "seen": 1795717573.2463973,
+    "ast_hash": "92f9fe1be379837e82cac6949944ec75",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/owner-qr.js": {
+    "mtime": 1795717425.9556255,
+    "seen": 1795717573.2463984,
+    "ast_hash": "08abe663831de129e3d3811bd60000a8",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/password-onboarding.js": {
+    "mtime": 1795717452.6321645,
+    "seen": 1795717573.2463994,
+    "ast_hash": "71878930cd96b40339378f67ca52f6bf",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/personal-space.js": {
+    "mtime": 1795717443.00797,
+    "seen": 1795717573.2464008,
+    "ast_hash": "79b3aebb97cb335f64ef15ffc8b45eea",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/private-vault.js": {
+    "mtime": 1795717465.0524154,
+    "seen": 1795717573.2464018,
+    "ast_hash": "57ef0064c5399218284cc2ce2743c1b9",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/pwa.js": {
+    "mtime": 1795717444.8760078,
+    "seen": 1795717573.2464027,
+    "ast_hash": "7b69a47b319a596747d2f42af56ca27e",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/refined.js": {
+    "mtime": 1795717424.4035943,
+    "seen": 1795717573.246404,
+    "ast_hash": "9e362c943b09ec570af2223ee33db8a3",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/refonte.js": {
+    "mtime": 1795717426.5756383,
+    "seen": 1795717573.2464051,
+    "ast_hash": "f7600e9b7a993da265499661a78a2881",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/settings-tools.js": {
+    "mtime": 1795717424.8476033,
+    "seen": 1795717573.246406,
+    "ast_hash": "c916097383adaa393a994002690e7eec",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/solitaire71.js": {
+    "mtime": 1795717427.1836505,
+    "seen": 1795717573.2464073,
+    "ast_hash": "553710d576078f5affbd764dd5becb8a",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/studio.js": {
+    "mtime": 1795717475.7926323,
+    "seen": 1795717573.2464082,
+    "ast_hash": "82251353140652abf56ce87485612640",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/sw.js": {
+    "mtime": 1795717424.0875878,
+    "seen": 1795717573.2464092,
+    "ast_hash": "51b1154eba139254e4be0e78ddd95489",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/themes72.js": {
+    "mtime": 1795717444.3719976,
+    "seen": 1795717573.2464106,
+    "ast_hash": "fdce4a2294f1a7df3f9ca682a8473a08",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/tools.js": {
+    "mtime": 1795717465.924433,
+    "seen": 1795717573.2464116,
+    "ast_hash": "955295130be3ad561491ce0bf880e8a0",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/user-wizard.js": {
+    "mtime": 1795717442.3559568,
+    "seen": 1795717573.2464125,
+    "ast_hash": "ded9e905f1979f518411ec498cc0e9d6",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/users-cards.js": {
+    "mtime": 1795717466.75645,
+    "seen": 1795717573.2464135,
+    "ast_hash": "57e0db9cc57bf2f4bff8e0225b055661",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/vault-crypto.js": {
+    "mtime": 1795717448.296077,
+    "seen": 1795717573.2464147,
+    "ast_hash": "149b745a2119a4da1d8fca4dc13e5801",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/vault-stream-worker.js": {
+    "mtime": 1795717463.5283847,
+    "seen": 1795717573.2464156,
+    "ast_hash": "072a85ea6d1316cff652df69dc790742",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/vpn-credentials.js": {
+    "mtime": 1795717424.6755998,
+    "seen": 1795717573.2464166,
+    "ast_hash": "b24c1856daffcf186ef8f544ea029d57",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/vpn-verification.js": {
+    "mtime": 1795717425.2876122,
+    "seen": 1795717573.246418,
+    "ast_hash": "10d92638baa7ac4f4f7f98d45d63a781",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/workspace-core.js": {
+    "mtime": 1795717476.812653,
+    "seen": 1795717573.2464187,
+    "ast_hash": "b2cdbfac2f40317b9829fe82ba601420",
+    "semantic_hash": ""
+  },
+  "Serveur/code/remote-access-server.js": {
+    "mtime": 1795717502.9611812,
+    "seen": 1795717573.2464197,
+    "ast_hash": "a54a8f361ff2f3138e8acda51e30c5bc",
+    "semantic_hash": ""
+  },
+  "Serveur/code/request-security.js": {
+    "mtime": 1795717421.0395262,
+    "seen": 1795717573.246421,
+    "ast_hash": "78a1709edf56a1f878b6e98fbb87f794",
+    "semantic_hash": ""
+  },
+  "Serveur/code/secure-server.js": {
+    "mtime": 1795717422.5755575,
+    "seen": 1795717573.246422,
+    "ast_hash": "7110bf8691deba7af482b91d781de582",
+    "semantic_hash": ""
+  },
+  "Serveur/code/secure-transport.js": {
+    "mtime": 1795717422.263551,
+    "seen": 1795717573.246423,
+    "ast_hash": "06c587ca40cd16272a1666c41715084f",
+    "semantic_hash": ""
+  },
+  "Serveur/code/server.js": {
+    "mtime": 1795717485.4168267,
+    "seen": 1795717573.2464244,
+    "ast_hash": "74391c0fc6cffcfec28967192c051041",
+    "semantic_hash": ""
+  },
+  "Serveur/code/session-file-store.js": {
+    "mtime": 1795717423.795582,
+    "seen": 1795717573.2464254,
+    "ast_hash": "9f872c5aaae86a25f198d9bc43418082",
+    "semantic_hash": ""
+  },
+  "Serveur/code/storage-search.js": {
+    "mtime": 1795717421.7515407,
+    "seen": 1795717573.2464266,
+    "ast_hash": "c583f9011ae414e6169e2cadfdb52746",
+    "semantic_hash": ""
+  },
+  "Serveur/code/storage-usage.js": {
+    "mtime": 1795717420.7475204,
+    "seen": 1795717573.2464275,
+    "ast_hash": "21d9fed0045db827d11d10508a8e7695",
+    "semantic_hash": ""
+  },
+  "Serveur/code/upload-limits.js": {
+    "mtime": 1795717483.8567953,
+    "seen": 1795717573.2464287,
+    "ast_hash": "6f043bdcffdafbc6acc2e43929fa358e",
+    "semantic_hash": ""
+  },
+  "Serveur/code/vpn-launcher.ps1": {
+    "mtime": 1795717482.2487628,
+    "seen": 1795717573.2464297,
+    "ast_hash": "81cddbdd2d5448697cee82bdaf6a9374",
+    "semantic_hash": ""
+  },
+  "Serveur/code/vpn-maps.js": {
+    "mtime": 1795717489.53691,
+    "seen": 1795717573.2464306,
+    "ast_hash": "a3cab943d96c2e714fadf2dd9df9f1eb",
+    "semantic_hash": ""
+  },
+  "Serveur/code/vpn-proxy.ps1": {
+    "mtime": 1795717488.1688824,
+    "seen": 1795717573.2464316,
+    "ast_hash": "caffd1cdab3f65faaf9e2bf788697cc8",
+    "semantic_hash": ""
+  },
+  "Serveur/code/vpn-server.js": {
+    "mtime": 1795717483.5767896,
+    "seen": 1795717573.2464325,
+    "ast_hash": "61a9a2c04270b32a32c246980237206d",
+    "semantic_hash": ""
+  },
+  "Serveur/code/windows-audio.cs": {
+    "mtime": 1795717501.3331482,
+    "seen": 1795717573.2464337,
+    "ast_hash": "67781ba1b8cf70682a19885f66f1041d",
+    "semantic_hash": ""
+  },
+  "Serveur/code/windows-dictation.js": {
+    "mtime": 1795717421.4755352,
+    "seen": 1795717573.246435,
+    "ast_hash": "6c03bc72182704a027bd4c764dcdc098",
+    "semantic_hash": ""
+  },
+  "Serveur/code/windows-tools.js": {
+    "mtime": 1795717423.0235665,
+    "seen": 1795717573.2464356,
+    "ast_hash": "3b57873b79ca9c0fb56bb56f6a4e98c4",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/desktop-control/instructions.txt": {
+    "mtime": 1795717495.3890283,
+    "seen": 1795717573.2466908,
+    "ast_hash": "ab4e9997787fae2cce62b2cb7b8f117d",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/public/demo.html": {
+    "mtime": 1795717490.4889293,
+    "seen": 1795717573.2466936,
+    "ast_hash": "f8e835894a434717c7df7a543bf8b9e6",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/public/guide.html": {
+    "mtime": 1795717493.5169904,
+    "seen": 1795717573.2466955,
+    "ast_hash": "3997cde447a35c8179875e220fc5faa7",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/public/index.html": {
+    "mtime": 1795717491.3769472,
+    "seen": 1795717573.2466974,
+    "ast_hash": "53b71ded974e90e34fadfc6a05743560",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/public/pilotage.html": {
+    "mtime": 1795717493.848997,
+    "seen": 1795717573.2466993,
+    "ast_hash": "dc9007bcaad1e03f196f3cdf4217cc3e",
+    "semantic_hash": ""
+  },
+  "Serveur/code/connection-setup.html": {
+    "mtime": 1795717497.2210653,
+    "seen": 1795717573.2467012,
+    "ast_hash": "9ac86efa47a98d2f1e51779891565a9b",
+    "semantic_hash": ""
+  },
+  "Serveur/code/installation-wizard.html": {
+    "mtime": 1795717503.5491931,
+    "seen": 1795717573.2467031,
+    "ast_hash": "63e8fa5e4600c8f0e49cafdb28ac114d",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/acces-distance.html": {
+    "mtime": 1795717468.8684926,
+    "seen": 1795717573.2467053,
+    "ast_hash": "662949d87eb186394b66ccf69a0200fe",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/arcade-pocket/index.html": {
+    "mtime": 1795717445.8360271,
+    "seen": 1795717573.2467072,
+    "ast_hash": "9651a39506e7cf69a620424fb7ad2635",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/atelier/index.html": {
+    "mtime": 1795717451.0281322,
+    "seen": 1795717573.2467093,
+    "ast_hash": "c8d8a068fd5eb0a67a9e06e28a7c2aa0",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/guide-coffre.html": {
+    "mtime": 1795717471.22454,
+    "seen": 1795717573.246711,
+    "ast_hash": "eef3580f67317c505d2e2a814915849e",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/guide-correctif-freezes.html": {
+    "mtime": 1795717444.6440032,
+    "seen": 1795717573.2467127,
+    "ast_hash": "1169e7bcff9a47e9ab2906021198a2f0",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/guide-install-iphone.html": {
+    "mtime": 1795717448.7720866,
+    "seen": 1795717573.2467144,
+    "ast_hash": "48f3b80385fe5f189ee08aee474c8b0a",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/guide-install-samsung.html": {
+    "mtime": 1795717460.9963336,
+    "seen": 1795717573.2467165,
+    "ast_hash": "2ef9286ff62f81adce249e8869ba98b5",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/guide-interface.html": {
+    "mtime": 1795717464.6684077,
+    "seen": 1795717573.2467184,
+    "ast_hash": "81bc6dafc9b5ca193cb7ee5ba65b37b7",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/guide-iphone.html": {
+    "mtime": 1795717476.1526396,
+    "seen": 1795717573.24672,
+    "ast_hash": "c8c4ba0e3bc196386208d4b546f6c18f",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/guide-nouveautes.html": {
+    "mtime": 1795717448.5160813,
+    "seen": 1795717573.2467217,
+    "ast_hash": "e4af52506af30bfc788bae1ca361b556",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/guide-proprietaire.html": {
+    "mtime": 1795717441.759945,
+    "seen": 1795717573.2467237,
+    "ast_hash": "67ff109199af71c7595f90682f706740",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/guide-reglages.html": {
+    "mtime": 1795717453.6161845,
+    "seen": 1795717573.2467253,
+    "ast_hash": "608140fef5d3827c940787ff2eb67958",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/guide-vpn-localisation.html": {
+    "mtime": 1795717447.6120632,
+    "seen": 1795717573.2467272,
+    "ast_hash": "431c8bc17031da1a04f3a9d0c7a31e80",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/guide-vpn.html": {
+    "mtime": 1795717455.3722198,
+    "seen": 1795717573.246729,
+    "ast_hash": "3e1890fcbb88ab1ed7d39174e8fe5b63",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/index.html": {
+    "mtime": 1795717460.0723147,
+    "seen": 1795717573.246731,
+    "ast_hash": "b85f0373d82a413b64fcb3ba2d08ab27",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/m/index.html": {
+    "mtime": 1795717443.435979,
+    "seen": 1795717573.2467327,
+    "ast_hash": "89f125ef20ab76d62461f34ebf98bec4",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/mobile.html": {
+    "mtime": 1795717468.2804806,
+    "seen": 1795717573.2467346,
+    "ast_hash": "99c5920425b43af33a2bd0e95612f981",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/offline.html": {
+    "mtime": 1795717469.6725087,
+    "seen": 1795717573.246736,
+    "ast_hash": "67fca592c6f6d50f39e8534c2bd16855",
+    "semantic_hash": ""
+  },
+  "Serveur/code/atelier-update/public/logo.svg": {
+    "mtime": 1795717490.768935,
+    "seen": 1795717573.246786,
+    "ast_hash": "8eaaddb2427c410120269c5b44293045",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/arcade-pocket/icon.svg": {
+    "mtime": 1795717446.0520315,
+    "seen": 1795717573.2467878,
+    "ast_hash": "96fddc39b9874626fce0701283730a84",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/assets/icon-192.png": {
+    "mtime": 1795717472.804572,
+    "seen": 1795717573.2467895,
+    "ast_hash": "1be293027a27c918519a86d579fb7174",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/assets/icon-512.png": {
+    "mtime": 1795717474.3246026,
+    "seen": 1795717573.246807,
+    "ast_hash": "25e499ecb3f2521adc9c3efe411ac186",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/assets/icon.png": {
+    "mtime": 1795717472.4725654,
+    "seen": 1795717573.2468092,
+    "ast_hash": "58f4595a989ab1ebb4af2557cfc70c13",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/assets/jmh-app-192.png": {
+    "mtime": 1795717473.0725775,
+    "seen": 1795717573.2468114,
+    "ast_hash": "1be293027a27c918519a86d579fb7174",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/assets/jmh-app-512.png": {
+    "mtime": 1795717474.6686096,
+    "seen": 1795717573.2468128,
+    "ast_hash": "25e499ecb3f2521adc9c3efe411ac186",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/assets/jmh-app.svg": {
+    "mtime": 1795717473.3605833,
+    "seen": 1795717573.2468147,
+    "ast_hash": "d4a772e57ff15bcc2c100d4f79d34478",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/assets/jmh-login-universe-v1.png": {
+    "mtime": 1795717473.9605954,
+    "seen": 1795717573.2468162,
+    "ast_hash": "24e034bf8151263f847d401f16a1f00f",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/assets/logo.png": {
+    "mtime": 1795717475.1406193,
+    "seen": 1795717573.2468178,
+    "ast_hash": "58f4595a989ab1ebb4af2557cfc70c13",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/atelier/logo.svg": {
+    "mtime": 1795717450.8001275,
+    "seen": 1795717573.2468193,
+    "ast_hash": "8eaaddb2427c410120269c5b44293045",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/aurora.svg": {
+    "mtime": 1795717435.5558195,
+    "seen": 1795717573.2468214,
+    "ast_hash": "8d67927a422e9db8370e7c4d7470375c",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/camera.svg": {
+    "mtime": 1795717434.0637894,
+    "seen": 1795717573.2468233,
+    "ast_hash": "d1a55bd7a4fb352efb04a84ae122378e",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/carillon.svg": {
+    "mtime": 1795717438.343876,
+    "seen": 1795717573.2468252,
+    "ast_hash": "248ef93cffd74b9d1d896c9350ab6355",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/casque.svg": {
+    "mtime": 1795717433.499778,
+    "seen": 1795717573.2468271,
+    "ast_hash": "9e9da92dd9faa7476320f97da7c3660e",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/cinema.svg": {
+    "mtime": 1795717431.9197462,
+    "seen": 1795717573.2468288,
+    "ast_hash": "95a74b0569c6ac5ad7caffe4aa7272f2",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/clap.svg": {
+    "mtime": 1795717427.9756665,
+    "seen": 1795717573.2468302,
+    "ast_hash": "29cb3347646b62c0cd764560cd24b49c",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/couronne.svg": {
+    "mtime": 1795717432.5837595,
+    "seen": 1795717573.2468321,
+    "ast_hash": "345f0996c392e216bd517326ba26d4b9",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/eclair.svg": {
+    "mtime": 1795717428.1276696,
+    "seen": 1795717573.2468336,
+    "ast_hash": "4bd3200d373f47e699af97ee38b47287",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/etoile-filante.svg": {
+    "mtime": 1795717434.7678037,
+    "seen": 1795717573.2468352,
+    "ast_hash": "521b455cbf08a481b47028d5aafb2898",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/flamme-bleue.svg": {
+    "mtime": 1795717440.8599267,
+    "seen": 1795717573.2468376,
+    "ast_hash": "4d4f7df42001e04d2183a787fbecf1f7",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/flocon.svg": {
+    "mtime": 1795717429.1996913,
+    "seen": 1795717573.2468398,
+    "ast_hash": "10734609690068a483b6f25e5fdde6e2",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/fusee.svg": {
+    "mtime": 1795717438.5318797,
+    "seen": 1795717573.2468417,
+    "ast_hash": "8d3dbd8d16e7677e41f2b1031cf3e500",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/jmh.svg": {
+    "mtime": 1795717441.1079316,
+    "seen": 1795717573.2468433,
+    "ast_hash": "444d893babb999b619f758a4ae5c5720",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/lecture.svg": {
+    "mtime": 1795717436.3958366,
+    "seen": 1795717573.246845,
+    "ast_hash": "8e73584c2ff346a4c0c76f0411df48d7",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/manette.svg": {
+    "mtime": 1795717436.8238451,
+    "seen": 1795717573.2468467,
+    "ast_hash": "a06e2409219e6380bf82c78133245d9e",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/mountain.svg": {
+    "mtime": 1795717436.023829,
+    "seen": 1795717573.2468483,
+    "ast_hash": "66d4d4c6c47db3be5d9af37ec063416d",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/objectif.svg": {
+    "mtime": 1795717431.5957396,
+    "seen": 1795717573.2468498,
+    "ast_hash": "636767900a0d2e2af8a58f70f52f1e3b",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/palmier.svg": {
+    "mtime": 1795717429.991707,
+    "seen": 1795717573.2468517,
+    "ast_hash": "e5ab63701afbdc51d5134bd2da711752",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/patte.svg": {
+    "mtime": 1795717431.3437345,
+    "seen": 1795717573.2468534,
+    "ast_hash": "dffaa5300c10d569653b3f749d877333",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/planet.svg": {
+    "mtime": 1795717434.3997962,
+    "seen": 1795717573.2468555,
+    "ast_hash": "d3bc7a3b9a803f1c0d8ae084229a5283",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/plume.svg": {
+    "mtime": 1795717427.66366,
+    "seen": 1795717573.2468572,
+    "ast_hash": "219367b9a933f06ab08b71bb27914589",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/saturne.svg": {
+    "mtime": 1795717432.0717492,
+    "seen": 1795717573.2468588,
+    "ast_hash": "787d9e90a768cf30b1330425dc95298a",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/sommet.svg": {
+    "mtime": 1795717436.1998327,
+    "seen": 1795717573.2468607,
+    "ast_hash": "ce70520df98dd83a672112af1ab18551",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-abysses.svg": {
+    "mtime": 1795717432.415756,
+    "seen": 1795717573.246863,
+    "ast_hash": "dd2f5d62b90f343b6bdb0125278467f8",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-ambre.svg": {
+    "mtime": 1795717437.1958528,
+    "seen": 1795717573.2468646,
+    "ast_hash": "73c4174072fc98c6465b3c1b4823e0af",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-ardoise.svg": {
+    "mtime": 1795717431.7557428,
+    "seen": 1795717573.2468665,
+    "ast_hash": "343810ce25f501f728c781494cfb964e",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-aurore.svg": {
+    "mtime": 1795717438.8958871,
+    "seen": 1795717573.2468684,
+    "ast_hash": "887cbb466cb6156eb2c555894ee12a0b",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-azur.svg": {
+    "mtime": 1795717429.5036974,
+    "seen": 1795717573.2468705,
+    "ast_hash": "c4305bbdf68db3f96e76250ebf63761f",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-braise.svg": {
+    "mtime": 1795717433.9077864,
+    "seen": 1795717573.246873,
+    "ast_hash": "d45fda8832e0dc71cf88338bb3b6de39",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-cafe.svg": {
+    "mtime": 1795717429.0596883,
+    "seen": 1795717573.2468748,
+    "ast_hash": "43bba5808f66619bd3ba0f00f8ca15e7",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-cerise.svg": {
+    "mtime": 1795717439.735904,
+    "seen": 1795717573.2468767,
+    "ast_hash": "f47c33fbc0eaf40a9f45b569a2200479",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-ciel.svg": {
+    "mtime": 1795717428.2836728,
+    "seen": 1795717573.2468793,
+    "ast_hash": "ae55ed5ef97f7d34f0a96b343a7e3a13",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-citron.svg": {
+    "mtime": 1795717428.8996851,
+    "seen": 1795717573.246881,
+    "ast_hash": "e5602764bc13857a0310d9cab15d5a0c",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-clair.svg": {
+    "mtime": 1795717437.3878565,
+    "seen": 1795717573.246883,
+    "ast_hash": "a53afbf71eb95839e7c02785320e03d9",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-corail.svg": {
+    "mtime": 1795717429.835704,
+    "seen": 1795717573.2468846,
+    "ast_hash": "5c330c7a3f134aced19b54640a32688e",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-cosmos.svg": {
+    "mtime": 1795717439.1238916,
+    "seen": 1795717573.2468865,
+    "ast_hash": "a66acd980e3288608032d19b3bceaf3a",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-coton.svg": {
+    "mtime": 1795717437.5758605,
+    "seen": 1795717573.246888,
+    "ast_hash": "04a3202a0a966604974c5f044043a1a9",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-crepuscule.svg": {
+    "mtime": 1795717440.4599185,
+    "seen": 1795717573.24689,
+    "ast_hash": "a070e2011a7329dbe07ecb0a751b0b13",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-emeraude.svg": {
+    "mtime": 1795717429.6717007,
+    "seen": 1795717573.2468915,
+    "ast_hash": "4a10638700db2401a554dde0d52e01ea",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-foret.svg": {
+    "mtime": 1795717437.8198652,
+    "seen": 1795717573.2468936,
+    "ast_hash": "2fcce81972b1207800b8feb4eaa71661",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-framboise.svg": {
+    "mtime": 1795717439.5519004,
+    "seen": 1795717573.2468953,
+    "ast_hash": "7632ef96e856bf9da59d2394c88c0d4f",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-glacier.svg": {
+    "mtime": 1795717435.3438153,
+    "seen": 1795717573.246897,
+    "ast_hash": "e26770d88ac73262b5e3d7619008be3c",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-glycine.svg": {
+    "mtime": 1795717437.0038488,
+    "seen": 1795717573.2468987,
+    "ast_hash": "c291aa3e8f746bd03a41539fd2211487",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-graphite.svg": {
+    "mtime": 1795717428.4716766,
+    "seen": 1795717573.2469006,
+    "ast_hash": "fcb3c079abafb788e1f65cbd8eea2f62",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-jade.svg": {
+    "mtime": 1795717436.6278412,
+    "seen": 1795717573.2469027,
+    "ast_hash": "acde81e7cf685b20ad290a20b66b09c6",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-jungle.svg": {
+    "mtime": 1795717432.9437668,
+    "seen": 1795717573.2469046,
+    "ast_hash": "8bd2378e3fa117889b222db93c85ae16",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-lavande.svg": {
+    "mtime": 1795717438.1358716,
+    "seen": 1795717573.246906,
+    "ast_hash": "1601e1f73fcb485b1c4d5a5ac3416b0c",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-lilas.svg": {
+    "mtime": 1795717440.2439144,
+    "seen": 1795717573.2469082,
+    "ast_hash": "b8cb795b0fe5c98a1251cbe42339033a",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-marine.svg": {
+    "mtime": 1795717435.1478114,
+    "seen": 1795717573.2469106,
+    "ast_hash": "deb7f29886689c7604038a648dfa6d3c",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-menthe.svg": {
+    "mtime": 1795717435.8358252,
+    "seen": 1795717573.2469125,
+    "ast_hash": "8349c91281b8ba86ff62a9754c19a9b7",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-nacre.svg": {
+    "mtime": 1795717440.6559227,
+    "seen": 1795717573.2469141,
+    "ast_hash": "8c0f681d3d2fe526b4ad52a43db184c8",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-neon.svg": {
+    "mtime": 1795717432.7677634,
+    "seen": 1795717573.2469156,
+    "ast_hash": "bb30a684f392d07ba4556f4359c0e4ba",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-nuit.svg": {
+    "mtime": 1795717432.2357526,
+    "seen": 1795717573.246918,
+    "ast_hash": "98095165f26e5fb885fb3f3391a3fc8c",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-ocean.svg": {
+    "mtime": 1795717431.1277301,
+    "seen": 1795717573.2469194,
+    "ast_hash": "cf728f1503b8b3beb1d9bfe6e349f2f9",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-oled.svg": {
+    "mtime": 1795717429.3556943,
+    "seen": 1795717573.2469215,
+    "ast_hash": "355ff8ec6a1c5253e4217a1e46cad277",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-olive.svg": {
+    "mtime": 1795717433.1077702,
+    "seen": 1795717573.246923,
+    "ast_hash": "816555d7834b7bf0a3c1cefb7985bb7c",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-orchidee.svg": {
+    "mtime": 1795717438.7278838,
+    "seen": 1795717573.2469249,
+    "ast_hash": "f5a89a73807e76d54874833cabd561de",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-papier.svg": {
+    "mtime": 1795717434.5878,
+    "seen": 1795717573.2469263,
+    "ast_hash": "e31e8fd3add56fb7d75531ec0575e3b0",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-peche.svg": {
+    "mtime": 1795717439.9599085,
+    "seen": 1795717573.246928,
+    "ast_hash": "86939fa31ac56282da95464d888927fa",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-petrole.svg": {
+    "mtime": 1795717434.9798079,
+    "seen": 1795717573.2469296,
+    "ast_hash": "7ade4684d7fe47c074e30bef35fea14b",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-prairie.svg": {
+    "mtime": 1795717433.2877738,
+    "seen": 1795717573.2469316,
+    "ast_hash": "6b2e49af86dbaf00da7442264b46691b",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-rubis.svg": {
+    "mtime": 1795717427.8236635,
+    "seen": 1795717573.246933,
+    "ast_hash": "62eff75ff1a4763ea47d46c70f060387",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-sable.svg": {
+    "mtime": 1795717427.5196571,
+    "seen": 1795717573.246935,
+    "ast_hash": "ce8002df682c6e35dbcff66b9cd28c34",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-sakura.svg": {
+    "mtime": 1795717434.2277927,
+    "seen": 1795717573.2469363,
+    "ast_hash": "973c42e78d75677c316ea734df2cdb90",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/theme-vanille.svg": {
+    "mtime": 1795717441.3479366,
+    "seen": 1795717573.2469387,
+    "ast_hash": "92ecda9c8b2345e77077ee4884e3ecf8",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/vinyl.svg": {
+    "mtime": 1795717433.7477832,
+    "seen": 1795717573.2469406,
+    "ast_hash": "e9b26a6b1263ce844cac769314cbeab8",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/vinyle-soleil.svg": {
+    "mtime": 1795717439.3598964,
+    "seen": 1795717573.246943,
+    "ast_hash": "d6f4a77b962a10f004ed67316d49cfdc",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/avatars/waves.svg": {
+    "mtime": 1795717428.751682,
+    "seen": 1795717573.2469451,
+    "ast_hash": "6cf6d72118e9f8da9d18361aaa421e01",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/home-backdrop.jpg": {
+    "mtime": 1795717452.39616,
+    "seen": 1795717573.2469468,
+    "ast_hash": "e050bb328c5e74a0186f5af2f3d24798",
+    "semantic_hash": ""
+  },
+  "Serveur/code/public/jmh-symbol.svg": {
+    "mtime": 1795717467.0924566,
+    "seen": 1795717573.2469487,
+    "ast_hash": "d4a772e57ff15bcc2c100d4f79d34478",
     "semantic_hash": ""
   }
 }

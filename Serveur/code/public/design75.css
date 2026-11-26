@@ -1,0 +1,33 @@
+/* 7.5 : pochettes des musiques (titres, albums, lecteur, fiche) et rubrique Paramètres → Musique. */
+.music-mini-art,.music-album-art,#musicDockArtwork,#musicDetailsArt{position:relative;overflow:hidden;isolation:isolate}
+.d75-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:inherit;z-index:0;pointer-events:none;user-select:none;animation:d75-in .35s ease both}
+@keyframes d75-in{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
+
+/* Pastille des titres : la pochette remplace le rond, le ▶ apparaît au survol ou pendant l'écoute. */
+.music-track-row .music-mini-art.d75-has-art{color:transparent!important;background:#0000!important;box-shadow:0 4px 14px #0006,inset 0 0 0 1px #ffffff1f;border-radius:10px!important}
+.music-track-row .music-mini-art.d75-has-art::after{content:"▶";position:absolute;inset:0;z-index:1;display:grid;place-items:center;color:#fff;font-size:13px;background:#0008;opacity:0;transition:opacity .18s ease;border-radius:inherit}
+.music-track-row:hover .music-mini-art.d75-has-art::after,.music-track-row.is-playing .music-mini-art.d75-has-art::after,.music-mini-art.d75-has-art:focus-visible::after{opacity:1}
+.music-track-row.is-playing .music-mini-art.d75-has-art::after{content:"♫";background:color-mix(in srgb,var(--r-accent,#ff7a3d) 55%,#0000)}
+
+/* Cartes d'album et fiche : la pochette recouvre le motif « Personal collection ». */
+.music-album-art.d75-has-art>span:not(.music-album-hover),.music-album-art.d75-has-art>b,.music-album-art.d75-has-art>small,#musicDetailsArt.d75-has-art>span,#musicDetailsArt.d75-has-art>b,#musicDetailsArt.d75-has-art>small{opacity:0}
+.music-album-art.d75-has-art{box-shadow:0 14px 34px #0007,inset 0 0 0 1px #ffffff1a}
+.music-album-art.d75-has-art::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,#0000 55%,#0005);pointer-events:none}
+.music-album-card:hover .music-album-art.d75-has-art .d75-art{transform:scale(1.05);transition:transform .45s ease}
+.music-album-hover{z-index:2}
+
+/* Lecteur en bas de l'écran. */
+#musicDockArtwork.d75-has-art{color:transparent!important;background:#0000!important;box-shadow:0 6px 18px #0007}
+#musicDockArtwork.d75-has-art>span{opacity:0}
+
+/* Fiche d'un titre : actions de correction (administrateur). */
+.d75-detail-actions{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px}
+.d75-detail-actions[hidden]{display:none}
+.d75-detail-actions .music-text-button{font-size:11px!important;opacity:.85}
+.d75-detail-actions .music-text-button:hover{opacity:1;text-decoration:underline}
+
+/* Paramètres → Musique */
+.d75-progress{height:8px;border-radius:999px;background:var(--r-input,#ffffff14);overflow:hidden;margin:14px 0 4px}
+.d75-progress span{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--r-accent,#ff7a3d),color-mix(in srgb,var(--r-accent,#ff7a3d) 55%,#fff));transition:width .6s ease}
+
+@media (prefers-reduced-motion:reduce){.d75-art{animation:none}.music-album-card:hover .music-album-art.d75-has-art .d75-art{transform:none}}

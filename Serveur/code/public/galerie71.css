@@ -1,0 +1,29 @@
+/* JMH 7.1 — barre de filtres Photos / Vidéos personnelles (variables de thème uniquement). */
+html body.jmh-refonte .gallery-filterbar.g71-bar{display:flex!important;flex-wrap:wrap;align-items:center;gap:10px!important;padding:0!important;margin:6px 0 14px!important;
+ background:transparent!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;grid-template-columns:none!important}
+html body.jmh-refonte .g71-bar>label{display:flex!important;align-items:center;margin:0!important;padding:0!important;gap:0!important;font-size:0!important;flex-direction:row!important}
+html body.jmh-refonte .g71-bar>label .g71-lab{display:none}
+/* Recherche : prend la place restante. */
+html body.jmh-refonte .g71-bar>label.g71-search{flex:1 1 260px;min-width:220px;font-size:14px!important;gap:10px!important}
+html body.jmh-refonte :is(#photosPage,#personalVideosPage,main) .g71-bar .g71-search input{min-width:0;flex:1;height:100%!important;padding:0!important;margin:0!important;border:0!important;outline:0!important;background:transparent!important;box-shadow:none!important;color:var(--r-text)!important;font-size:14px!important}
+/* Listes (Année, Mois, Dossier, Trier) : pastilles de même hauteur. */
+html body.jmh-refonte .g71-bar select.jmh-select{width:auto!important;min-width:120px;max-width:220px}
+/* Bouton « Dates » et « Effacer les filtres ». */
+html body.jmh-refonte .g71-bar .g71-toggle,html body.jmh-refonte .g71-bar .g71-reset{display:inline-flex!important;align-items:center;gap:8px;height:44px;padding:0 16px!important;margin:0!important;border-radius:14px!important;
+ font-size:13px!important;font-weight:600!important;cursor:pointer;background:var(--r-input)!important;border:1px solid var(--r-border)!important;color:var(--r-text)!important;box-shadow:none!important;white-space:nowrap}
+html body.jmh-refonte .g71-bar .g71-toggle:hover,html body.jmh-refonte .g71-bar .g71-reset:hover{background:color-mix(in srgb,var(--r-accent) 12%,var(--r-input))!important}
+html body.jmh-refonte .g71-bar .g71-toggle[aria-expanded=true]{border-color:color-mix(in srgb,var(--r-accent) 55%,transparent)!important;color:var(--r-accent)!important}
+html body.jmh-refonte .g71-bar .g71-toggle svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+html body.jmh-refonte .g71-bar .g71-dot{width:7px;height:7px;border-radius:50%;background:var(--r-accent)}
+html body.jmh-refonte .g71-bar .g71-reset{background:transparent!important;color:var(--r-muted)!important}
+/* Rangée des dates, repliée par défaut. */
+html body.jmh-refonte .g71-bar .g71-more{display:none;flex-basis:100%;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;
+ background:color-mix(in srgb,var(--r-text) 4%,transparent);border:1px solid var(--r-border)}
+html body.jmh-refonte .g71-bar.g71-open .g71-more{display:flex;animation:g71-in .18s ease-out}
+@keyframes g71-in{from{opacity:0;transform:translateY(-4px)}}
+html body.jmh-refonte .g71-more>label{display:flex!important;align-items:center;gap:8px!important;margin:0!important;font-size:13px!important;color:var(--r-muted)}
+html body.jmh-refonte .g71-more>label .g71-lab{display:inline;font-weight:600}
+html body.jmh-refonte .g71-more input[type=date]{height:40px!important;padding:0 12px!important;border-radius:12px!important;background:var(--r-input)!important;border:1px solid var(--r-border)!important;color:var(--r-text)!important;box-shadow:none!important;color-scheme:inherit}
+/* Statut sous la barre. */
+html body.jmh-refonte .gallery-library .gallery-status{font-size:12.5px!important;color:var(--r-muted)!important;margin:0 0 12px!important}
+@media (max-width:900px){html body.jmh-refonte .g71-bar select.jmh-select{flex:1 1 140px;max-width:none}}

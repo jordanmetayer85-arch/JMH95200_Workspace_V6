@@ -7,3 +7,49 @@ Thumbs.db
 
 # Graphify : cache local
 graphify-out/cache/
+
+# --- Sécurité : ne jamais envoyer sur GitHub ---
+# Mots de passe, clés et secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*secret*.json
+*credentials*.json
+!Serveur/code/**/*.js
+id_rsa*
+*.dpapi
+# Bases de données et données d'exécution
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+Serveur/runtime/
+Serveur/data/
+# Médias : films, musique, photos, vidéos
+*.mkv
+*.mp4
+*.avi
+*.mov
+*.m4v
+*.mp3
+*.flac
+*.m4a
+*.wav
+*.ogg
+*.heic
+# Dépendances et programmes externes
+node_modules/
+vendor/
+atelier-omniroute/
+# Sauvegardes et fichiers temporaires
+*.before-*
+*.bak
+*.orig
+*.tmp
+Sauvegardes/*.zip
+*.original-*

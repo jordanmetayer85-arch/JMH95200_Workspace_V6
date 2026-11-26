@@ -1,0 +1,249 @@
+/* JMH — Refonte « Lumière » : thèmes complets, fonds d'écran, verre dépoli.
+   Chargée en dernier ; toutes les règles sont limitées à body.jmh-refonte. */
+
+/* ---------- Jetons par thème ---------- */
+body.jmh-refonte{
+  --r-bg:#0e1020;--r-bg-2:#151833;
+  --r-surface:rgba(24,27,48,.62);--r-surface-strong:rgba(30,34,58,.86);--r-elev:rgba(255,255,255,.045);
+  --r-border:rgba(255,255,255,.09);--r-border-strong:rgba(255,255,255,.16);
+  --r-text:#f1f2fa;--r-muted:#a3a8c3;--r-input:rgba(8,10,24,.45);
+  --r-accent:#a99bf5;--r-accent-2:#7fc8e8;--r-accent-ink:#14122a;
+  --r-shadow:0 18px 50px rgba(0,0,0,.35);--r-radius:18px;--r-radius-sm:12px;
+  --r-blur:22px;--r-glass:1;--r-wall-blur:0px;--r-wall-dim:.35;
+  --r-font:"Segoe UI Variable Text","Segoe UI",system-ui,sans-serif;
+  color-scheme:dark;
+}
+body.jmh-refonte[data-r-theme=clair]{--r-bg:#eef0f7;--r-bg-2:#dfe4f2;--r-surface:rgba(255,255,255,.66);--r-surface-strong:rgba(255,255,255,.9);--r-elev:rgba(20,30,60,.04);--r-border:rgba(20,30,70,.10);--r-border-strong:rgba(20,30,70,.18);--r-text:#151a2e;--r-muted:#5b6380;--r-input:rgba(255,255,255,.75);--r-accent-ink:#ffffff;--r-shadow:0 16px 40px rgba(40,50,90,.14);color-scheme:light}
+body.jmh-refonte[data-r-theme=oled]{--r-bg:#000;--r-bg-2:#070707;--r-surface:rgba(14,14,16,.78);--r-surface-strong:rgba(18,18,22,.95);--r-border:rgba(255,255,255,.08);--r-muted:#9a9aa6;--r-input:rgba(255,255,255,.04)}
+body.jmh-refonte[data-r-theme=aurore]{--r-bg:#0a1418;--r-bg-2:#10202a;--r-surface:rgba(14,32,38,.58);--r-surface-strong:rgba(16,38,46,.88);--r-muted:#9fc0c4;--r-input:rgba(3,16,20,.45)}
+body.jmh-refonte[data-r-theme=ocean]{--r-bg:#07142a;--r-bg-2:#0c1f3f;--r-surface:rgba(12,32,64,.58);--r-surface-strong:rgba(14,38,74,.88);--r-muted:#9db4d8;--r-input:rgba(2,10,26,.45)}
+body.jmh-refonte[data-r-theme=foret]{--r-bg:#0b140e;--r-bg-2:#132219;--r-surface:rgba(20,38,27,.6);--r-surface-strong:rgba(24,44,31,.9);--r-muted:#a7c0ab;--r-input:rgba(4,14,8,.45)}
+body.jmh-refonte[data-r-theme=sable]{--r-bg:#f6efe4;--r-bg-2:#eadcc6;--r-surface:rgba(255,250,242,.7);--r-surface-strong:rgba(255,251,245,.94);--r-elev:rgba(90,60,20,.04);--r-border:rgba(90,60,20,.12);--r-border-strong:rgba(90,60,20,.2);--r-text:#2b2116;--r-muted:#7a6650;--r-input:rgba(255,255,255,.8);--r-accent-ink:#fff;--r-shadow:0 16px 40px rgba(90,60,20,.14);color-scheme:light}
+body.jmh-refonte[data-r-theme=neon]{--r-bg:#0b0618;--r-bg-2:#160b2e;--r-surface:rgba(26,12,52,.6);--r-surface-strong:rgba(32,14,62,.9);--r-border:rgba(255,80,220,.18);--r-border-strong:rgba(90,240,255,.3);--r-muted:#c0a8e6;--r-input:rgba(10,2,26,.5);--r-shadow:0 0 0 1px rgba(255,80,220,.08),0 18px 50px rgba(0,0,0,.45)}
+body.jmh-refonte[data-r-contrast=high]{--r-muted:var(--r-text);--r-border:var(--r-border-strong)}
+body.jmh-refonte[data-r-glass=off]{--r-blur:0px}
+body.jmh-refonte[data-r-glass=off]:not([data-r-theme=clair]):not([data-r-theme=sable]){--r-surface:var(--r-surface-strong)}
+body.jmh-refonte[data-r-glass=off][data-r-theme=clair],body.jmh-refonte[data-r-glass=off][data-r-theme=sable]{--r-surface:var(--r-surface-strong)}
+body.jmh-refonte[data-r-radius=sharp]{--r-radius:8px;--r-radius-sm:6px}
+body.jmh-refonte[data-r-radius=round]{--r-radius:26px;--r-radius-sm:16px}
+body.jmh-refonte[data-r-font=geo]{--r-font:Bahnschrift,"Segoe UI",sans-serif}
+body.jmh-refonte[data-r-font=elegant]{--r-font:Georgia,Cambria,"Times New Roman",serif}
+body.jmh-refonte[data-r-font=douce]{--r-font:"Trebuchet MS","Segoe UI",sans-serif}
+body.jmh-refonte[data-r-font=tech]{--r-font:"Cascadia Code",Consolas,"Courier New",monospace}
+
+/* Variables historiques : les anciennes couches suivent le thème. */
+body.jmh-refonte{
+  --accent:var(--r-accent);--studio-accent:var(--r-accent);--primary:var(--r-accent);--studio-soft:color-mix(in srgb,var(--r-accent) 18%,transparent);--accent-soft:var(--studio-soft);
+  --bg:var(--r-bg);--panel:var(--r-surface-strong);--panel-2:var(--r-surface);--surface:var(--r-surface-strong);--surface-2:var(--r-surface);--surface-3:var(--r-elev);
+  --text:var(--r-text);--muted:var(--r-muted);--border:var(--r-border);--line:var(--r-border);
+  --studio-ink:var(--r-text);--studio-muted:var(--r-muted);--studio-border:var(--r-border);
+  --jmh-panel:var(--r-surface);--jmh-panel-alt:var(--r-surface-strong);--jmh-page:transparent;--jmh-sidebar-bg:var(--r-surface);--jmh-sidebar:200px;--jmh-edge:var(--r-border);
+  --evolution-panel:var(--r-surface);--evolution-border:var(--r-border);
+  --music-bg:transparent;--music-surface:var(--r-surface);--music-line:var(--r-border);--music-muted:var(--r-muted);
+  --cinema-bg:transparent;--cinema-surface:var(--r-surface);--cinema-line:var(--r-border);--cinema-muted:var(--r-muted);
+  font-family:var(--r-font)!important;background:var(--r-bg)!important;color:var(--r-text)!important;
+}
+
+/* ---------- Fond d'écran (couche fixe derrière l'application) ---------- */
+#refonteWallpaper{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:var(--r-bg)}
+#refonteWallpaper .r-wall-image{position:absolute;inset:calc(var(--r-wall-blur) * -2);background-size:cover;background-position:center;filter:blur(var(--r-wall-blur)) saturate(1.05);transition:opacity .6s ease,background-image .6s ease}
+#refonteWallpaper .r-wall-dim{position:absolute;inset:0;background:var(--r-bg);opacity:var(--r-wall-dim);transition:opacity .3s}
+body.jmh-refonte[data-r-wall-scope=home] #refonteWallpaper .r-wall-image{opacity:0}
+body.jmh-refonte[data-r-wall-animated=on] #refonteWallpaper .r-wall-image{animation:r-drift 38s ease-in-out infinite alternate}
+@keyframes r-drift{0%{transform:scale(1.04) translate3d(0,0,0)}50%{transform:scale(1.1) translate3d(-1.5%,1%,0)}100%{transform:scale(1.06) translate3d(1.5%,-1%,0)}}
+body.jmh-refonte.reduce-motion #refonteWallpaper .r-wall-image{animation:none!important}
+body.jmh-refonte #appView{position:relative;z-index:1;background:transparent!important}
+body.jmh-refonte #loginView{position:relative;z-index:1}
+
+/* ---------- Structure : barre latérale flottante ---------- */
+body.jmh-refonte #appView main,body.jmh-refonte #appView section.page,body.jmh-refonte .page{background:transparent!important}
+body.jmh-refonte aside.sidebar{background:var(--r-surface)!important;backdrop-filter:blur(var(--r-blur)) saturate(1.3);-webkit-backdrop-filter:blur(var(--r-blur)) saturate(1.3);border:1px solid var(--r-border)!important;border-radius:var(--r-radius)!important;margin:12px 0 12px 12px!important;height:calc(100dvh - 24px)!important;box-shadow:var(--r-shadow)!important}
+body.jmh-refonte .brand-block{border-bottom:1px solid var(--r-border)!important}
+body.jmh-refonte .brand-copy strong{color:var(--r-text)!important;letter-spacing:.04em}
+body.jmh-refonte .brand-copy span,body.jmh-refonte .nav-divider{color:var(--r-muted)!important;opacity:.85}
+body.jmh-refonte .main-nav .nav{color:var(--r-muted)!important;background:transparent!important;border:1px solid transparent!important;border-radius:var(--r-radius-sm)!important;transition:background .18s,color .18s,transform .18s,border-color .18s!important;position:relative}
+body.jmh-refonte .main-nav .nav:hover{color:var(--r-text)!important;background:var(--r-elev)!important;border-color:var(--r-border)!important}
+body.jmh-refonte .main-nav .nav.active{color:var(--r-text)!important;background:linear-gradient(90deg,color-mix(in srgb,var(--r-accent) 26%,transparent),color-mix(in srgb,var(--r-accent) 8%,transparent))!important;border-color:color-mix(in srgb,var(--r-accent) 35%,transparent)!important;box-shadow:0 6px 18px color-mix(in srgb,var(--r-accent) 18%,transparent)}
+body.jmh-refonte .main-nav .nav.active:before{content:'';position:absolute;left:-1px;top:22%;bottom:22%;width:3px;border-radius:3px;background:var(--r-accent);box-shadow:0 0 12px var(--r-accent)}
+body.jmh-refonte .main-nav .nav .studio-icon{stroke:currentColor}
+body.jmh-refonte .main-nav .nav.active .studio-icon{stroke:var(--r-accent)}
+body.jmh-refonte .profile-card{background:var(--r-elev)!important;border:1px solid var(--r-border)!important;border-radius:var(--r-radius-sm)!important}
+body.jmh-refonte .profile-card *{color:var(--r-text)}
+body.jmh-refonte .profile-card small,body.jmh-refonte .profile-card .profile-copy span{color:var(--r-muted)!important}
+
+/* Barre latérale compacte */
+body.jmh-refonte[data-r-sidebar=compact]{--jmh-sidebar:84px}
+body.jmh-refonte[data-r-sidebar=compact] #appView{grid-template-columns:84px minmax(0,1fr)!important}
+body.jmh-refonte[data-r-sidebar=compact] aside.sidebar{width:72px!important;min-width:72px!important;padding-inline:8px!important;overflow:visible}
+body.jmh-refonte[data-r-sidebar=compact] .brand-copy,body.jmh-refonte[data-r-sidebar=compact] .nav-divider,body.jmh-refonte[data-r-sidebar=compact] .main-nav .nav span,body.jmh-refonte[data-r-sidebar=compact] .profile-copy,body.jmh-refonte[data-r-sidebar=compact] .profile-card #logoutBtn{display:none!important}
+body.jmh-refonte[data-r-sidebar=compact] .main-nav .nav{justify-content:center!important;padding:11px 0!important;min-height:44px}
+body.jmh-refonte[data-r-sidebar=compact] .brand-block,body.jmh-refonte[data-r-sidebar=compact] .profile-card{justify-content:center!important;padding-inline:0!important}
+body.jmh-refonte[data-r-sidebar=compact] .main-nav{gap:4px}
+body.jmh-refonte[data-r-sidebar=compact] .profile-card{display:flex!important;justify-content:center!important;align-items:center!important;padding:8px 0!important;background:transparent!important;border:0!important;width:100%!important;min-width:0!important}
+body.jmh-refonte[data-r-sidebar=compact] .profile-card .avatar{margin:0!important;flex:none}
+body.jmh-refonte[data-r-sidebar=compact] .main-nav .nav:after{content:attr(data-r-label);position:absolute;left:calc(100% + 12px);top:50%;transform:translateY(-50%) scale(.96);opacity:0;pointer-events:none;white-space:nowrap;background:var(--r-surface-strong);color:var(--r-text);border:1px solid var(--r-border);padding:6px 10px;border-radius:8px;font-size:12px;box-shadow:var(--r-shadow);transition:opacity .15s,transform .15s;z-index:50}
+body.jmh-refonte[data-r-sidebar=compact] .main-nav .nav:hover:after{opacity:1;transform:translateY(-50%) scale(1)}
+
+/* ---------- Barre supérieure et fil d'Ariane ---------- */
+body.jmh-refonte header.topbar{background:color-mix(in srgb,var(--r-bg) 55%,transparent)!important;backdrop-filter:blur(var(--r-blur)) saturate(1.2);-webkit-backdrop-filter:blur(var(--r-blur)) saturate(1.2);border-bottom:1px solid var(--r-border)!important}
+body.jmh-refonte .page-heading h1,body.jmh-refonte .page-heading h2{color:var(--r-text)!important;letter-spacing:-.02em}
+body.jmh-refonte .page-heading p{color:var(--r-muted)!important}
+body.jmh-refonte nav.jmh-navigation{background:transparent!important;border:0!important}
+body.jmh-refonte .jmh-navigation-button{background:var(--r-surface)!important;border:1px solid var(--r-border)!important;color:var(--r-text)!important;border-radius:10px!important;backdrop-filter:blur(var(--r-blur))}
+body.jmh-refonte .jmh-navigation-trail,body.jmh-refonte .jmh-navigation-state{color:var(--r-muted)!important}
+body.jmh-refonte .topbar-actions .global-search,body.jmh-refonte .topbar-actions input[type=search],body.jmh-refonte .topbar-actions .search-box{background:var(--r-input)!important;border:1px solid var(--r-border)!important;border-radius:999px!important;color:var(--r-text)!important}
+body.jmh-refonte .role-pill,body.jmh-refonte #themeToggle{background:var(--r-surface)!important;border:1px solid var(--r-border)!important;color:var(--r-text)!important;border-radius:999px!important}
+body.jmh-refonte .profile-menu,body.jmh-refonte .global-search-results{background:var(--r-surface-strong)!important;border:1px solid var(--r-border)!important;border-radius:var(--r-radius-sm)!important;box-shadow:var(--r-shadow)!important;backdrop-filter:blur(var(--r-blur))}
+
+/* ---------- Surfaces : panneaux et cartes en verre ---------- */
+body.jmh-refonte :is(.panel,.studio-panel,.preference-panel,.settings-panel,.home-section,.home-stat,.stat-card,.studio-heading,.gallery-heading,.gallery-memories,.gallery-library,.game-panel,.profile-panel,.account-management,.server-health,.welcome-banner,.music-album-card,.studio-app-card,.studio-import-card,.home-collection-card,.permission-choice,.account-user-card,.appearance-preview-card,.setting-preview,.gallery-filterbar,.cinema-hero,.music-hero,.home-hero,.studio-transfer-details){
+  background-color:var(--r-surface)!important;border:1px solid var(--r-border)!important;border-radius:var(--r-radius)!important;box-shadow:var(--r-shadow);backdrop-filter:blur(var(--r-blur)) saturate(1.25);-webkit-backdrop-filter:blur(var(--r-blur)) saturate(1.25);color:var(--r-text)
+}
+body.jmh-refonte :is(.panel,.studio-panel,.preference-panel,.settings-panel,.home-section,.home-stat,.stat-card,.studio-heading,.gallery-heading,.gallery-memories,.gallery-library,.game-panel,.profile-panel,.account-management,.server-health,.welcome-banner,.studio-app-card,.studio-import-card,.permission-choice,.account-user-card,.setting-preview,.gallery-filterbar,.studio-transfer-details){background-image:none!important}
+body.jmh-refonte :is(.panel,.studio-panel,.preference-panel) :is(.panel,.studio-panel,.setting-preview,.permission-choice){box-shadow:none;background-color:var(--r-elev)!important;backdrop-filter:none}
+body.jmh-refonte :is(.studio-app-card,.home-collection-card,.music-album-card,.account-user-card,.studio-import-card,.home-stat){transition:transform .22s cubic-bezier(.2,.8,.2,1),border-color .22s,box-shadow .22s!important}
+body.jmh-refonte :is(.studio-app-card,.home-collection-card,.music-album-card,.account-user-card,.studio-import-card,.home-stat):hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--r-accent) 45%,transparent)!important;box-shadow:0 20px 44px rgba(0,0,0,.28),0 0 0 1px color-mix(in srgb,var(--r-accent) 18%,transparent)}
+body.jmh-refonte.reduce-motion :is(.studio-app-card,.home-collection-card,.music-album-card,.account-user-card,.studio-import-card,.home-stat):hover{transform:none}
+body.jmh-refonte .studio-app-icon{background:color-mix(in srgb,var(--r-accent) 16%,transparent)!important;border-radius:14px!important}
+body.jmh-refonte .studio-app-icon .studio-icon{stroke:var(--r-accent)!important}
+body.jmh-refonte :is(h1,h2,h3,h4,strong){color:inherit}
+body.jmh-refonte #appView :is(h1,h2,h3){color:var(--r-text)!important}
+body.jmh-refonte #appView :is(p,small,.muted-text,.setting-hint,.studio-heading p,.studio-app-card span:not(.studio-app-icon):not(.studio-card-arrow)){color:var(--r-muted)}
+body.jmh-refonte .studio-eyebrow,body.jmh-refonte .studio-card-arrow{color:var(--r-accent)!important;letter-spacing:.14em}
+body.jmh-refonte .home-hero,body.jmh-refonte .music-hero,body.jmh-refonte .cinema-hero{overflow:hidden}
+body.jmh-refonte .home-stat strong,body.jmh-refonte .stat-card strong{color:var(--r-text)!important}
+
+/* ---------- Champs et boutons ---------- */
+body.jmh-refonte :is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=file]),select,textarea){background:var(--r-input)!important;border:1px solid var(--r-border)!important;color:var(--r-text)!important;border-radius:var(--r-radius-sm)!important;transition:border-color .15s,box-shadow .15s}
+body.jmh-refonte :is(input,select,textarea):focus{border-color:color-mix(in srgb,var(--r-accent) 70%,transparent)!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--r-accent) 22%,transparent)!important;outline:none!important}
+body.jmh-refonte select option{background:var(--r-surface-strong);color:var(--r-text)}
+body.jmh-refonte input[type=range]{accent-color:var(--r-accent)}
+body.jmh-refonte input[type=checkbox],body.jmh-refonte input[type=radio]{accent-color:var(--r-accent)}
+body.jmh-refonte button.secondary,body.jmh-refonte .preference-tab{background:var(--r-elev)!important;border:1px solid var(--r-border)!important;color:var(--r-text)!important;border-radius:var(--r-radius-sm)!important}
+body.jmh-refonte button.secondary:hover,body.jmh-refonte .preference-tab:hover{border-color:var(--r-border-strong)!important;background:color-mix(in srgb,var(--r-accent) 10%,var(--r-elev))!important}
+body.jmh-refonte .preference-tab.active{background:color-mix(in srgb,var(--r-accent) 22%,transparent)!important;border-color:color-mix(in srgb,var(--r-accent) 45%,transparent)!important}
+body.jmh-refonte #appView :is(.music-button,.cinema-button:not(.cinema-glass),button[type=submit]:not(.secondary),#homeMusicMix,.studio-color-preview button),body.jmh-refonte .preference-panel > button:not(.secondary):not(.r-chip),body.jmh-refonte .setting-apply-actions button:not(.secondary){background:linear-gradient(135deg,var(--r-accent),color-mix(in srgb,var(--r-accent) 70%,var(--r-accent-2)))!important;color:var(--r-accent-ink)!important;border:0!important;border-radius:var(--r-radius-sm)!important;box-shadow:0 8px 22px color-mix(in srgb,var(--r-accent) 30%,transparent)!important;font-weight:600}
+body.jmh-refonte #appView main button:not([class]):not([role=tab]),body.jmh-refonte dialog button:not([class]):not([role=tab]){background:linear-gradient(135deg,var(--r-accent),color-mix(in srgb,var(--r-accent) 70%,var(--r-accent-2)))!important;color:var(--r-accent-ink)!important;border:0!important;border-radius:var(--r-radius-sm)!important;font-weight:600}
+body.jmh-refonte #appView #homePage .home-hero .home-hero-actions button:not(.secondary),body.jmh-refonte #appView #homePage #homeMusicMix{background:linear-gradient(135deg,var(--r-accent),color-mix(in srgb,var(--r-accent) 70%,var(--r-accent-2)))!important;color:var(--r-accent-ink)!important;-webkit-text-fill-color:var(--r-accent-ink);border:0!important}
+/* Bandeaux photographiques : toujours sombres, donc toujours un texte clair (y compris en thème clair). */
+body.jmh-refonte :is(.home-hero,.cinema-hero){--r-text:#f6f6fb;--r-muted:#d4d6e6;color:#f6f6fb!important}
+body.jmh-refonte .cinema-hero{background-color:#141019!important}
+body.jmh-refonte :is(.home-hero,.cinema-hero) :is(h1,h2,h3,p,span,strong,em){color:#f6f6fb!important;-webkit-text-fill-color:currentColor}
+body.jmh-refonte :is(.home-hero,.cinema-hero) p{color:#d9dbea!important}
+body.jmh-refonte :is(.home-hero,.cinema-hero) :is(.studio-eyebrow,[class*=eyebrow],[class*=kicker]){color:color-mix(in srgb,var(--r-accent) 60%,#fff)!important}
+body.jmh-refonte .home-hero :is(h1,h2) :is(em,span:last-child),body.jmh-refonte .home-hero h1 + h1{color:color-mix(in srgb,var(--r-accent) 55%,#fff)!important}
+body.jmh-refonte :is(.home-hero,.cinema-hero) :is(button.secondary,a.secondary,.cinema-glass){background:rgba(10,10,20,.45)!important;color:#fff!important;border-color:rgba(255,255,255,.28)!important}
+body.jmh-refonte .switch-track{background:var(--r-border-strong)!important}
+body.jmh-refonte input:checked + .switch-track{background:var(--r-accent)!important}
+
+/* ---------- Dialogues ---------- */
+body.jmh-refonte dialog:not(.cinema-player-dialog){background:var(--r-surface-strong)!important;color:var(--r-text)!important;border:1px solid var(--r-border)!important;border-radius:calc(var(--r-radius) + 4px)!important;box-shadow:0 30px 90px rgba(0,0,0,.5)!important;backdrop-filter:blur(var(--r-blur))}
+body.jmh-refonte dialog::backdrop{background:rgba(5,6,14,.55);backdrop-filter:blur(6px)}
+
+/* ---------- Musique, cinéma, galerie ---------- */
+body.jmh-refonte :is(.music-album-art,.cinema-card-cover,.home-film-art,.home-track-art,.music-mini-art){border-radius:calc(var(--r-radius) - 6px)!important}
+body.jmh-refonte .cinema-card-cover{box-shadow:0 14px 30px rgba(0,0,0,.35)}
+body.jmh-refonte .app .music-dock{background:var(--r-surface-strong)!important;border:1px solid var(--r-border)!important;border-radius:var(--r-radius)!important;box-shadow:0 18px 50px rgba(0,0,0,.45)!important;backdrop-filter:blur(var(--r-blur)) saturate(1.3);-webkit-backdrop-filter:blur(var(--r-blur)) saturate(1.3);color:var(--r-text)!important}
+body.jmh-refonte .music-dock :is(strong,.music-dock-track-copy strong){color:var(--r-text)!important}
+body.jmh-refonte .music-dock input[type=range]{background:linear-gradient(to right,var(--r-accent) 0 var(--music-progress,0%),var(--r-border-strong) var(--music-progress,0%) 100%)!important;padding:0!important;min-width:0;box-sizing:border-box}
+body.jmh-refonte .music-dock input[type=range]::-webkit-slider-thumb{background:var(--r-accent);width:12px;height:12px;box-shadow:0 0 0 3px color-mix(in srgb,var(--r-accent) 18%,transparent)}
+body.jmh-refonte .music-dock-center{min-width:0}
+body.jmh-refonte .music-seek{width:100%;min-width:0}
+body.jmh-refonte .brand-copy{min-width:0;overflow:hidden}
+body.jmh-refonte .brand-copy span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.08em!important;font-size:9px!important}
+
+/* Densité */
+body.jmh-refonte[data-r-density=compact] #appView main{zoom:.92}
+body.jmh-refonte[data-r-density=airy] #appView main{zoom:1.05}
+
+/* ---------- Message d'accueil ---------- */
+#refonteGreeting{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:26px 30px;margin:0 0 18px;border-radius:var(--r-radius);background:linear-gradient(120deg,color-mix(in srgb,var(--r-accent) 22%,var(--r-surface)),var(--r-surface))!important;border:1px solid var(--r-border);backdrop-filter:blur(var(--r-blur));box-shadow:var(--r-shadow)}
+#refonteGreeting .r-hello{font-size:30px;font-weight:700;letter-spacing:-.03em;color:var(--r-text)!important;-webkit-text-fill-color:var(--r-text);background:none!important;margin:0}
+#refonteGreeting .r-sub{color:var(--r-muted)!important;margin:6px 0 0;font-size:14px}
+#refonteGreeting .r-clock{text-align:right;color:var(--r-text)}
+#refonteGreeting .r-clock strong{display:block;font-size:40px;font-weight:300;letter-spacing:-.04em;font-variant-numeric:tabular-nums;line-height:1}
+#refonteGreeting .r-clock span{color:var(--r-muted);font-size:13px;text-transform:capitalize}
+body.jmh-refonte[data-r-greeting=off] #refonteGreeting{display:none}
+
+/* ---------- Studio Apparence ---------- */
+#refonteStudio{display:grid;gap:18px;color:var(--r-text)}
+#refonteStudio .r-section{background:var(--r-elev);border:1px solid var(--r-border);border-radius:var(--r-radius);padding:20px 22px}
+#refonteStudio header{background:none!important;border:0!important;padding:0!important;box-shadow:none!important;backdrop-filter:none!important;position:static!important;min-height:0!important;height:auto!important;margin:0 0 14px!important}
+#refonteStudio .r-section > header{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+#refonteStudio .r-section h3{margin:0;font-size:17px;letter-spacing:-.01em}
+#refonteStudio .r-section header p{margin:0;color:var(--r-muted);font-size:13px}
+#refonteStudio .r-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+#refonteStudio .r-tile{position:relative;display:flex;flex-direction:column;gap:8px;padding:8px;border-radius:var(--r-radius-sm);border:1px solid var(--r-border);background:var(--r-surface);color:var(--r-text);cursor:pointer;text-align:left;transition:transform .18s,border-color .18s,box-shadow .18s;font:inherit}
+#refonteStudio .r-tile:hover{transform:translateY(-2px);border-color:var(--r-border-strong)}
+#refonteStudio .r-tile[aria-pressed=true]{border-color:var(--r-accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--r-accent) 45%,transparent)}
+#refonteStudio .r-tile[aria-pressed=true]:after{content:'✓';position:absolute;top:12px;right:12px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--r-accent);color:var(--r-accent-ink);font-size:12px;font-weight:700}
+#refonteStudio .r-tile .r-swatch{height:84px;border-radius:calc(var(--r-radius-sm) - 4px);background-size:cover;background-position:center;position:relative;overflow:hidden}
+#refonteStudio .r-tile strong{font-size:13px}
+#refonteStudio .r-tile small{color:var(--r-muted);font-size:11px;margin-top:-6px}
+#refonteStudio .r-mini{position:absolute;inset:10px;display:grid;grid-template-columns:22% 1fr;gap:5px}
+#refonteStudio .r-mini i{display:block;border-radius:5px}
+#refonteStudio .r-mini .r-mini-main{display:grid;grid-template-rows:14px 1fr;gap:5px}
+#refonteStudio .r-accents{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+#refonteStudio .r-dot{width:34px;height:34px;border-radius:50%;border:2px solid transparent;cursor:pointer;box-shadow:inset 0 0 0 2px rgba(255,255,255,.18);transition:transform .15s}
+#refonteStudio .r-dot:hover{transform:scale(1.1)}
+#refonteStudio .r-dot[aria-pressed=true]{border-color:var(--r-text);transform:scale(1.12)}
+#refonteStudio .r-custom{display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 5px;border-radius:999px;border:1px solid var(--r-border);background:var(--r-surface);font-size:13px}
+#refonteStudio .r-custom input{width:28px;height:28px;border:0;padding:0;border-radius:50%;background:none;cursor:pointer}
+#refonteStudio .r-rows{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr));gap:12px}
+#refonteStudio,#refonteStudio .r-section{min-width:0;max-width:100%}
+#refonteStudio .r-grid{grid-template-columns:repeat(auto-fill,minmax(min(150px,42%),1fr))}
+#refonteStudio .r-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 14px;border-radius:var(--r-radius-sm);background:var(--r-surface);border:1px solid var(--r-border);flex-wrap:wrap}
+#refonteStudio .r-row > span{display:grid;gap:2px;flex:1 1 150px;min-width:0}
+#refonteStudio .r-row > span small{color:var(--r-muted);font-size:12px}
+#refonteStudio .r-row select{min-width:150px;padding:7px 10px}
+#refonteStudio .r-row input[type=range]{width:150px}
+#refonteStudio .r-seg{display:inline-flex;padding:3px;border-radius:999px;background:var(--r-input);border:1px solid var(--r-border)}
+#refonteStudio .r-seg button{border:0;background:transparent;color:var(--r-muted);padding:6px 12px;border-radius:999px;font:inherit;font-size:12px;cursor:pointer}
+#refonteStudio .r-seg button[aria-pressed=true]{background:var(--r-accent);color:var(--r-accent-ink);font-weight:600}
+#refonteStudio .r-toggle{position:relative;width:46px;height:26px;flex:none}
+#refonteStudio .r-toggle input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
+#refonteStudio .r-toggle i{position:absolute;inset:0;border-radius:999px;background:var(--r-border-strong);transition:background .18s;pointer-events:none}
+#refonteStudio .r-toggle i:after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.25);transition:transform .18s}
+#refonteStudio .r-toggle input:checked + i{background:var(--r-accent)}
+#refonteStudio .r-toggle input:checked + i:after{transform:translateX(20px)}
+#refonteStudio .r-toggle input:focus-visible + i{box-shadow:0 0 0 3px color-mix(in srgb,var(--r-accent) 40%,transparent)}
+#refonteStudio .r-actions{display:flex;flex-wrap:wrap;gap:10px}
+#refonteStudio .r-chip{border:1px solid var(--r-border);background:var(--r-surface);color:var(--r-text);padding:9px 14px;border-radius:999px;font:inherit;font-size:13px;cursor:pointer}
+#refonteStudio .r-chip:hover{border-color:var(--r-accent)}
+#refonteStudio .r-chip.r-primary{background:var(--r-accent);color:var(--r-accent-ink);border-color:transparent;font-weight:600}
+#refonteStudio .r-live{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px;align-items:stretch}
+#refonteStudio .r-preview{position:relative;min-height:220px;border-radius:var(--r-radius);overflow:hidden;border:1px solid var(--r-border);background-size:cover;background-position:center}
+#refonteStudio .r-preview .r-pv-shell{position:absolute;inset:14px;display:grid;grid-template-columns:110px 1fr;gap:10px}
+#refonteStudio .r-preview .r-pv-side,#refonteStudio .r-preview .r-pv-card{background:var(--r-surface);border:1px solid var(--r-border);border-radius:calc(var(--r-radius) - 6px);backdrop-filter:blur(calc(var(--r-blur) / 2))}
+#refonteStudio .r-preview .r-pv-side{padding:10px;display:grid;align-content:start;gap:6px}
+#refonteStudio .r-preview .r-pv-side i{height:9px;border-radius:5px;background:var(--r-border-strong)}
+#refonteStudio .r-preview .r-pv-side i.on{background:var(--r-accent)}
+#refonteStudio .r-preview .r-pv-main{display:grid;grid-template-rows:auto 1fr;gap:10px}
+#refonteStudio .r-preview .r-pv-card{padding:12px}
+#refonteStudio .r-preview .r-pv-card b{display:block;font-size:15px;color:var(--r-text)}
+#refonteStudio .r-preview .r-pv-card span{font-size:11px;color:var(--r-muted)}
+#refonteStudio .r-preview .r-pv-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+#refonteStudio .r-preview .r-pv-row i{border-radius:calc(var(--r-radius) - 8px);background:linear-gradient(140deg,color-mix(in srgb,var(--r-accent) 55%,transparent),var(--r-elev));border:1px solid var(--r-border)}
+#refonteStudio .r-preview .r-pv-btn{display:inline-block;margin-top:8px;padding:5px 10px;border-radius:999px;background:var(--r-accent);color:var(--r-accent-ink)!important;font-size:11px;font-weight:600}
+#refonteStudio .r-summary{display:grid;align-content:center;gap:10px}
+#refonteStudio .r-summary h2{margin:0;font-size:26px;letter-spacing:-.03em}
+#refonteStudio .r-summary p{margin:0;color:var(--r-muted)}
+#refonteStudio .r-gallery-picker{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:12px;max-height:260px;overflow:auto}
+#refonteStudio .r-gallery-picker button{aspect-ratio:3/2;border-radius:10px;border:2px solid transparent;background-size:cover;background-position:center;cursor:pointer}
+#refonteStudio .r-gallery-picker button:hover{border-color:var(--r-accent)}
+#refonteStudio .r-status{min-height:18px;color:var(--r-accent);font-size:13px;margin:0}
+body.jmh-refonte #appearancePage > :not(#refonteStudio){display:none!important}
+@media (max-width:900px){#refonteStudio .r-live{grid-template-columns:minmax(0,1fr)}#refonteStudio .r-preview .r-pv-shell{grid-template-columns:28% minmax(0,1fr)}#refonteStudio .r-section{padding:16px}#refonteGreeting{flex-direction:column;align-items:flex-start}#refonteGreeting .r-clock{text-align:left}}
+/* ---------- Finitions : en-tête flottant, marque, recherche, défilement ---------- */
+body.jmh-refonte header.topbar{margin:12px 12px 0 12px!important;border:1px solid var(--r-border)!important;border-radius:var(--r-radius)!important;box-shadow:var(--r-shadow)!important;background:var(--r-surface)!important;top:12px!important}
+body.jmh-refonte .brand-copy span{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;line-height:1.35!important;letter-spacing:.06em!important}
+body.jmh-refonte .topbar-actions .global-search>span{display:none!important}
+body.jmh-refonte .topbar-actions .global-search{padding-left:14px!important}
+body.jmh-refonte .atelier-frame{border:1px solid var(--r-border)!important;border-radius:var(--r-radius)!important;box-shadow:var(--r-shadow)!important;overflow:hidden}
+html body.jmh-refonte .topbar-actions .global-search input#globalSearch,html body.jmh-refonte .topbar-actions .global-search input#globalSearch:focus{background:transparent!important;border:0!important;box-shadow:none!important;outline:0!important;border-radius:0!important;padding-inline:4px!important}
+body.jmh-refonte .topbar-actions .global-search:focus-within{border-color:color-mix(in srgb,var(--r-accent,#a9a6ff) 55%,transparent)!important}
+body.jmh-refonte aside.sidebar *{scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--r-text) 18%,transparent) transparent}
+body.jmh-refonte aside.sidebar ::-webkit-scrollbar{width:6px;height:6px}
+body.jmh-refonte aside.sidebar ::-webkit-scrollbar-track{background:transparent}
+body.jmh-refonte aside.sidebar ::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--r-text) 16%,transparent);border-radius:6px}
+body.jmh-refonte aside.sidebar ::-webkit-scrollbar-button{display:none;width:0;height:0}

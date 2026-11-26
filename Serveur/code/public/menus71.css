@@ -1,0 +1,32 @@
+/* JMH 7.1.2 — listes déroulantes aux couleurs du thème (au lieu de la liste Windows) : arrondies, sélection en couleur d'accent, ouverture en fondu.
+   « appearance: base-select » (Chromium 135+) garde le vrai <select> : clavier, accessibilité et événements inchangés. */
+@supports (appearance: base-select) {
+  html body.jmh-refonte select:not([multiple]):not([size]),
+  html body.jmh-refonte select:not([multiple]):not([size])::picker(select){appearance:base-select!important}
+
+  /* Le bouton : une seule flèche, identique partout (les :not(#…) donnent la priorité sur les anciennes règles par identifiant). */
+  html body.jmh-refonte select:not([multiple]):not([size]):not(#jmh-a):not(#jmh-b){display:inline-flex;align-items:center;cursor:pointer;padding-right:38px!important;
+   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a8f9c' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")!important;
+   background-repeat:no-repeat!important;background-position:right 13px center!important;background-size:15px!important}
+  html body.jmh-refonte select::picker-icon{display:none}
+  html body.jmh-refonte select:open:not(#jmh-a):not(#jmh-b){border-color:color-mix(in srgb,var(--r-accent) 60%,transparent)!important;box-shadow:0 0 0 4px color-mix(in srgb,var(--r-accent) 14%,transparent)!important}
+
+  /* La liste ouverte, proportionnée à son bouton (7.2.1) : au moins aussi large que lui, jamais beaucoup plus (un nom très long est coupé),
+     lignes resserrées et hauteur limitée à environ 8 choix. */
+  html body.jmh-refonte select::picker(select){margin-block:6px;padding:5px;box-sizing:border-box;width:fit-content;min-width:anchor-size(width);max-width:max(anchor-size(width),min(calc(anchor-size(width) * 1.4),15rem));max-height:min(292px,48vh);overflow-x:hidden;overflow-y:auto;
+   border:1px solid var(--r-border);border-radius:16px;color:var(--r-text);
+   background:color-mix(in srgb,var(--r-surface-strong) 92%,transparent);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
+   box-shadow:0 18px 44px rgba(0,0,0,.28),0 2px 8px rgba(0,0,0,.12);scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--r-text) 25%,transparent) transparent;
+   opacity:1;translate:0 0;transition:opacity .16s ease,translate .16s ease,overlay .16s allow-discrete,display .16s allow-discrete}
+  @starting-style{html body.jmh-refonte select:open::picker(select){opacity:0;translate:0 -6px}}
+
+  /* Les choix. */
+  html body.jmh-refonte select option{display:block;min-height:0;padding:7px 11px!important;margin:1px 0;border-radius:9px;line-height:1.35;
+   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:13px;font-weight:500;background:transparent!important;color:var(--r-text)!important;cursor:pointer;transition:background .12s}
+  html body.jmh-refonte select option:is(:hover,:focus-visible){background:color-mix(in srgb,var(--r-accent) 14%,transparent)!important;outline:none}
+  html body.jmh-refonte select option:checked{background:var(--r-accent)!important;color:var(--r-accent-ink)!important;font-weight:650}
+  /* Le choix en cours est déjà surligné en couleur d'accent : la coche, qui prenait de la place, est retirée. */
+  html body.jmh-refonte select option::checkmark{display:none}
+  html body.jmh-refonte select option:disabled{opacity:.45;cursor:default}
+  html body.jmh-refonte select optgroup{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--r-muted);padding:8px 12px 2px}
+}

@@ -1,0 +1,11 @@
+data
+uploads
+updates
+shared_storage
+config.json
+.session-secret
+*.tmp
+*.log
+electron-main.js
+preload.js
+desktop-updater.js

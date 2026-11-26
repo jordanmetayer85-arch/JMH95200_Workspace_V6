@@ -1,0 +1,142 @@
+/* JMH 6.9.0 — finitions : connexion, densité compacte, Mon PC, notifications, Musiques, Mes fichiers.
+   Tout repose sur les variables de thème (--r-*) : identique pour les 12 thèmes, clairs comme sombres. */
+
+/* ---------- Densité compacte : le zoom réduisait aussi la hauteur → bande vide en bas ---------- */
+body.jmh-refonte[data-r-density=compact] #appView>main{height:calc(100dvh / .92)!important;min-height:calc(100dvh / .92)!important;max-height:none!important}
+
+/* ---------- Notifications : sous l'en-tête, plus par-dessus « Administrateur » ---------- */
+body.jmh-refonte #toast{top:calc(12px + 86px + 12px)!important;right:calc(var(--jmh-gap,12px) + 8px)!important;bottom:auto!important;z-index:60!important}
+
+/* ---------- Champs, listes et boutons communs (verre, lisibles dans tous les thèmes) ---------- */
+body.jmh-refonte .jmh-field{display:flex;align-items:center;gap:10px;height:44px;padding:0 14px;border-radius:14px;background:var(--r-input)!important;border:1px solid var(--r-border)!important;color:var(--r-text);transition:border-color .2s,box-shadow .2s}
+body.jmh-refonte .jmh-field:focus-within{border-color:color-mix(in srgb,var(--r-accent) 60%,transparent)!important;box-shadow:0 0 0 4px color-mix(in srgb,var(--r-accent) 16%,transparent)}
+body.jmh-refonte .jmh-field svg{flex:none;width:17px;height:17px;fill:none;stroke:var(--r-muted);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+body.jmh-refonte .jmh-field input{flex:1;min-width:0;height:100%;padding:0!important;margin:0!important;border:0!important;outline:0!important;background:transparent!important;box-shadow:none!important;color:var(--r-text)!important;font:inherit;font-size:14px}
+body.jmh-refonte .jmh-field input::placeholder{color:var(--r-muted);opacity:.85}
+body.jmh-refonte .jmh-select{height:44px!important;padding:0 36px 0 14px!important;border-radius:14px!important;background-color:var(--r-input)!important;border:1px solid var(--r-border)!important;color:var(--r-text)!important;font:inherit;font-size:13px!important;cursor:pointer;box-shadow:none!important}
+body.jmh-refonte .jmh-select option{background:var(--r-surface-strong);color:var(--r-text)}
+body.jmh-refonte .jmh-pills{display:inline-flex!important;align-items:center;gap:4px!important;padding:4px!important;border-radius:999px!important;background:color-mix(in srgb,var(--r-text) 7%,transparent)!important;border:1px solid var(--r-border)!important;box-shadow:none!important;width:auto!important;flex-wrap:wrap}
+body.jmh-refonte .jmh-pills>button{all:unset;box-sizing:border-box;display:inline-flex!important;align-items:center;gap:8px;height:34px;padding:0 16px!important;border-radius:999px!important;font-family:inherit;font-size:13px!important;font-weight:550!important;color:var(--r-muted)!important;background:transparent!important;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
+body.jmh-refonte .jmh-pills>button:hover{color:var(--r-text)!important;background:color-mix(in srgb,var(--r-text) 8%,transparent)!important}
+body.jmh-refonte .jmh-pills>button:is(.active,.is-active,[aria-pressed=true]){background:var(--r-accent)!important;color:var(--r-accent-ink)!important;font-weight:650!important;box-shadow:0 3px 10px color-mix(in srgb,var(--r-accent) 38%,transparent)!important}
+body.jmh-refonte .jmh-pills>button span{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;font-size:11px;background:color-mix(in srgb,currentColor 16%,transparent)}
+body.jmh-refonte .jmh-btn{display:inline-flex!important;align-items:center;gap:8px;height:42px;padding:0 18px!important;border-radius:14px!important;font-size:13px!important;font-weight:600!important;cursor:pointer;border:1px solid var(--r-border)!important;background:var(--r-surface)!important;color:var(--r-text)!important;backdrop-filter:blur(var(--r-blur));box-shadow:none!important;white-space:nowrap;transition:transform .15s,background .2s}
+body.jmh-refonte .jmh-btn:hover{background:color-mix(in srgb,var(--r-accent) 12%,var(--r-surface))!important}
+body.jmh-refonte .jmh-btn:active{transform:scale(.97)}
+body.jmh-refonte .jmh-btn.primary{background:linear-gradient(135deg,var(--r-accent),var(--r-accent-2))!important;color:var(--r-accent-ink)!important;border-color:transparent!important;box-shadow:0 8px 20px color-mix(in srgb,var(--r-accent) 30%,transparent)!important}
+body.jmh-refonte .jmh-btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- Musiques : onglets, recherche, filtres ---------- */
+body.jmh-refonte #musicPage .music-tabs{border-bottom:0!important;margin-bottom:6px}
+body.jmh-refonte #musicPage .music-filters{display:grid!important;grid-template-columns:minmax(240px,1fr) repeat(4,minmax(140px,180px));gap:10px!important;align-items:center;margin:8px 0 18px}
+@media (max-width:1300px){body.jmh-refonte #musicPage .music-filters{grid-template-columns:1fr 1fr}body.jmh-refonte #musicPage .music-filters .music-search{grid-column:1 / -1}}
+body.jmh-refonte #musicPage .music-search>span{display:none!important}
+html body.jmh-refonte #musicPage .music-filters>*{width:100%!important;min-width:0!important;max-width:none!important;margin:0!important}
+html body.jmh-refonte #musicPage .music-filters select{text-overflow:ellipsis}
+html body.jmh-refonte :is(#musicPage,#storagePage) .jmh-field input{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;height:100%!important;border-radius:0!important}
+
+/* ---------- Musiques : cartes d'albums (titres plus coupés) ---------- */
+body.jmh-refonte #musicPage .music-album-card{height:auto!important;min-height:0!important;padding:8px 8px 12px!important;border-radius:calc(var(--r-radius) + 2px)!important;
+ background:var(--r-surface)!important;border:1px solid var(--r-border)!important;backdrop-filter:blur(var(--r-blur)) saturate(1.3);-webkit-backdrop-filter:blur(var(--r-blur)) saturate(1.3);
+ box-shadow:0 8px 22px color-mix(in srgb,#000 10%,transparent)!important;overflow:hidden!important;transition:transform .2s,box-shadow .2s}
+body.jmh-refonte #musicPage .music-album-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px color-mix(in srgb,#000 16%,transparent)!important}
+body.jmh-refonte #musicPage .music-album-card .music-album-art{width:100%!important;aspect-ratio:1;height:auto!important;border-radius:calc(var(--r-radius) - 4px)!important;margin:0 0 10px!important}
+body.jmh-refonte #musicPage .music-album-card .music-album-name,body.jmh-refonte #musicPage .music-album-card .music-album-artist{display:block;margin:0!important;padding:0 4px!important;text-indent:0!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;text-align:left}
+body.jmh-refonte #musicPage .music-album-card .music-album-name{font-size:13px!important;font-weight:650!important;line-height:1.35!important;color:var(--r-text)!important}
+body.jmh-refonte #musicPage .music-album-card .music-album-artist{font-size:12px!important;line-height:1.45!important;margin-top:3px!important;color:var(--r-muted)!important}
+
+/* ---------- Musiques : liste des titres (verre équilibré, clair comme sombre) ---------- */
+body.jmh-refonte #musicPage .music-track-row{background:var(--r-surface)!important;border:1px solid var(--r-border)!important;border-radius:var(--r-radius-sm,12px)!important;margin:0 0 6px!important;
+ backdrop-filter:blur(var(--r-blur)) saturate(1.3);-webkit-backdrop-filter:blur(var(--r-blur)) saturate(1.3);box-shadow:0 4px 14px color-mix(in srgb,#000 6%,transparent)!important;color:var(--r-muted)!important;transition:background .2s,transform .15s}
+body.jmh-refonte #musicPage .music-track-row:hover{background:color-mix(in srgb,var(--r-accent) 10%,var(--r-surface))!important}
+body.jmh-refonte #musicPage .music-track-row :is(.music-track-title strong){color:var(--r-text)!important;font-weight:620}
+body.jmh-refonte #musicPage .music-track-row :is(.music-track-title small,.music-track-album,.music-track-genre,.music-track-duration,.music-track-number){color:var(--r-muted)!important}
+body.jmh-refonte #musicPage .music-track-row.is-playing,body.jmh-refonte #musicPage .music-track-row[aria-current]{background:color-mix(in srgb,var(--r-accent) 16%,var(--r-surface))!important;border-color:color-mix(in srgb,var(--r-accent) 40%,transparent)!important}
+body.jmh-refonte #musicPage :is(.music-track-list,.music-track-table,.music-library-list){background:transparent!important;border:0!important;box-shadow:none!important}
+
+/* ---------- Mon PC : tuiles lisibles et curseur de volume sans cadre ---------- */
+body.jmh-refonte .windows-shortcut{color:var(--r-text)!important;background:var(--r-surface)!important;border:1px solid var(--r-border)!important}
+body.jmh-refonte .windows-shortcut:hover{background:color-mix(in srgb,var(--r-accent) 12%,var(--r-surface))!important}
+body.jmh-refonte .windows-shortcut svg{color:var(--r-accent)!important;stroke:var(--r-accent)}
+body.jmh-refonte .windows-volume-row{display:flex;align-items:center;gap:16px}
+body.jmh-refonte #windowsMasterVolume{flex:1;max-width:420px;height:6px!important;padding:0!important;margin:0!important;border:0!important;border-radius:6px!important;background:color-mix(in srgb,var(--r-text) 14%,transparent)!important;box-shadow:none!important;accent-color:var(--r-accent);outline-offset:4px}
+
+/* ---------- Mes fichiers ---------- */
+body.jmh-refonte #storagePage .storage-header{display:flex!important;align-items:flex-end!important;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:14px 0 14px}
+body.jmh-refonte #storagePage .storage-header h3{font-size:22px!important;font-weight:700!important;color:var(--r-text)!important;margin:0 0 10px!important;letter-spacing:-.01em}
+body.jmh-refonte #storagePage #storageBreadcrumb{display:inline-flex!important;align-items:center;flex-wrap:wrap;gap:0;min-height:38px;padding:3px 6px!important;border-radius:999px!important;background:var(--r-surface)!important;border:1px solid var(--r-border)!important;box-shadow:none!important;backdrop-filter:blur(var(--r-blur))}
+body.jmh-refonte #storagePage #storageBreadcrumb>*{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:999px;font-size:13px;font-weight:550;color:var(--r-muted);cursor:pointer}
+body.jmh-refonte #storagePage #storageBreadcrumb>*:hover{background:color-mix(in srgb,var(--r-text) 8%,transparent);color:var(--r-text)}
+body.jmh-refonte #storagePage #storageBreadcrumb>*:last-child{color:var(--r-text);font-weight:650}
+body.jmh-refonte #storagePage #storageBreadcrumb>*+*::before{content:'›';margin:0 6px 0 -6px;color:var(--r-muted)}
+body.jmh-refonte #storagePage .storage-actions{display:flex;gap:10px;align-items:center}
+body.jmh-refonte #storagePage .storage-search-row{display:flex!important;gap:10px;align-items:center;margin-bottom:12px}
+body.jmh-refonte #storagePage .storage-search-row .jmh-field{flex:1}
+body.jmh-refonte #storagePage .drop-zone{border-radius:var(--r-radius)!important;border:1.5px dashed color-mix(in srgb,var(--r-accent) 45%,transparent)!important;background:color-mix(in srgb,var(--r-surface) 70%,transparent)!important;color:var(--r-muted)!important}
+body.jmh-refonte .file-space-tabs{margin:0 0 6px!important}
+
+/* ---------- Page de connexion ---------- */
+body.jmh-refonte #loginView{position:relative;isolation:isolate;background:#05060c!important;overflow:hidden}
+#loginView .jmh-login-bg,#loginView .jmh-login-dim{position:absolute;inset:-40px;z-index:-2;pointer-events:none}
+#loginView .jmh-login-bg{background:var(--jmh-login-bg,#0b0d18);filter:blur(var(--jmh-login-blur,0px));transform:scale(1.04);transition:filter .3s}
+#loginView .jmh-login-dim{z-index:-1;background:radial-gradient(ellipse at 50% 40%,transparent 0 30%,rgba(0,0,0,calc(var(--jmh-login-dim,.25) + .15)) 100%),rgba(0,0,0,var(--jmh-login-dim,.25))}
+body.jmh-refonte #loginView .login-card{position:relative;width:min(440px,calc(100vw - 32px))!important;padding:38px 38px 30px!important;border-radius:30px!important;
+ background:color-mix(in srgb,var(--r-surface-strong,#141826) calc(var(--jmh-login-card,.58) * 100%),transparent)!important;
+ border:1px solid color-mix(in srgb,#fff 22%,transparent)!important;
+ backdrop-filter:blur(28px) saturate(1.5);-webkit-backdrop-filter:blur(28px) saturate(1.5);
+ box-shadow:0 30px 80px rgba(0,0,0,.45),inset 0 1px 0 color-mix(in srgb,#fff 25%,transparent)!important;color:var(--r-text)!important;animation:jmh-login-in .6s cubic-bezier(.2,.8,.2,1)}
+@keyframes jmh-login-in{from{opacity:0;transform:translateY(14px) scale(.98)}}
+body.jmh-refonte #loginView .login-card::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(160deg,color-mix(in srgb,#fff 14%,transparent),transparent 40%)}
+body.jmh-refonte #loginView .login-wordmark{justify-content:center;gap:12px!important;margin-bottom:18px!important}
+body.jmh-refonte #loginView .login-wordmark svg,body.jmh-refonte #loginView .login-wordmark img{width:46px!important;height:46px!important;padding:8px;border-radius:16px;background:color-mix(in srgb,var(--r-accent) 18%,transparent);box-shadow:0 0 0 1px color-mix(in srgb,var(--r-accent) 30%,transparent),0 8px 24px color-mix(in srgb,var(--r-accent) 35%,transparent)}
+body.jmh-refonte #loginView .login-card h2{font-size:30px!important;font-weight:750!important;letter-spacing:-.02em;text-align:center;color:var(--r-text)!important;margin:0 0 6px!important}
+body.jmh-refonte #loginView #loginSlogan{text-align:center;color:var(--r-muted)!important;margin:0 0 26px!important}
+body.jmh-refonte #loginView #loginForm label{color:var(--r-text)!important;font-size:13px!important;font-weight:600!important}
+body.jmh-refonte #loginView #loginForm :is(input:not([type=checkbox]),select){height:48px!important;border-radius:14px!important;background:color-mix(in srgb,var(--r-input) 85%,transparent)!important;border:1px solid var(--r-border)!important;color:var(--r-text)!important;box-shadow:none!important;padding:0 16px!important;font-size:14px!important}
+body.jmh-refonte #loginView #loginForm :is(input,select):focus{border-color:color-mix(in srgb,var(--r-accent) 65%,transparent)!important;box-shadow:0 0 0 4px color-mix(in srgb,var(--r-accent) 18%,transparent)!important;outline:0!important}
+body.jmh-refonte #loginView #loginForm button[type=submit]{height:50px!important;border-radius:15px!important;border:0!important;font-size:15px!important;font-weight:700!important;letter-spacing:.01em;color:var(--r-accent-ink)!important;
+ background:linear-gradient(135deg,var(--r-accent),var(--r-accent-2))!important;box-shadow:0 12px 28px color-mix(in srgb,var(--r-accent) 40%,transparent)!important;transition:transform .15s,box-shadow .2s}
+body.jmh-refonte #loginView #loginForm button[type=submit]:hover{transform:translateY(-1px);box-shadow:0 16px 34px color-mix(in srgb,var(--r-accent) 50%,transparent)!important}
+body.jmh-refonte #loginView .local-login-controls{display:flex;flex-wrap:wrap;gap:8px}
+body.jmh-refonte #loginView .local-login-controls.hidden{display:none!important}
+body.jmh-refonte #loginView .local-login-controls button{height:32px!important;padding:0 14px!important;border-radius:999px!important;font-size:12px!important;font-weight:600!important;background:color-mix(in srgb,var(--r-text) 8%,transparent)!important;border:1px solid var(--r-border)!important;color:var(--r-text)!important;box-shadow:none!important}
+body.jmh-refonte #loginView .local-login-controls button:hover{background:color-mix(in srgb,var(--r-accent) 16%,transparent)!important}
+body.jmh-refonte #loginView :is(#localLoginStatus,.muted-text){color:var(--r-muted)!important}
+/* Verre de la carte : clair pour les thèmes clairs, sombre pour les thèmes sombres ; textes toujours lisibles. */
+body.jmh-refonte.light-theme #loginView .login-card{background:rgba(255,255,255,calc(var(--jmh-login-card,.58) * .45 + .55))!important;border-color:rgba(255,255,255,.7)!important}
+body.jmh-refonte:not(.light-theme) #loginView .login-card{background:color-mix(in srgb,var(--r-bg,#0e1020) calc(var(--jmh-login-card,.58) * 100%),transparent)!important}
+body.jmh-refonte #loginView .login-card :is(p,small,span:not(.login-kicker),.login-footer,footer){color:var(--r-muted)!important}
+body.jmh-refonte #loginView .login-card a{color:var(--r-accent)!important}
+body.jmh-refonte #loginView .login-card .login-wordmark :is(strong,span,b){color:var(--r-text)!important;letter-spacing:.06em}
+body.jmh-refonte #loginView #loginForm #togglePassword{width:48px!important;height:48px!important;border-radius:14px!important;background:color-mix(in srgb,var(--r-input) 85%,transparent)!important;border:1px solid var(--r-border)!important;color:var(--r-text)!important;box-shadow:none!important}
+.jmh-login-clock{position:absolute;left:clamp(24px,5vw,72px);bottom:clamp(24px,6vh,64px);color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.45);pointer-events:none;user-select:none}
+.jmh-login-clock strong{display:block;font-size:clamp(56px,8vw,104px);font-weight:250;letter-spacing:-.03em;line-height:1}
+.jmh-login-clock span{display:block;margin-top:8px;font-size:clamp(15px,1.4vw,19px);font-weight:500;opacity:.9;text-transform:capitalize}
+body[data-jmh-login-clock=off] .jmh-login-clock{display:none}
+@media (max-width:900px){.jmh-login-clock{display:none}}
+
+/* ---------- Paramètres → Écran de connexion ---------- */
+.jmh-login-settings .jl-preview{position:relative;height:220px;border-radius:var(--r-radius);overflow:hidden;display:grid;place-items:center;margin:6px 0 22px;border:1px solid var(--r-border);isolation:isolate}
+.jmh-login-settings .jl-preview-bg{position:absolute;inset:-20px;z-index:-2;transform:scale(1.05)}
+.jmh-login-settings .jl-preview-dim{position:absolute;inset:0;z-index:-1}
+.jmh-login-settings .jl-preview-card{width:170px;padding:16px;border-radius:18px;background:color-mix(in srgb,var(--r-surface-strong) calc(var(--jl-card,.58) * 100%),transparent);border:1px solid color-mix(in srgb,#fff 22%,transparent);backdrop-filter:blur(14px);box-shadow:0 12px 30px #0006;display:grid;gap:8px}
+.jmh-login-settings .jl-preview-card i{display:block;height:9px;border-radius:6px;background:color-mix(in srgb,var(--r-text) 18%,transparent)}
+.jmh-login-settings .jl-preview-card i.t{width:60%;height:12px;margin:0 auto 4px;background:color-mix(in srgb,var(--r-text) 45%,transparent)}
+.jmh-login-settings .jl-preview-card i.b{height:22px;border-radius:9px;background:var(--r-accent)}
+.jmh-login-settings .jl-preview-clock{position:absolute;left:16px;bottom:12px;color:#fff;font-size:30px;font-weight:300;text-shadow:0 2px 12px #0007}
+.jmh-login-settings h3{margin:22px 0 10px;font-size:15px}
+.jmh-login-settings .jl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px}
+html body .jmh-login-settings .jl-grid button.jl-wall{all:unset;box-sizing:border-box;cursor:pointer;display:grid;gap:7px;padding:6px 6px 9px;border-radius:14px;border:1px solid var(--r-border);background:var(--r-surface);font-size:12px;font-weight:600;color:var(--r-text);transition:transform .15s,box-shadow .2s}
+.jmh-login-settings .jl-grid button:hover{transform:translateY(-2px)}
+/* 7.2.1 : le fond choisi est entouré et marqué d'une bulle cochée, comme les thèmes. La règle de base (all:unset) effaçait le contour : sélecteur renforcé. */
+html body .jmh-login-settings .jl-grid button.jl-wall{position:relative}
+html body .jmh-login-settings .jl-grid button.jl-wall[aria-pressed=true]{border-color:var(--r-accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--r-accent) 45%,transparent)}
+html body .jmh-login-settings .jl-grid button.jl-wall[aria-pressed=true]::after{content:'✓';position:absolute;top:12px;right:12px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--r-accent);color:var(--r-accent-ink);font-size:12px;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.jmh-login-settings .jl-grid button b{display:block;height:70px;border-radius:10px;background-size:cover!important;background-position:center!important;box-shadow:inset 0 0 0 1px #0001}
+.jmh-login-settings .jl-grid button b.jl-photo{display:grid;place-items:center;font-size:12px;font-weight:600;color:var(--r-muted);background:repeating-linear-gradient(45deg,color-mix(in srgb,var(--r-text) 6%,transparent) 0 8px,transparent 8px 16px)}
+.jmh-login-settings .jl-rows{display:grid;gap:10px;margin-top:6px}
+.jmh-login-settings .jl-row{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 16px;border-radius:14px;background:var(--r-surface);border:1px solid var(--r-border)}
+.jmh-login-settings .jl-row strong{display:block;font-size:13px}.jmh-login-settings .jl-row small{display:block;color:var(--r-muted);font-size:12px;margin-top:2px}
+.jmh-login-settings .jl-row input[type=range]{width:min(260px,40vw);accent-color:var(--r-accent)}
+.jmh-login-settings .jl-row input[type=checkbox]{width:20px;height:20px;accent-color:var(--r-accent)}
+.jmh-login-settings .jl-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}

@@ -1,0 +1,95 @@
+/* Lecteur Cinéma — commandes en surimpression (cinema-player.js). */
+.cinema-dialog.cinema-player-dialog{width:min(1280px,96vw)!important;padding:14px 16px 12px!important;background:#0c0e14!important;border:1px solid #ffffff14!important;border-radius:20px!important;box-shadow:0 30px 90px #000c!important}
+.cinema-player-dialog .cinema-player-top{position:static!important;padding:0 0 12px!important;background:transparent!important;gap:14px}
+.cinema-player-dialog .cinema-player-top h2{font-size:18px!important;font-weight:650}
+#cinemaPlayerBack{padding:8px 14px!important;border-radius:999px!important;font-size:13px!important;background:#ffffff0d!important;border:1px solid #ffffff1c!important;color:#e9ecf5!important}
+#cinemaPlayerBack:hover{background:#ffffff1a!important}
+.cinema-player-dialog .cinema-close{border-radius:50%!important}
+
+html body #cinemaPlayerSurface .cp-stage{position:relative;border-radius:14px;overflow:hidden;background:#000;line-height:0;user-select:none;-webkit-user-select:none}
+html body #cinemaPlayerSurface .cp-stage video{display:block;width:100%!important;height:auto!important;aspect-ratio:16/9;max-height:72dvh!important;object-fit:contain;background:#000;border-radius:0!important;cursor:pointer}
+html body #cinemaPlayerSurface .cp-stage.cp-idle,html body #cinemaPlayerSurface .cp-stage.cp-idle video{cursor:none}
+
+/* Icône centrale (lecture / pause) */
+html body #cinemaPlayerSurface .cp-flash{position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;display:grid;place-items:center;background:#0009;color:#fff;opacity:0;pointer-events:none;backdrop-filter:blur(6px)}
+html body #cinemaPlayerSurface .cp-flash svg{width:34px;height:34px}
+html body #cinemaPlayerSurface .cp-flash.show{animation:cp-flash .6s ease-out}
+@keyframes cp-flash{0%{opacity:.95;transform:scale(.85)}100%{opacity:0;transform:scale(1.25)}}
+html body #cinemaPlayerSurface .cp-stage.cp-paused .cp-flash{opacity:.92;pointer-events:auto;cursor:pointer;animation:none;transform:none}
+html body #cinemaPlayerSurface .cp-stage.cp-paused:not(.cp-flash-pause) .cp-flash{background:linear-gradient(135deg,#9fb8ffd9,#b7a2ffd9);color:#121628;box-shadow:0 10px 40px #0008}
+
+/* Titre en surimpression (plein écran) */
+html body #cinemaPlayerSurface .cp-title{position:absolute;left:0;right:0;top:0;padding:22px 28px 60px;font:650 20px/1.3 Segoe UI,system-ui,sans-serif;color:#fff;background:linear-gradient(#000b,#0000);display:none;transition:opacity .35s;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* Barre de commandes */
+html body #cinemaPlayerSurface .cp-bar{position:absolute;left:0;right:0;bottom:0;padding:48px 18px 12px;background:linear-gradient(transparent,#000000b8 55%,#000000e0);line-height:1.2;transition:opacity .35s,transform .35s}
+html body #cinemaPlayerSurface .cp-stage.cp-idle .cp-bar,html body #cinemaPlayerSurface .cp-stage.cp-idle .cp-title{opacity:0;pointer-events:none}
+html body #cinemaPlayerSurface .cp-stage.cp-idle .cp-bar{transform:translateY(8px)}
+html body #cinemaPlayerSurface .cinema-nas-controls{display:block!important;padding:0 2px 6px!important;margin:0!important}
+html body #cinemaPlayerSurface .cp-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+html body #cinemaPlayerSurface .cp-left,html body #cinemaPlayerSurface .cp-right{display:flex!important;align-items:center;gap:4px!important;margin:0!important;flex-wrap:nowrap!important;min-width:0}
+html body #cinemaPlayerSurface .cp-bar button{display:grid;place-items:center;width:40px;height:40px;padding:0!important;border:0!important;border-radius:50%!important;background:transparent!important;color:#f3f5fb!important;cursor:pointer;transition:background .15s,transform .15s;box-shadow:none!important}
+html body #cinemaPlayerSurface .cp-bar button:hover{background:#ffffff1f!important}
+html body #cinemaPlayerSurface .cp-bar button:active{transform:scale(.92)}
+html body #cinemaPlayerSurface .cp-bar button:focus-visible{outline:2px solid #a9b8ff!important;outline-offset:1px!important}
+html body #cinemaPlayerSurface .cp-bar svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+html body #cinemaPlayerSurface svg .fill{fill:currentColor;stroke:none}
+html body #cinemaPlayerSurface svg text{font:700 7px Segoe UI,system-ui,sans-serif;fill:currentColor;stroke:none}
+html body #cinemaPlayerSurface #cinemaPlayPause{width:46px;height:46px}
+html body #cinemaPlayerSurface #cinemaPlayPause svg{width:26px;height:26px}
+html body #cinemaPlayerSurface #cinemaNasTime{min-width:0!important;margin-left:10px;font:500 13px/1 Segoe UI,system-ui,sans-serif;color:#e7eaf3;font-variant-numeric:tabular-nums;white-space:nowrap}
+#studioCinemaCompact{display:none!important}
+
+/* Curseurs : progression et volume */
+html body #cinemaPlayerSurface input[type=range]{-webkit-appearance:none;appearance:none;display:block;height:16px;margin:0;padding:0!important;background:transparent!important;border:0!important;cursor:pointer;--p:0%}
+html body #cinemaPlayerSurface input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:4px;background:linear-gradient(90deg,#b7c4ff var(--p),#ffffff40 var(--p));transition:height .15s}
+html body #cinemaPlayerSurface input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;margin-top:-5px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px #b7c4ff40;transform:scale(0);transition:transform .15s}
+html body #cinemaPlayerSurface input[type=range]:hover::-webkit-slider-thumb,html body #cinemaPlayerSurface input[type=range]:focus-visible::-webkit-slider-thumb{transform:scale(1)}
+html body #cinemaPlayerSurface #cinemaNasSeek{width:100%!important}
+html body #cinemaPlayerSurface #cinemaNasSeek:hover::-webkit-slider-runnable-track{height:6px}
+html body #cinemaPlayerSurface #cinemaNasSeek:hover::-webkit-slider-thumb{margin-top:-4px}
+html body #cinemaPlayerSurface input[type=range]::-moz-range-track{height:4px;border-radius:4px;background:#ffffff40}
+html body #cinemaPlayerSurface input[type=range]::-moz-range-progress{height:4px;border-radius:4px;background:#b7c4ff}
+html body #cinemaPlayerSurface input[type=range]::-moz-range-thumb{width:14px;height:14px;border:0;border-radius:50%;background:#fff}
+html body #cinemaPlayerSurface .cp-volume{display:flex;align-items:center}
+html body #cinemaPlayerSurface .cp-volume #cinemaVolume{width:0!important;opacity:0;transition:width .2s,opacity .2s,margin .2s}
+html body #cinemaPlayerSurface .cp-volume:hover #cinemaVolume,html body #cinemaPlayerSurface .cp-volume:focus-within #cinemaVolume{width:86px!important;opacity:1;margin:0 6px 0 2px}
+
+/* Panneau de réglages */
+html body #cinemaPlayerSurface .cp-settings{position:absolute;right:16px;bottom:78px;width:min(320px,calc(100% - 32px));padding:14px 16px 10px;border-radius:16px;background:#141824eb;border:1px solid #ffffff1f;box-shadow:0 18px 50px #000b;backdrop-filter:blur(14px);line-height:1.3;color:#eef1f8;z-index:3}
+html body #cinemaPlayerSurface .cp-settings[hidden]{display:none}
+html body #cinemaPlayerSurface .cp-settings>strong{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#aab3cc;margin-bottom:10px}
+html body #cinemaPlayerSurface .cp-settings .cinema-playback-settings{display:grid!important;gap:8px!important;margin:0!important}
+html body #cinemaPlayerSurface .cp-settings label{display:flex!important;align-items:center;justify-content:space-between;gap:12px;font-size:13px!important;color:#d9deea;margin:0!important}
+html body #cinemaPlayerSurface .cp-settings select{width:170px!important;max-width:60%!important;padding:7px 10px!important;border-radius:10px!important;background:#ffffff0f!important;border:1px solid #ffffff22!important;color:#fff!important;font:inherit;font-size:13px!important}
+html body #cinemaPlayerSurface .cp-settings select option{background:#151926;color:#fff}
+html body #cinemaPlayerSurface .cp-settings .cinema-dialogue-switch{padding:6px 0!important;border:0!important;justify-content:flex-start!important}
+html body #cinemaPlayerSurface .cp-settings input[type=checkbox]{width:16px;height:16px;accent-color:#a9b8ff}
+html body #cinemaPlayerSurface .cp-settings #cinemaQualityNote{font-size:11px!important;color:#98a2bb!important;margin:10px 0 2px!important;line-height:1.4}
+#cinemaSettingsToggle[aria-expanded=true]{background:#ffffff26!important}
+
+/* Bas du lecteur (hors plein écran) */
+.cinema-player-dialog .cinema-player-bottom{padding:10px 4px 0!important;gap:14px!important}
+.cinema-player-dialog .cinema-player-bottom p{font-size:12px!important;color:#9aa4bb!important;margin:0}
+
+/* Plein écran : uniquement l'image et les commandes qui s'effacent */
+html body #cinemaPlayerSurface:fullscreen{padding:0!important;background:#000!important;overflow:hidden!important;display:block!important}
+html body #cinemaPlayerSurface:fullscreen .cinema-player-top,html body #cinemaPlayerSurface:fullscreen .cinema-player-bottom{display:none!important}
+html body #cinemaPlayerSurface:fullscreen .cp-stage{width:100vw;height:100vh;border-radius:0}
+html body #cinemaPlayerSurface:fullscreen .cp-stage video{width:100vw!important;height:100vh!important;max-height:none!important;aspect-ratio:auto}
+html body #cinemaPlayerSurface:fullscreen .cp-title{display:block}
+html body #cinemaPlayerSurface:fullscreen .cp-bar{padding:70px 32px 20px}
+html body #cinemaPlayerSurface:fullscreen .cp-settings{bottom:92px;right:32px}
+
+@media (max-width:640px){
+ html body #cinemaPlayerSurface .cp-bar{padding:36px 8px 6px}
+ html body #cinemaPlayerSurface .cp-bar button{width:36px;height:36px}
+ html body #cinemaPlayerSurface #cinemaForward,html body #cinemaPlayerSurface #cinemaRewind{display:none}
+ html body #cinemaPlayerSurface #cinemaNasTime{font-size:11px;margin-left:4px}
+}
+
+/* Priorité sur les thèmes (refonte, polish) */
+html body #cinemaPlayerSurface .cinema-nas-controls{background:transparent!important;border:0!important;box-shadow:none!important}
+html body #cinemaPlayerSurface .cp-settings label{flex-direction:row!important;text-align:left!important}
+html body #cinemaPlayerSurface .cp-settings .cinema-dialogue-switch{flex-direction:row-reverse!important;justify-content:flex-end!important;gap:10px!important}
+html body #cinemaPlayerSurface .cp-bar button,html body #cinemaPlayerSurface .cp-bar button:hover{min-width:0!important;font-size:0!important}

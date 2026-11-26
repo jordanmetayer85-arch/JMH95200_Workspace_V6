@@ -1,0 +1,6 @@
+/* JMH 7.1.1 — fond provisoire identique au fond choisi, tant que les scripts de la page ne l'ont pas posé (voir fond-precoce.js). */
+html.jmh-early,html.jmh-early body{background-color:var(--jmh-early-color,#111114)!important}
+html.jmh-early #loginView,html.jmh-early #loginView.center-screen{background:var(--jmh-early-bg)!important;background-color:var(--jmh-early-color,#111114)!important}
+/* La carte de connexion attend que le thème soit appliqué, puis apparaît en fondu. */
+html.jmh-early #loginView>:not(.jmh-login-bg):not(.jmh-login-dim){opacity:0!important}
+#loginView .login-card{transition:opacity .25s ease}
