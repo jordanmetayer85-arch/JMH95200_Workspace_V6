@@ -1,0 +1,19 @@
+{
+  "0": "index.js",
+  "1": "docker-publish.yml",
+  "2": "with",
+  "3": "tv.ps1",
+  "4": "Allègement télé Android TV / Google TV",
+  "5": "dependencies",
+  "6": "package.json",
+  "7": "INSTALLATION_SIMPLE.md",
+  "8": "README.md",
+  "9": "better-sqlite3",
+  "10": "cors",
+  "11": "dotenv",
+  "12": "helmet",
+  "13": "jsonwebtoken",
+  "14": "morgan",
+  "15": "engines",
+  "16": "scripts"
+}

@@ -30,8 +30,21 @@ Pour une correction simple et évidente, ne pas poser de question : agir.
 | `apple-design` | Interfaces fluides et minimalistes façon Apple (client, pages web) |
 | `humanizer` | Retirer les tics d'écriture IA d'un texte |
 | `copywriting` | Textes marketing (site, présentation, annonces) |
+| `graphify` | Carte du projet en graphe de connaissances (`/graphify`) |
 
 Sources et licences : `.claude/skills/SOURCES.md`.
+
+## Graphify — carte du code
+
+Le projet a un graphe de connaissances dans `graphify-out/` (fichiers, fonctions, dépendances et leurs liens).
+
+- Pour une question sur le code, lancer d'abord `graphify query "<question>"`, avant tout grep ou lecture de fichier. Ensuite, lire seulement les lignes que le graphe a désignées.
+- Relation entre deux éléments : `graphify path "<A>" "<B>"`. Expliquer un élément : `graphify explain "<nom>"`.
+- Vue d'ensemble de l'architecture : `graphify-out/GRAPH_REPORT.md`. Vue visuelle : ouvrir `graphify-out/graph.html` dans un navigateur.
+- Après une modification du code, lancer `graphify update .` (analyse locale, gratuite) et committer `graphify-out/` avec le changement.
+- Mettre cette règle dans le prompt de chaque sous-agent qui explore le code.
+- Si la commande `graphify` n'est pas installée, travailler normalement avec grep et Read.
+- Installation (une fois par machine) : `uv tool install graphifyy` ou `pipx install graphifyy`.
 
 ## Langue
 

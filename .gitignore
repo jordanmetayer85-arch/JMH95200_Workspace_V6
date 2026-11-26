@@ -4,3 +4,6 @@ node_modules/
 dist/
 Serveur/data/*.db*
 Thumbs.db
+
+# Graphify : cache local
+graphify-out/cache/
