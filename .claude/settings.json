@@ -34,5 +34,37 @@
         ]
       }
     ]
+  },
+  "extraKnownMarketplaces": {
+    "hallmark": {
+      "source": {
+        "source": "github",
+        "repo": "Nutlope/hallmark"
+      }
+    },
+    "impeccable": {
+      "source": {
+        "source": "github",
+        "repo": "pbakaus/impeccable"
+      }
+    },
+    "agent-browser": {
+      "source": {
+        "source": "github",
+        "repo": "vercel-labs/agent-browser"
+      }
+    },
+    "agricidaniel-claude-seo": {
+      "source": {
+        "source": "github",
+        "repo": "AgriciDaniel/claude-seo"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "hallmark@hallmark": true,
+    "impeccable@impeccable": true,
+    "agent-browser@agent-browser": true,
+    "claude-seo@agricidaniel-claude-seo": true
   }
 }
