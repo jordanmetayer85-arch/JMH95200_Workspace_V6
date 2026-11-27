@@ -34,6 +34,17 @@ Pour une correction simple et évidente, ne pas poser de question : agir.
 
 Sources et licences : `.claude/skills/SOURCES.md`.
 
+## Plugins (déclarés dans `.claude/settings.json`)
+
+Claude Code propose de les installer à l'ouverture du projet ; sinon `/plugin` → onglet Installer.
+
+| Plugin | Usage | Prérequis sur la machine |
+|---|---|---|
+| `hallmark` | Design anti « AI slop » : pages qui ne ressemblent pas à un site généré par IA | Node 18+ |
+| `impeccable` | Vocabulaire de designer (typo, espacements, couleurs) + audit de design après chaque modification | Télécharge son moteur au premier usage |
+| `agent-browser` | Piloter un vrai navigateur : tester une page, remplir un formulaire, faire des captures | `npm install -g agent-browser` puis `agent-browser install` |
+| `claude-seo` | Audit et optimisation SEO (référencement Google, données structurées) | Python 3 |
+
 ## Graphify — carte du code
 
 Le projet a un graphe de connaissances dans `graphify-out/` (fichiers, fonctions, dépendances et leurs liens).
