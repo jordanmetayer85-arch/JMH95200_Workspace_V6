@@ -31,7 +31,11 @@ function createNasBridge(root,{port=20128}={}){
    if(complete&&upstream.statusCode>=200&&upstream.statusCode<300){const {readJson,messageEvents}=require('./anthropic-stream.cjs');const events=messageEvents(await readJson(upstream));res.writeHead(200,{'Content-Type':'text/event-stream; charset=utf-8'});res.end(events);}
    else{res.writeHead(upstream.statusCode,{'Content-Type':upstream.headers['content-type']||'application/json',...(upstream.headers['retry-after']?{'Retry-After':upstream.headers['retry-after']}:{})});upstream.pipe(res);}
   }catch(e){if(res.destroyed)return;if(!res.headersSent){res.writeHead(502,{'Content-Type':'application/json'});res.end(JSON.stringify({error:{message:e.message,type:'api_error'}}));}else res.end();}
- });await new Promise((resolve,reject)=>{candidate.once('error',reject);candidate.listen(port,'127.0.0.1',resolve);});relay=candidate;}
+ });
+  // Si le port habituel est déjà pris (autre OmniRoute, outil « relais »…), le système choisit un port libre.
+  const listen=p=>new Promise((resolve,reject)=>{candidate.once('error',reject);candidate.listen(p,'127.0.0.1',()=>{candidate.removeListener('error',reject);resolve();});});
+  try{await listen(port);}catch(e){if(e.code!=='EADDRINUSE'||port===0)throw e;await listen(0);}
+  relay=candidate;}
  async function closeRelay(){if(!relay)return;const old=relay;relay=null;old.closeAllConnections();await new Promise(r=>old.close(r));}
  return{hasProfile:()=>fs.existsSync(file),profile,pair,status,image,startRelay,closeRelay,origin:()=>relay?'http://127.0.0.1:'+relay.address().port:null};
 }

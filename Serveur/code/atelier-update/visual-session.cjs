@@ -3,7 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),{spawn}=require('node:chil
 const root=__dirname;
 (async()=>{
  const profile=require('./claude-profile.cjs').profileFor(root,'desktop'),mcp=require('./desktop-connector.cjs').writeConnectorConfig(root,path.join(profile,'interactive'));
- const response=await fetch('http://127.0.0.1:20128/v1/models',{headers:{Authorization:'Bearer '+String(process.env.ANTHROPIC_AUTH_TOKEN||'')},signal:AbortSignal.timeout(15000)});
+ const response=await fetch((process.env.ANTHROPIC_BASE_URL||'http://127.0.0.1:20128')+'/v1/models',{headers:{Authorization:'Bearer '+String(process.env.ANTHROPIC_AUTH_TOKEN||'')},signal:AbortSignal.timeout(15000)});
  if(!response.ok)throw Error('Le moteur Gemini ne répond pas.');const models=(await response.json()).data||[];
  const model=models.map(m=>m.id).find(m=>typeof m==='string'&&/^gemini\//i.test(m)&&!/embed|imagen|tts|audio|live/i.test(m));if(!model)throw Error('Aucun modèle Gemini compatible n’est disponible.');
  const env={...process.env,ANTHROPIC_MODEL:model,CLAUDE_CONFIG_DIR:profile,ENABLE_TOOL_SEARCH:'false'};delete env.ANTHROPIC_API_KEY;
